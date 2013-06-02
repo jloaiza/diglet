@@ -1,0 +1,1158 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="Nuevo documento 1">
+  <defs
+     id="defs4">
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3115"
+       is_visible="true" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.12374369"
+     inkscape:cx="185.70838"
+     inkscape:cy="606.46281"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     showborder="false"
+     inkscape:showpageshadow="false"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:window-width="1317"
+     inkscape:window-height="744"
+     inkscape:window-x="49"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Capa 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:0.8549366"
+       id="rect2985"
+       width="742.71503"
+       height="152.63815"
+       x="-977.21545"
+       y="29.432508"
+       inkscape:export-filename="/home/arayaq/dugtrio/docs/arch/forma registros - metadatos.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <text
+       xml:space="preserve"
+       style="font-size:31.24643898px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="-957.14288"
+       y="77.140106"
+       id="text2987"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/arayaq/dugtrio/docs/arch/forma registros - metadatos.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         sodipodi:role="line"
+         id="tspan2989"
+         x="-957.14288"
+         y="77.140106">Archivo de ejemplo:    3 int (6, 12, 18)</tspan><tspan
+         sodipodi:role="line"
+         x="-957.14288"
+         y="116.19817"
+         id="tspan2991">                                   4 char ('a', 'b', 'c', 'd')</tspan><tspan
+         sodipodi:role="line"
+         x="-957.14288"
+         y="155.25621"
+         id="tspan2993">                                   1 float (3.14)</tspan></text>
+    <path
+       style="fill:#000000;stroke:#000000"
+       id="path3001"
+       d="m -149.3702,93.919139 c 18.84796,0.183623 37.69732,0.196306 56.546032,0.235023 21.898149,-0.404645 43.834928,0.652052 65.729051,0.08863 9.640087,-0.248077 32.5453415,-1.80936 41.802596,-2.400892 32.754727,-2.148698 65.532529,-3.560819 97.976281,-8.77153 3.03047,-0.669165 6.06095,-1.33833 9.09142,-2.007495 0,0 -10.87394,8.256027 -10.87394,8.256027 l 0,0 c -3.01226,0.62358 -6.02451,1.24716 -9.03677,1.87074 -32.298661,4.883129 -64.899595,6.050957 -97.4597169,8.240225 -10.2194181,0.674682 -31.5253771,2.187982 -42.0530741,2.480272 -21.975182,0.61013 -43.993758,-0.37632 -65.973029,0.0886 -19.06437,0.0389 -38.12936,0.0529 -57.193,0.23503 0,0 11.44415,-8.314661 11.44415,-8.314661 z"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/arayaq/dugtrio/docs/arch/forma registros - metadatos.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="fill:#000000;stroke:#000000"
+       id="path3003"
+       d="m -113.69803,51.201747 c 0.36518,11.323023 -6.73164,20.182824 -14.44041,27.630827 -1.87473,1.394578 -3.63702,2.954659 -5.62419,4.183736 -8.40873,5.200864 -15.43956,9.60745 -24.14196,13.235218 -3.41308,2.165643 -7.55458,2.179175 -11.19507,3.644976 -1.62842,0.655666 -3.07152,1.700706 -4.60727,2.551066 2.95508,-1.46734 5.67603,-3.556786 8.86526,-4.402001 0.80893,-0.214384 -1.0015,1.475364 -0.97879,2.311911 0.0799,2.94286 2.64543,4.58431 4.61644,6.19778 6.09455,4.98899 7.2706,5.33767 14.73705,10.01971 25.16364,14.90568 50.960401,28.76624 77.752344,40.51302 0,0 -11.180043,7.42952 -11.180043,7.42952 l 0,0 c -26.741731,-12.02848 -52.516361,-26.0344 -77.955731,-40.59661 -4.9757,-3.01589 -19.79964,-10.3431 -20.71856,-17.55597 -0.13286,-1.04291 -0.0829,-2.4083 0.73662,-3.06678 4.61994,-3.711913 9.99093,-6.377291 14.98639,-9.565935 5.16249,-2.510905 10.50209,-3.804888 15.7618,-6.087859 2.04989,-0.889756 4.43231,-4.418661 6.05354,-2.880685 1.57075,1.490096 -5.78393,5.491706 -5.57259,3.336946 0.22498,-2.293795 3.7586,-2.66859 5.6379,-4.002885 7.60075,-6.920786 15.17517,-15.516852 14.66333,-26.473952 0,0 12.60394,-6.422033 12.60394,-6.422033 z"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/arayaq/dugtrio/docs/arch/forma registros - metadatos.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:1.22294474"
+       id="rect3005"
+       width="1185.4913"
+       height="642.63428"
+       x="254.39719"
+       y="-56.097775"
+       inkscape:export-filename="/home/arayaq/dugtrio/docs/arch/forma registros - metadatos.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Ubuntu Mono;-inkscape-font-specification:Ubuntu Mono;font-stretch:normal;font-variant:normal;text-anchor:start;text-align:start;writing-mode:lr"
+       x="282.85715"
+       y="6.6478968"
+       id="text3007"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/arayaq/dugtrio/docs/arch/forma registros - metadatos.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         sodipodi:role="line"
+         id="tspan3009"
+         x="282.85715"
+         y="6.6478968">XML Externo al LSS (Se requiere para arrancar el sistema)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Ubuntu Mono;-inkscape-font-specification:Ubuntu Mono"
+       x="377.14285"
+       y="98.076469"
+       id="text3011"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/arayaq/dugtrio/docs/arch/forma registros - metadatos.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         sodipodi:role="line"
+         id="tspan3013"
+         x="377.14285"
+         y="98.076469">...</tspan><tspan
+         sodipodi:role="line"
+         x="377.14285"
+         y="148.07648"
+         id="tspan3015">&lt;archivo&gt;</tspan><tspan
+         sodipodi:role="line"
+         x="377.14285"
+         y="198.07648"
+         id="tspan3017">    &lt;metadatos&gt; 26 &lt;/metadatos&gt;</tspan><tspan
+         sodipodi:role="line"
+         x="377.14285"
+         y="248.07648"
+         id="tspan3021">    &lt;registro&gt;</tspan><tspan
+         sodipodi:role="line"
+         x="377.14285"
+         y="298.07648"
+         id="tspan3025">        &lt;int&gt; 3 &lt;/int&gt;</tspan><tspan
+         sodipodi:role="line"
+         x="377.14285"
+         y="348.07648"
+         id="tspan3027">        &lt;char&gt; 4 &lt;/char&gt;</tspan><tspan
+         sodipodi:role="line"
+         x="377.14285"
+         y="398.07648"
+         id="tspan3029">        &lt;float&gt; 1 &lt;/float&gt;</tspan><tspan
+         sodipodi:role="line"
+         x="377.14285"
+         y="448.07648"
+         id="tspan3035">    &lt;/registro&gt;</tspan><tspan
+         sodipodi:role="line"
+         x="377.14285"
+         y="498.07648"
+         id="tspan3033">&lt;/archivo&gt;</tspan><tspan
+         sodipodi:role="line"
+         x="377.14285"
+         y="548.07648"
+         id="tspan3045">...</tspan><tspan
+         sodipodi:role="line"
+         x="377.14285"
+         y="598.07648"
+         id="tspan3047" /></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="625.71429"
+       y="495.21933"
+       id="text3039"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3041"
+         x="625.71429"
+         y="495.21933"></tspan><tspan
+         sodipodi:role="line"
+         id="tspan3043"
+         x="625.71429"
+         y="545.21936" /></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="1016.4286"
+       y="73.076469"
+       id="text3067"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/arayaq/dugtrio/docs/arch/forma registros - metadatos.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         sodipodi:role="line"
+         id="tspan3069"
+         x="1016.4286"
+         y="73.076469"
+         style="-inkscape-font-specification:Ubuntu Mono;font-family:Ubuntu Mono;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:22px;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%">bloque de inicio</tspan><tspan
+         sodipodi:role="line"
+         x="1016.4286"
+         y="123.07647"
+         id="tspan3071"
+         style="-inkscape-font-specification:Ubuntu Mono;font-family:Ubuntu Mono;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:22px;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%">de los metadatos</tspan></text>
+    <path
+       style="fill:#000000;stroke:#000000"
+       id="path3139"
+       d="m 740.32129,165.43079 c 0.59428,-0.33936 2.46183,-0.93258 1.78284,-1.01808 -0.71339,-0.0898 -2.45319,1.47339 -1.91021,1.00204 0.85016,-0.738 1.8982,-1.21098 2.8477,-1.81584 1.12994,-0.71982 2.26396,-1.43328 3.39062,-2.15821 2.92815,-1.88408 4.99281,-3.25428 7.93557,-5.19061 14.67995,-10.15077 30.08948,-19.13418 45.61127,-27.91578 16.70489,-8.95487 33.998,-16.88019 52.1965,-22.29614 3.64984,-1.08621 7.35944,-1.96043 11.03917,-2.94065 20.51672,-4.837162 41.60861,-5.954704 62.59863,-6.589506 15.25301,-0.305311 30.51015,-0.251802 45.76522,-0.199688 9.18107,0.03325 18.3622,0.04553 27.54332,0.03708 4.36838,0.08196 8.86048,-0.804609 12.53638,2.030223 0,0 -4.1956,2.650724 -4.1956,2.650724 l 0,0 c -3.5217,-2.618817 -8.11342,-1.708716 -12.23902,-1.849774 -9.12973,-0.04135 -18.25941,-0.09163 -27.38905,-0.15073 -15.19396,-0.08799 -30.39035,-0.231663 -45.5828,0.08586 -20.93527,0.601488 -41.97344,1.708745 -62.42602,6.585935 -3.67309,0.98542 -7.37604,1.86559 -11.01927,2.95626 -18.20258,5.4493 -35.49527,13.41281 -52.19674,22.4021 -13.01292,7.17295 -25.56821,15.13104 -37.85583,23.48042 -7.32605,4.84293 -14.6424,9.72592 -22.31924,14.00325 0,0 3.88656,-3.10888 3.88656,-3.10888 z"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/arayaq/dugtrio/docs/arch/forma registros - metadatos.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="fill:#000000;stroke:#000000"
+       id="path3141"
+       d="m 744.69021,148.87553 c 0.31858,3.90064 -0.64748,6.96571 -1.97746,10.5608 -0.55268,2.28247 -3.03177,4.47139 -2.65504,6.96753 0.046,0.3048 0.24219,0.56694 0.36328,0.85041 2.23562,2.78026 5.94654,3.10673 9.25225,3.49034 4.46351,0.0222 8.67363,1.07639 12.85092,2.52117 0,0 -4.07691,2.7592 -4.07691,2.7592 l 0,0 c -4.14968,-1.43933 -8.34452,-2.39051 -12.76959,-2.4496 -3.50292,-0.43285 -7.29398,-0.887 -9.5981,-3.88116 -0.15263,-0.35009 -0.38671,-0.67504 -0.45788,-1.05025 -0.48778,-2.5714 1.9396,-4.84082 2.62817,-7.13152 0.68564,-1.80996 1.56543,-3.70084 1.89358,-5.62044 0.26732,-1.56374 0.0456,-3.17318 0.0906,-4.74595 0,0 4.45617,-2.27053 4.45617,-2.27053 z"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/arayaq/dugtrio/docs/arch/forma registros - metadatos.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="fill:#000000;stroke:#000000"
+       id="path3179"
+       d="m 928.04808,259.98267 c 2.51421,3.59313 5.64157,6.69118 8.31492,10.15375 2.84257,3.77486 4.03128,8.04285 4.70023,12.63922 0.61515,5.62086 0.57661,11.28832 0.58408,16.9353 -0.009,6.0981 -0.0223,12.19622 -0.0368,18.29432 0.13098,5.57418 -0.28966,11.17578 0.236,16.73187 0.32279,3.04244 0.93863,5.97367 2.26734,8.73237 0,0 -4.30433,2.44158 -4.30433,2.44158 l 0,0 c -1.3492,-2.82128 -1.97653,-5.80683 -2.28905,-8.91703 -0.5485,-5.57429 -0.0868,-11.19721 -0.22459,-16.79132 0.007,-6.09706 0.0344,-12.19409 0.035,-18.29117 -0.019,-5.62197 0.0235,-11.26259 -0.58031,-16.85963 -0.65285,-4.51166 -1.80739,-8.70338 -4.6055,-12.40523 -2.66896,-3.4781 -5.76108,-6.61396 -8.38536,-10.13256 0,0 4.28838,-2.53147 4.28838,-2.53147 z"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/arayaq/dugtrio/docs/arch/forma registros - metadatos.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="fill:#000000;stroke:#000000"
+       id="path3181"
+       d="m 947.62817,348.92283 c -0.99833,3.16219 -2.35074,6.171 -3.09791,9.41951 -0.75851,4.18574 -0.8217,8.45308 -0.88674,12.69404 -0.0532,4.60374 -0.0252,9.20795 -0.0123,13.81185 0.21449,4.64319 -0.33202,9.24826 -1.42098,13.75571 -0.92056,3.93482 -1.87628,7.81546 -3.75667,11.41089 -1.63757,2.83709 -3.96298,5.17098 -6.23279,7.49952 -2.88496,2.50584 -6.36297,4.23657 -9.64879,6.12747 0,0 3.84441,-3.1062 3.84441,-3.1062 l 0,0 c -6.6481,3.90733 0.11436,0.0136 1.24379,-1.12658 2.26502,-2.30288 4.58805,-4.60327 6.2891,-7.37235 1.95702,-3.54287 2.94631,-7.38771 3.84606,-11.31615 1.12471,-4.46455 1.70253,-9.03649 1.47018,-13.64678 -0.006,-4.60514 -0.0172,-9.21032 6.9e-4,-13.81544 0.0648,-4.26724 0.13383,-8.55757 0.83376,-12.77759 0.67447,-3.24405 1.98835,-6.24 3.03574,-9.36156 0,0 4.49244,-2.19634 4.49244,-2.19634 z"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/arayaq/dugtrio/docs/arch/forma registros - metadatos.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <text
+       xml:space="preserve"
+       style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Ubuntu Mono;-inkscape-font-specification:Ubuntu Mono"
+       x="961.66522"
+       y="314.95081"
+       id="text3183"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/arayaq/dugtrio/docs/arch/forma registros - metadatos.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         sodipodi:role="line"
+         id="tspan3185"
+         x="961.66522"
+         y="314.95081">Formato del registro</tspan><tspan
+         sodipodi:role="line"
+         x="961.66522"
+         y="349.95081"
+         id="tspan3187">(No puede ir en los </tspan><tspan
+         sodipodi:role="line"
+         x="961.66522"
+         y="384.95081"
+         id="tspan3195">metadatos; ver 1)</tspan></text>
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:0.9515456"
+       id="rect3199"
+       width="1537.1913"
+       height="777.19135"
+       x="-934.30994"
+       y="612.33795"
+       inkscape:export-filename="/home/arayaq/dugtrio/docs/arch/forma registros - metadatos.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <g
+       id="g3230"
+       transform="translate(25.714286,88.571429)"
+       inkscape:export-filename="/home/arayaq/dugtrio/docs/arch/forma registros - metadatos.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <rect
+         y="798.07648"
+         x="-828.57141"
+         height="125.71429"
+         width="125.71429"
+         id="rect3201"
+         style="fill:none;stroke:#000000" />
+      <rect
+         style="fill:none;stroke:#000000"
+         id="rect3203"
+         width="125.71429"
+         height="125.71429"
+         x="-701.85712"
+         y="798.07648" />
+      <rect
+         y="798.07648"
+         x="-575.14282"
+         height="125.71429"
+         width="125.71429"
+         id="rect3205"
+         style="fill:none;stroke:#000000" />
+      <g
+         transform="translate(-74.14283,0)"
+         id="g3213">
+        <rect
+           y="798.07648"
+           x="-374.28571"
+           height="125.71429"
+           width="125.71429"
+           id="rect3207"
+           style="fill:none;stroke:#000000" />
+        <rect
+           style="fill:none;stroke:#000000"
+           id="rect3209"
+           width="125.71429"
+           height="125.71429"
+           x="-247.5714"
+           y="798.07648" />
+        <rect
+           y="798.07648"
+           x="-120.85711"
+           height="125.71429"
+           width="125.71429"
+           id="rect3211"
+           style="fill:none;stroke:#000000" />
+      </g>
+      <g
+         id="g3218"
+         transform="translate(306.00005,0)">
+        <rect
+           style="fill:none;stroke:#000000"
+           id="rect3220"
+           width="125.71429"
+           height="125.71429"
+           x="-374.28571"
+           y="798.07648" />
+        <rect
+           y="798.07648"
+           x="-247.5714"
+           height="125.71429"
+           width="125.71429"
+           id="rect3222"
+           style="fill:none;stroke:#000000" />
+        <rect
+           style="fill:none;stroke:#000000"
+           id="rect3224"
+           width="125.71429"
+           height="125.71429"
+           x="-120.85711"
+           y="798.07648" />
+      </g>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3226"
+         y="880.93359"
+         x="-794.28571"
+         style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Ubuntu Mono;-inkscape-font-specification:Ubuntu Mono"
+         xml:space="preserve"><tspan
+           y="880.93359"
+           x="-794.28571"
+           id="tspan3228"
+           sodipodi:role="line">me     ta     da   tos    ...   ...   ...    ...   * </tspan></text>
+      <path
+         style="fill:#000000;stroke:#000000"
+         id="path3283"
+         d="m 260.0135,923.85932 c 0.18925,-0.75264 1.18432,-4.70988 1.18531,-4.71349 1.05857,-3.85987 2.21799,-7.69137 3.33601,-11.53444 7.74005,-26.6057 -3.09589,10.76723 5.8929,-20.26206 6.4601,-22.99015 15.3814,-45.3119 27.24426,-66.0672 2.47193,-4.32488 5.20668,-8.49415 7.81002,-12.74122 10.53722,-16.37631 23.44201,-31.00028 37.63339,-44.28206 7.84135,-7.33876 11.31486,-10.0197 19.47903,-16.79034 6.93001,-5.55679 14.17441,-10.68551 21.5135,-15.67891 0,0 1.07819,-0.42282 1.07819,-0.42282 l 0,0 c -7.43163,5.01776 -14.7677,10.17316 -21.77866,15.77385 -8.17768,6.76535 -11.69967,9.47903 -19.55272,16.813 -14.21436,13.2748 -27.14075,27.89734 -37.68558,44.28352 -2.60502,4.24615 -5.34158,8.41435 -7.81505,12.73844 -11.84712,20.71098 -20.74815,43.00102 -27.09194,65.97744 -1.89596,6.72106 -3.8074,13.43778 -5.68641,20.1636 -1.0647,3.81108 -2.16823,7.61206 -3.15694,11.44356 -0.003,0.0104 -0.89795,3.88257 -1.07276,4.63863 0,0 -1.33255,0.6605 -1.33255,0.6605 z"
+         inkscape:connector-curvature="0"
+         transform="translate(-25.714286,-88.571429)" />
+      <path
+         style="fill:#000000;stroke:#000000"
+         id="path3285"
+         d="m 247.5249,907.74591 c 1.93923,0.82251 3.71039,1.92251 5.42406,3.14134 1.72067,1.4426 3.08611,3.22747 4.26281,5.12605 1.13707,1.56188 1.76617,3.36659 2.51703,5.12049 0.80932,2.3621 1.26496,2.69069 3.79281,2.23431 3.03516,-0.74464 5.66261,-2.4679 8.34279,-3.99868 2.5506,-1.30296 5.03646,-2.74666 7.69333,-3.82607 1.10844,-0.49127 2.16796,-1.07877 3.25412,-1.61593 0,0 -1.13737,0.90918 -1.13737,0.90918 l 0,0 c -1.0845,0.53935 -2.14699,1.12235 -3.25837,1.60603 -2.64109,1.09151 -5.12499,2.51808 -7.66253,3.82551 -2.69049,1.53893 -5.33886,3.25702 -8.39553,3.97523 -2.57238,0.39879 -3.10251,0.002 -3.91519,-2.38763 -0.74368,-1.74916 -1.35505,-3.55466 -2.49091,-5.10994 -1.16405,-1.88383 -2.52777,-3.64573 -4.23102,-5.07752 -1.71572,-1.22148 -3.49737,-2.30036 -5.44557,-3.11012 0,0 1.24954,-0.81225 1.24954,-0.81225 z"
+         inkscape:connector-curvature="0"
+         transform="translate(-25.714286,-88.571429)" />
+    </g>
+    <path
+       style="fill:#000000;stroke:#000000"
+       id="path3261"
+       d="m -805.31883,811.28195 c -0.51783,2.24496 -0.51707,4.5852 -0.58983,6.87819 -0.0664,4.13481 -0.16966,8.27303 -0.0121,12.40633 0.21454,3.61743 0.43994,7.23366 0.56683,10.85541 0.20179,2.36626 0.52091,4.71949 0.68151,7.08943 0.0154,1.87936 0.54191,3.68551 0.96883,5.49874 0.42322,1.6653 0.4514,3.38539 0.60941,5.08571 0.14279,1.62884 0.59383,3.19248 0.97159,4.77455 0.16374,0.69322 0.24326,1.40023 0.32027,2.10678 0,0 -0.91757,0.47999 -0.91757,0.47999 l 0,0 c -0.0748,-0.70286 -0.15202,-1.40621 -0.31259,-2.09614 -0.37411,-1.58759 -0.82271,-3.15693 -0.97607,-4.78861 -0.15635,-1.69683 -0.1788,-3.41333 -0.59662,-5.07644 -0.42442,-1.81966 -0.96577,-3.62971 -0.97191,-5.51595 -0.15849,-2.37413 -0.45973,-4.73333 -0.66144,-7.10365 -0.11278,-3.62671 -0.32223,-7.24844 -0.53651,-10.87038 -0.16179,-4.13142 -0.0564,-8.26765 -0.0128,-12.40107 0.0607,-2.29378 0.0652,-4.61901 0.50714,-6.87808 0,0 0.96179,-0.44481 0.96179,-0.44481 z"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/arayaq/dugtrio/docs/arch/forma registros - metadatos.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="fill:#000000;stroke:#000000"
+       id="path3263"
+       d="m -814.80911,863.03175 c 0.73941,1.52775 1.73935,2.91268 2.67091,4.32661 0.82891,1.12684 1.4803,2.37827 2.3246,3.49429 0.41533,0.549 0.74407,0.87013 1.2122,1.36451 0.93503,0.95435 1.92134,1.84094 3.00802,2.61597 1.03821,0.56927 2.05149,1.16847 2.99448,1.88585 0.41414,0.40696 0.80964,0.55604 1.38334,0.35504 0.21051,-0.0738 0.45411,-0.13472 0.59372,-0.30869 0.0686,-0.0854 -0.34743,0.0852 -0.3279,-0.0226 0.0531,-0.29336 0.31323,-0.50738 0.46985,-0.76108 1.19114,-2.22725 2.47512,-4.40315 3.73217,-6.5934 0.98528,-1.85392 2.23752,-3.53075 3.59612,-5.12283 0.5128,-0.61398 1.07439,-1.17112 1.66959,-1.70303 0,0 0.95547,-0.38886 0.95547,-0.38886 l 0,0 c -0.60131,0.52507 -1.16466,1.07829 -1.67878,1.69146 -1.36972,1.58747 -2.63325,3.26084 -3.62625,5.11508 -1.25444,2.18516 -2.53939,4.35458 -3.71088,6.58594 -0.15122,0.26095 -0.23795,0.57206 -0.45366,0.78284 -0.42604,0.41628 -0.93808,0.73659 -1.43599,1.06352 -0.71034,0.46642 -1.44589,0.46555 -2.04926,-0.13604 -0.9427,-0.71517 -1.95695,-1.30948 -2.98956,-1.88515 -1.09225,-0.77681 -2.07233,-1.67915 -3.00723,-2.6404 -0.46514,-0.49668 -0.80243,-0.83117 -1.21543,-1.38124 -0.84035,-1.11924 -1.49244,-2.37076 -2.32272,-3.49721 -0.93846,-1.41912 -1.93528,-2.81038 -2.718,-4.32397 0,0 0.92519,-0.51664 0.92519,-0.51664 z"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/arayaq/dugtrio/docs/arch/forma registros - metadatos.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <text
+       xml:space="preserve"
+       style="font-size:22px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Ubuntu Mono;-inkscape-font-specification:Ubuntu Mono"
+       x="-877.85718"
+       y="797.00507"
+       id="text3265"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/arayaq/dugtrio/docs/arch/forma registros - metadatos.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         sodipodi:role="line"
+         id="tspan3267"
+         x="-877.85718"
+         y="797.00507">inicio del bloque 26</tspan><tspan
+         sodipodi:role="line"
+         x="-877.85718"
+         y="824.50507"
+         id="tspan3269" /></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.96345258px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -802.81876,1022.4646 c 0,24.8187 0,24.8187 0,24.8187"
+       id="path3271"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/arayaq/dugtrio/docs/arch/forma registros - metadatos.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Ubuntu Mono;-inkscape-font-specification:Ubuntu Mono"
+       x="-822.93878"
+       y="1076.6058"
+       id="text3273"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/arayaq/dugtrio/docs/arch/forma registros - metadatos.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         sodipodi:role="line"
+         id="tspan3275"
+         x="-822.93878"
+         y="1076.6058">26</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text3287"
+       y="683.86792"
+       x="362.61014"
+       style="font-size:22px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Ubuntu Mono;-inkscape-font-specification:Ubuntu Mono"
+       xml:space="preserve"
+       inkscape:export-filename="/home/arayaq/dugtrio/docs/arch/forma registros - metadatos.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         y="683.86792"
+         x="362.61014"
+         id="tspan3289"
+         sodipodi:role="line">Número de bloque </tspan><tspan
+         y="711.36792"
+         x="362.61014"
+         sodipodi:role="line"
+         id="tspan3293">del primer registro</tspan><tspan
+         id="tspan3291"
+         y="738.86792"
+         x="362.61014"
+         sodipodi:role="line" /></text>
+    <path
+       inkscape:connector-curvature="0"
+       id="path3295"
+       d="m 336.63331,1022.4646 c 0,24.8187 0,24.8187 0,24.8187"
+       style="fill:none;stroke:#000000;stroke-width:1.96345258px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       inkscape:export-filename="/home/arayaq/dugtrio/docs/arch/forma registros - metadatos.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text3297"
+       y="1076.6058"
+       x="272.06656"
+       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Ubuntu Mono;-inkscape-font-specification:Ubuntu Mono"
+       xml:space="preserve"
+       inkscape:export-filename="/home/arayaq/dugtrio/docs/arch/forma registros - metadatos.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         y="1076.6058"
+         x="272.06656"
+         id="tspan3299"
+         sodipodi:role="line">26 + n</tspan></text>
+    <path
+       style="fill:#000000;stroke:#000000"
+       id="path3305"
+       d="m -775.96608,1034.4403 c 9.89134,0.3003 19.15516,5.4437 28.07498,9.3106 10.84911,4.3715 21.22724,9.8743 32.21393,13.911 7.52692,2.7656 9.04205,2.9562 16.74394,4.948 16.17928,3.6456 32.78925,4.0594 49.29499,4.3466 21.58146,0.1705 43.16433,0.084 64.7462,0.031 20.70004,-0.069 41.40019,-0.08 62.10032,-0.089 22.60913,0 45.21826,0.02 67.82739,0.025 4.04479,5e-4 8.08957,0 12.13435,0 9.6761,9e-4 14.70623,-0.1629 24.37296,0.4933 12.70242,0.8623 25.39048,2.5913 38.06276,3.8126 34.83538,3.469 69.70637,6.5785 104.57362,9.742 22.57593,1.6795 44.95665,4.9805 66.79663,10.9462 12.8407,3.7212 24.908,9.6038 37.09031,15.0235 6.41843,2.6082 12.04924,6.5509 16.48452,11.8484 0,0 -5.05116,3.0344 -5.05116,3.0344 l 0,0 c -4.37193,-5.2192 -9.9236,-9.0956 -16.23316,-11.6953 -12.11493,-5.4581 -24.1617,-11.2661 -36.94355,-15.0171 -21.69234,-5.9766 -43.91922,-9.3791 -66.35031,-11.1424 -34.91181,-3.2653 -69.83902,-6.2811 -104.7405,-9.6251 -12.68602,-1.195 -25.38565,-2.9074 -38.10062,-3.7487 -9.55578,-0.6323 -14.79686,-0.4746 -24.36299,-0.474 -4.04596,3e-4 -8.09192,8e-4 -12.13788,0 -22.63563,0 -45.27125,0.018 -67.90687,0.033 -20.68107,0.01 -41.36213,0.024 -62.04318,0.049 -21.61828,0.04 -43.23706,0.1817 -64.85517,0.035 -16.54406,-0.2615 -33.18556,-0.7105 -49.38737,-4.445 -7.75693,-2.0375 -9.18616,-2.2128 -16.76778,-5.019 -10.9939,-4.0692 -21.40183,-9.5532 -32.29394,-13.8728 -8.95367,-3.8162 -18.25055,-8.9022 -28.18583,-8.9448 0,0 4.84341,-3.5189 4.84341,-3.5189 z"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/arayaq/dugtrio/docs/arch/forma registros - metadatos.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="fill:#000000;stroke:#000000"
+       id="path3307"
+       d="m -153.32373,1123.2525 c 8.87287,-7.951 19.77096,-13.2701 30.21442,-18.8405 17.83048,-9.0687 37.777644,-12.267 57.203929,-16.1107 23.123416,-4.5378 46.668911,-5.9026 70.1627501,-6.8162 18.2524149,-0.5804 36.5162239,-0.5783 54.7757619,-0.561 16.560473,0.031 33.120952,0.057 49.681439,0.08 17.14073,-0.6036 34.13964,-3.2338 50.99892,-6.2576 14.45924,-2.5394 28.72196,-6.0549 42.97739,-9.5265 11.21552,-2.4077 21.54448,-7.4134 31.57199,-12.8372 4.77423,-2.6979 9.91395,-4.597 14.95014,-6.7205 0,0 -4.6045,3.6339 -4.6045,3.6339 l 0,0 c -5.01867,2.1032 -10.11628,4.0403 -14.86811,6.7258 -10.05171,5.3588 -20.38124,10.3204 -31.60168,12.6747 -14.23074,3.4751 -28.49078,6.8998 -42.924,9.4413 -16.87643,2.9962 -33.88904,5.6171 -51.04523,6.1677 -16.566098,-0 -33.132154,-0.031 -49.698212,-0.067 -18.217219,-0.019 -36.438613,-0.066 -54.6495078,0.496 -23.4751442,0.889 -46.9969592,2.2906 -70.0924452,6.8716 -19.476519,3.8767 -39.462535,7.1656 -57.285935,16.3841 -7.06328,3.7897 -14.40189,7.3285 -20.23212,12.9704 0,0 -5.535,2.2926 -5.535,2.2926 z"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/arayaq/dugtrio/docs/arch/forma registros - metadatos.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text3309"
+       y="1182.8833"
+       x="-328.3342"
+       style="font-size:22px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Ubuntu Mono;-inkscape-font-specification:Ubuntu Mono"
+       xml:space="preserve"
+       inkscape:export-filename="/home/arayaq/dugtrio/docs/arch/forma registros - metadatos.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         y="1182.8833"
+         x="-328.3342"
+         id="tspan3311"
+         sodipodi:role="line">Tamaño fijo, por lo que se puede usar aritmética</tspan><tspan
+         id="tspan3313"
+         y="1210.3833"
+         x="-328.3342"
+         sodipodi:role="line" /><tspan
+         y="1237.8833"
+         x="-328.3342"
+         sodipodi:role="line"
+         id="tspan3323">Contiene:</tspan><tspan
+         y="1265.3833"
+         x="-328.3342"
+         sodipodi:role="line"
+         id="tspan3327" /><tspan
+         y="1292.8833"
+         x="-328.3342"
+         sodipodi:role="line"
+         id="tspan3329">     - x bytes: Nombre de archivo</tspan><tspan
+         y="1320.3833"
+         x="-328.3342"
+         sodipodi:role="line"
+         id="tspan3331">     - y bytes: autor</tspan><tspan
+         y="1347.8833"
+         x="-328.3342"
+         sodipodi:role="line"
+         id="tspan3333">     - z bytes: fecha ... etc</tspan><tspan
+         y="1375.3833"
+         x="-328.3342"
+         sodipodi:role="line"
+         id="tspan3325" /></text>
+    <path
+       style="fill:#000000;stroke:#000000"
+       id="path3337"
+       d="m -500.29691,204.00535 c 9.01234,7.11632 17.66311,14.65732 26.28686,22.23876 15.53218,13.49503 28.80691,29.20553 42.03229,44.88957 14.48232,17.58906 29.32836,34.87428 43.57822,52.65451 4.02914,5.02735 8.47111,9.76234 11.99337,15.15696 4.66269,7.14125 8.3232,14.88882 12.4848,22.33323 20.88597,39.56105 41.29829,79.36935 61.83627,119.11151 5.82138,11.97266 12.72516,23.43432 17.91505,35.71179 2.06705,4.8899 5.21505,13.47335 7.05249,18.387 7.22921,18.45539 13.09245,37.36571 18.93463,56.28745 1.45552,4.70863 2.98804,9.52032 3.1141,14.49884 0.0144,0.56919 0.0561,3.33661 -0.91524,3.94238 -2.33542,1.45645 -4.93289,2.44304 -7.39933,3.66456 -2.5867,-1.2513 -1.33133,-0.50025 -3.74748,-2.28399 0,0 5.86683,-3.73091 5.86683,-3.73091 l 0,0 c 2.28856,1.56872 1.10314,0.98884 3.51593,1.81975 -1.55321,1.11496 -3.01633,2.36756 -4.65964,3.34487 -0.42415,0.25225 0.78299,-0.67217 0.94777,-1.13734 0.27782,-0.78426 0.31563,-1.64208 0.33147,-2.47394 0.0946,-4.9696 -1.40627,-9.81071 -2.76217,-14.523 -5.55072,-19.01388 -11.30172,-37.96309 -18.72068,-56.35574 -2.10596,-5.56777 -4.77436,-12.7977 -7.11309,-18.30531 -5.20781,-12.26422 -11.93178,-23.82043 -17.49772,-35.91877 -19.78853,-40.12613 -39.5266,-80.29644 -61.00137,-119.5573 -4.30052,-7.33244 -8.16254,-14.94034 -12.90157,-21.9973 -3.59153,-5.3482 -7.9835,-10.11333 -12.0289,-15.12702 -14.32098,-17.74882 -29.28962,-34.9541 -43.96398,-52.40826 -13.39315,-15.54621 -26.82459,-31.11767 -42.40833,-44.55223 -8.68386,-7.55435 -17.34153,-15.14835 -26.6976,-21.87506 0,0 5.92702,-3.79501 5.92702,-3.79501 z"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/arayaq/dugtrio/docs/arch/forma registros - metadatos.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="fill:#000000;stroke:#000000"
+       id="path3339"
+       d="m -352.76858,554.58717 c 3.91958,0.23833 7.88603,-0.19546 11.79983,0.0862 5.54252,0.39892 11.01692,1.70433 16.39541,3.00871 14.45515,4.26512 26.47962,13.81256 38.70348,22.26132 10.92268,7.84191 21.91827,15.58193 32.8466,23.41556 3.33847,2.27675 6.79686,4.36886 10.1635,6.60239 2.19108,1.45363 4.16131,3.02419 6.52648,4.17466 0.58677,-0.16074 2.27381,-0.80849 1.7603,-0.48224 -1.37195,0.87164 -2.75337,2.15682 -4.37876,2.14583 -0.92676,-0.006 1.21212,-1.40617 1.74614,-2.16363 0.67513,-0.95761 1.26316,-1.97391 1.87525,-2.97299 2.98577,-4.8735 2.10954,-3.42217 4.82269,-8.78828 4.7768,-11.69575 9.36187,-23.46065 14.30161,-35.09015 0,0 6.0625,-2.78482 6.0625,-2.78482 l 0,0 c -5.05041,11.58881 -9.6561,23.34807 -14.26898,35.11572 -2.77899,5.68389 -1.64404,3.64683 -4.65809,8.78063 -2.94935,5.02358 -6.12347,10.11775 -13.08294,10.05995 -5.79546,-3.14112 -10.80549,-7.70381 -16.52101,-11.00869 -10.83636,-7.8977 -21.72826,-15.71898 -32.61511,-23.54689 -12.19236,-8.44599 -24.28144,-17.835 -38.76738,-21.92783 -9.70948,-2.2944 -18.38853,-3.44972 -28.38421,-2.76403 0,0 5.67269,-4.12145 5.67269,-4.12145 z"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/arayaq/dugtrio/docs/arch/forma registros - metadatos.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:0.94670606"
+       id="rect3341"
+       width="1834.339"
+       height="1040.0533"
+       x="-2862.8838"
+       y="-433.37875"
+       inkscape:export-filename="/home/arayaq/dugtrio/docs/arch/forma registros - metadatos.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <g
+       id="g3347"
+       inkscape:export-filename="/home/arayaq/dugtrio/docs/arch/forma registros - metadatos.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <rect
+         y="-142.08098"
+         x="-2663.0146"
+         height="148.76736"
+         width="148.76736"
+         id="rect3343"
+         style="fill:none;stroke:#000000;stroke-width:0.68511289" />
+      <rect
+         style="fill:none;stroke:#000000;stroke-width:0.68511289"
+         id="rect3345"
+         width="148.76736"
+         height="148.76736"
+         x="-2513.5623"
+         y="-142.08098" />
+    </g>
+    <g
+       id="g3351"
+       transform="translate(298.90487,0)"
+       inkscape:export-filename="/home/arayaq/dugtrio/docs/arch/forma registros - metadatos.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <rect
+         style="fill:none;stroke:#000000;stroke-width:0.68511289"
+         id="rect3353"
+         width="148.76736"
+         height="148.76736"
+         x="-2663.0146"
+         y="-142.08098" />
+      <rect
+         y="-142.08098"
+         x="-2513.5623"
+         height="148.76736"
+         width="148.76736"
+         id="rect3355"
+         style="fill:none;stroke:#000000;stroke-width:0.68511289" />
+    </g>
+    <text
+       sodipodi:linespacing="125%"
+       id="text3357"
+       y="-313.35211"
+       x="-2760"
+       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Ubuntu Mono;-inkscape-font-specification:Ubuntu Mono"
+       xml:space="preserve"
+       inkscape:export-filename="/home/arayaq/dugtrio/docs/arch/forma registros - metadatos.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         y="-313.35211"
+         x="-2760"
+         sodipodi:role="line"
+         id="tspan3361">Registro:</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Ubuntu Mono;-inkscape-font-specification:Ubuntu Mono"
+       x="-865.71429"
+       y="678.07648"
+       id="text3365"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/arayaq/dugtrio/docs/arch/forma registros - metadatos.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         id="tspan3367"
+         sodipodi:role="line"
+         x="-865.71429"
+         y="678.07648">Metadatos</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text3369"
+       y="-164.08919"
+       x="-2609.3103"
+       style="font-size:22px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Ubuntu Mono;-inkscape-font-specification:Ubuntu Mono"
+       xml:space="preserve"
+       inkscape:export-filename="/home/arayaq/dugtrio/docs/arch/forma registros - metadatos.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         y="-164.08919"
+         x="-2609.3103"
+         id="tspan3371"
+         sodipodi:role="line">int          char         float            *</tspan><tspan
+         id="tspan3373"
+         y="-136.58919"
+         x="-2609.3103"
+         sodipodi:role="line" /></text>
+    <g
+       id="g3375"
+       inkscape:export-filename="/home/arayaq/dugtrio/docs/arch/forma registros - metadatos.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <rect
+         style="fill:none;stroke:#000000;stroke-width:0.68511289"
+         id="rect3377"
+         width="148.76736"
+         height="148.76736"
+         x="-2663.0146"
+         y="-142.08098" />
+      <rect
+         y="-142.08098"
+         x="-2513.5623"
+         height="148.76736"
+         width="148.76736"
+         id="rect3379"
+         style="fill:none;stroke:#000000;stroke-width:0.68511289" />
+    </g>
+    <g
+       transform="translate(298.90487,0)"
+       id="g3381"
+       inkscape:export-filename="/home/arayaq/dugtrio/docs/arch/forma registros - metadatos.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <rect
+         y="-142.08098"
+         x="-2663.0146"
+         height="148.76736"
+         width="148.76736"
+         id="rect3383"
+         style="fill:none;stroke:#000000;stroke-width:0.68511289" />
+      <rect
+         style="fill:none;stroke:#000000;stroke-width:0.68511289"
+         id="rect3385"
+         width="148.76736"
+         height="148.76736"
+         x="-2513.5623"
+         y="-142.08098" />
+    </g>
+    <g
+       id="g3387"
+       transform="translate(0,169.70563)"
+       inkscape:export-filename="/home/arayaq/dugtrio/docs/arch/forma registros - metadatos.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <rect
+         y="-142.08098"
+         x="-2663.0146"
+         height="148.76736"
+         width="148.76736"
+         id="rect3389"
+         style="fill:none;stroke:#000000;stroke-width:0.68511289" />
+      <rect
+         style="fill:none;stroke:#000000;stroke-width:0.68511289"
+         id="rect3391"
+         width="148.76736"
+         height="148.76736"
+         x="-2513.5623"
+         y="-142.08098" />
+    </g>
+    <g
+       id="g3393"
+       transform="translate(298.90487,169.70563)"
+       inkscape:export-filename="/home/arayaq/dugtrio/docs/arch/forma registros - metadatos.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <rect
+         style="fill:none;stroke:#000000;stroke-width:0.68511289"
+         id="rect3395"
+         width="148.76736"
+         height="148.76736"
+         x="-2663.0146"
+         y="-142.08098" />
+      <rect
+         y="-142.08098"
+         x="-2513.5623"
+         height="148.76736"
+         width="148.76736"
+         id="rect3397"
+         style="fill:none;stroke:#000000;stroke-width:0.68511289" />
+    </g>
+    <g
+       transform="translate(0,335.37065)"
+       id="g3399"
+       inkscape:export-filename="/home/arayaq/dugtrio/docs/arch/forma registros - metadatos.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <rect
+         style="fill:none;stroke:#000000;stroke-width:0.68511289"
+         id="rect3401"
+         width="148.76736"
+         height="148.76736"
+         x="-2663.0146"
+         y="-142.08098" />
+      <rect
+         y="-142.08098"
+         x="-2513.5623"
+         height="148.76736"
+         width="148.76736"
+         id="rect3403"
+         style="fill:none;stroke:#000000;stroke-width:0.68511289" />
+    </g>
+    <g
+       transform="translate(298.90487,335.37065)"
+       id="g3405"
+       inkscape:export-filename="/home/arayaq/dugtrio/docs/arch/forma registros - metadatos.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <rect
+         y="-142.08098"
+         x="-2663.0146"
+         height="148.76736"
+         width="148.76736"
+         id="rect3407"
+         style="fill:none;stroke:#000000;stroke-width:0.68511289" />
+      <rect
+         style="fill:none;stroke:#000000;stroke-width:0.68511289"
+         id="rect3409"
+         width="148.76736"
+         height="148.76736"
+         x="-2513.5623"
+         y="-142.08098" />
+    </g>
+    <g
+       id="g3411"
+       transform="translate(0,503.05597)"
+       inkscape:export-filename="/home/arayaq/dugtrio/docs/arch/forma registros - metadatos.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <rect
+         y="-142.08098"
+         x="-2663.0146"
+         height="148.76736"
+         width="148.76736"
+         id="rect3413"
+         style="fill:none;stroke:#000000;stroke-width:0.68511289" />
+      <rect
+         style="fill:none;stroke:#000000;stroke-width:0.68511289"
+         id="rect3415"
+         width="148.76736"
+         height="148.76736"
+         x="-2513.5623"
+         y="-142.08098" />
+    </g>
+    <g
+       id="g3417"
+       transform="translate(298.90487,503.05597)"
+       inkscape:export-filename="/home/arayaq/dugtrio/docs/arch/forma registros - metadatos.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <rect
+         style="fill:none;stroke:#000000;stroke-width:0.68511289"
+         id="rect3419"
+         width="148.76736"
+         height="148.76736"
+         x="-2663.0146"
+         y="-142.08098" />
+      <rect
+         y="-142.08098"
+         x="-2513.5623"
+         height="148.76736"
+         width="148.76736"
+         id="rect3421"
+         style="fill:none;stroke:#000000;stroke-width:0.68511289" />
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:89.49381256px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Ubuntu Mono;-inkscape-font-specification:Ubuntu Mono"
+       x="-2611.1387"
+       y="-40.44643"
+       id="text3423"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/arayaq/dugtrio/docs/arch/forma registros - metadatos.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         id="tspan3425"
+         sodipodi:role="line"
+         x="-2611.1387"
+         y="-40.44643">6</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text3427"
+       y="128.125"
+       x="-2634.2727"
+       style="font-size:89.49381256px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Ubuntu Mono;-inkscape-font-specification:Ubuntu Mono"
+       xml:space="preserve"
+       inkscape:export-filename="/home/arayaq/dugtrio/docs/arch/forma registros - metadatos.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         y="128.125"
+         x="-2634.2727"
+         sodipodi:role="line"
+         id="tspan3429">12</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:89.49381256px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Ubuntu Mono;-inkscape-font-specification:Ubuntu Mono"
+       x="-2634.4519"
+       y="293.83929"
+       id="text3431"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/arayaq/dugtrio/docs/arch/forma registros - metadatos.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         id="tspan3433"
+         sodipodi:role="line"
+         x="-2634.4519"
+         y="293.83929">18</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text3435"
+       y="463.83929"
+       x="-2633.3779"
+       style="font-size:89.49381256px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Ubuntu Mono;-inkscape-font-specification:Ubuntu Mono"
+       xml:space="preserve"
+       inkscape:export-filename="/home/arayaq/dugtrio/docs/arch/forma registros - metadatos.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         y="463.83929"
+         x="-2633.3779"
+         sodipodi:role="line"
+         id="tspan3437">--</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text3439"
+       y="-40.44643"
+       x="-2611.1387"
+       style="font-size:89.49381256px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Ubuntu Mono;-inkscape-font-specification:Ubuntu Mono"
+       xml:space="preserve"
+       inkscape:export-filename="/home/arayaq/dugtrio/docs/arch/forma registros - metadatos.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         y="-40.44643"
+         x="-2611.1387"
+         sodipodi:role="line"
+         id="tspan3441">6</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:89.49381256px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Ubuntu Mono;-inkscape-font-specification:Ubuntu Mono"
+       x="-2464.4019"
+       y="128.125"
+       id="text3443"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/arayaq/dugtrio/docs/arch/forma registros - metadatos.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         id="tspan3445"
+         sodipodi:role="line"
+         x="-2464.4019"
+         y="128.125">b</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text3447"
+       y="293.83929"
+       x="-2463.0146"
+       style="font-size:89.49381256px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Ubuntu Mono;-inkscape-font-specification:Ubuntu Mono"
+       xml:space="preserve"
+       inkscape:export-filename="/home/arayaq/dugtrio/docs/arch/forma registros - metadatos.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         y="293.83929"
+         x="-2463.0146"
+         sodipodi:role="line"
+         id="tspan3449">c</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:89.49381256px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Ubuntu Mono;-inkscape-font-specification:Ubuntu Mono"
+       x="-2461.6274"
+       y="463.83929"
+       id="text3451"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/arayaq/dugtrio/docs/arch/forma registros - metadatos.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         id="tspan3453"
+         sodipodi:role="line"
+         x="-2461.6274"
+         y="463.83929">d</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:89.49381256px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Ubuntu Mono;-inkscape-font-specification:Ubuntu Mono"
+       x="-2462.5671"
+       y="-40.44643"
+       id="text3455"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/arayaq/dugtrio/docs/arch/forma registros - metadatos.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         id="tspan3457"
+         sodipodi:role="line"
+         x="-2462.5671"
+         y="-40.44643">a</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text3459"
+       y="128.125"
+       x="-2330.9873"
+       style="font-size:89.49381256px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Ubuntu Mono;-inkscape-font-specification:Ubuntu Mono"
+       xml:space="preserve"
+       inkscape:export-filename="/home/arayaq/dugtrio/docs/arch/forma registros - metadatos.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         y="128.125"
+         x="-2330.9873"
+         sodipodi:role="line"
+         id="tspan3461">--</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:89.49381256px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Ubuntu Mono;-inkscape-font-specification:Ubuntu Mono"
+       x="-2330.9873"
+       y="293.83929"
+       id="text3463"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/arayaq/dugtrio/docs/arch/forma registros - metadatos.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         id="tspan3465"
+         sodipodi:role="line"
+         x="-2330.9873"
+         y="293.83929">--</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text3467"
+       y="463.83929"
+       x="-2330.9873"
+       style="font-size:89.49381256px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Ubuntu Mono;-inkscape-font-specification:Ubuntu Mono"
+       xml:space="preserve"
+       inkscape:export-filename="/home/arayaq/dugtrio/docs/arch/forma registros - metadatos.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         y="463.83929"
+         x="-2330.9873"
+         sodipodi:role="line"
+         id="tspan3469">--</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text3471"
+       y="-48.672878"
+       x="-2349.9841"
+       style="font-size:62.95688248px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Ubuntu Mono;-inkscape-font-specification:Ubuntu Mono"
+       xml:space="preserve"
+       inkscape:export-filename="/home/arayaq/dugtrio/docs/arch/forma registros - metadatos.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         y="-48.672878"
+         x="-2349.9841"
+         sodipodi:role="line"
+         id="tspan3473">3.14</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:89.49381256px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Ubuntu Mono;-inkscape-font-specification:Ubuntu Mono"
+       x="-2186.8528"
+       y="463.83929"
+       id="text3483"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/arayaq/dugtrio/docs/arch/forma registros - metadatos.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         id="tspan3485"
+         sodipodi:role="line"
+         x="-2186.8528"
+         y="463.83929">øø</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text3510"
+       y="-234.00784"
+       x="-1740.9819"
+       style="font-size:28.68896294px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Ubuntu Mono;-inkscape-font-specification:Ubuntu Mono"
+       xml:space="preserve"
+       inkscape:export-filename="/home/arayaq/dugtrio/docs/arch/forma registros - metadatos.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         id="tspan3514"
+         y="-234.00784"
+         x="-1740.9819"
+         sodipodi:role="line">Direccionamiento necesario para llegar al inicio</tspan><tspan
+         y="-198.14664"
+         x="-1740.9819"
+         sodipodi:role="line"
+         id="tspan3518">del siguiente registro</tspan></text>
+    <path
+       style="fill:#000000;stroke:#000000"
+       id="path3532"
+       d="m -2101.1428,-91.793497 c 14.8156,1.359265 28.5808,-2.692644 42.2645,-7.898601 19.8997,-7.596162 39.0393,-16.948062 58.6671,-25.200892 19.235,-7.34162 38.0912,-15.66801 57.7635,-21.7846 19.6019,-6.12164 39.1268,-12.32682 59.2523,-16.49786 12.1959,-1.16662 24.0947,-3.72745 36.0919,-6.06385 11.437,-1.42668 22.6362,-4.09283 34.0254,-5.89005 11.2242,-1.55362 22.5478,-2.04636 33.8642,-2.26347 8.5695,-1.39161 17.0862,-3.05179 25.6798,-4.30303 0,0 -11.1083,8.31981 -11.1083,8.31981 l 0,0 c -8.6083,1.26549 -17.1283,3.0428 -25.7579,4.14579 -11.2547,0.24679 -22.5235,0.71822 -33.676,2.35977 -11.3982,1.82797 -22.6233,4.50638 -34.073,5.98939 -11.9155,2.37352 -23.8004,4.55593 -35.8847,5.92312 -20.0595,4.13786 -39.516,10.35179 -59.0332,16.50432 -19.5718,6.29453 -38.4684,14.40289 -57.6267,21.83413 -19.6498,8.27663 -38.8007,17.688992 -58.7649,25.2096 -13.9947,5.157939 -28.0573,8.93527 -43.1236,7.927782 0,0 11.4396,-8.311359 11.4396,-8.311359 z"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/arayaq/dugtrio/docs/arch/forma registros - metadatos.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="fill:#000000;stroke:#000000"
+       id="path3534"
+       d="m -2074.844,-108.9727 c -5.789,5.68559 -11.6638,11.255447 -16.6737,17.652449 0,0 -12.7832,5.494008 -12.7832,5.494008 l 0,0 c 4.853,-6.488476 10.69,-12.025934 16.4108,-17.742587 0,0 13.0461,-5.40387 13.0461,-5.40387 z"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/arayaq/dugtrio/docs/arch/forma registros - metadatos.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="fill:#000000;stroke:#000000"
+       id="path3542"
+       d="m -2097.4316,-84.385452 c 7.924,4.299443 15.2734,9.521869 22.882,14.329204 0,0 -11.5892,7.461518 -11.5892,7.461518 l 0,0 c -7.6306,-4.808918 -14.9862,-10.082463 -23.0735,-14.132773 0,0 11.7807,-7.657949 11.7807,-7.657949 z"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/arayaq/dugtrio/docs/arch/forma registros - metadatos.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="fill:#000000;stroke:#000000"
+       id="path3544"
+       d="m -2081.1322,473.71179 c 7.6523,12.24251 19.04,20.94633 30.7028,29.08986 2.5164,1.3989 4.9396,2.98029 7.5491,4.19669 4.1787,1.94788 13.6552,5.05264 17.8719,6.46145 11.1846,3.73681 22.4951,6.7315 33.8777,9.80267 27.2648,6.33521 54.2644,13.44683 81.9184,17.90559 19.3362,2.90343 38.8654,3.98503 58.3933,4.37081 0,0 -11.0873,8.01509 -11.0873,8.01509 l 0,0 c -19.4212,-0.54205 -38.8317,-1.85211 -58.0462,-4.84631 -27.6703,-4.6142 -54.7376,-11.69721 -82.0639,-17.96318 -11.4592,-3.04273 -22.8552,-6.02435 -34.1165,-9.74407 -4.819,-1.59179 -13.4137,-4.38304 -18.0982,-6.61114 -2.6346,-1.25311 -5.0767,-2.87626 -7.615,-4.3144 -11.8059,-8.2902 -23.2852,-17.12973 -31.4305,-29.24683 0,0 12.1444,-7.11623 12.1444,-7.11623 z"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/arayaq/dugtrio/docs/arch/forma registros - metadatos.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="fill:#000000;stroke:#000000"
+       id="path3552"
+       d="m -2047.3443,482.68513 c -6.8335,1.24905 -13.7562,1.75763 -20.686,2.04856 -3.9551,0.44732 -8.1062,-0.33563 -12.0116,0.66445 -1.1102,0.28427 -4.1706,1.88981 -3.1684,1.33425 11.0141,-6.1051 11.2921,-7.39743 7.3788,-1.97284 -3.7324,7.62486 -3.6366,16.25831 -3.8336,24.5567 -0.084,4.97717 -0.042,9.95497 -0.01,14.93228 0,0 -12.3688,6.30921 -12.3688,6.30921 l 0,0 c -0.01,-4.99078 -0.022,-9.98162 0.011,-14.97236 0.1357,-8.49241 -3e-4,-17.24509 3.4,-25.2011 7.2341,-12.59268 19.4746,-13.76989 31.8324,-13.89364 6.9469,-0.36813 13.8994,-0.92 20.7239,-2.33931 0,0 -11.271,8.5338 -11.271,8.5338 z"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/arayaq/dugtrio/docs/arch/forma registros - metadatos.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <text
+       xml:space="preserve"
+       style="font-size:45.06021881px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Ubuntu Mono;-inkscape-font-specification:Ubuntu Mono"
+       x="-1844.1044"
+       y="561.29663"
+       id="text3554"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/arayaq/dugtrio/docs/arch/forma registros - metadatos.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         id="tspan3558"
+         sodipodi:role="line"
+         x="-1844.1044"
+         y="561.29663">EOF</tspan></text>
+    <path
+       style="fill:#000000;stroke:#000000"
+       id="path3562"
+       d="m -1585.453,-142.63792 c -1.6182,15.06337 -2.2797,30.15659 -4.0961,45.211579 -1.9001,14.245398 -3.2136,28.554564 -3.9254,42.90634 -0.3668,8.739919 -0.3863,17.488942 -0.4117,26.234916 0,0 -12.3211,6.274734 -12.3211,6.274734 l 0,0 c 0.01,-8.766625 0,-17.537134 0.3831,-26.297472 0.7797,-14.434645 2.2793,-28.816345 4.1906,-43.144107 1.8323,-14.96964 2.5276,-29.94008 3.5459,-44.97253 0,0 12.6347,-6.21346 12.6347,-6.21346 z"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/arayaq/dugtrio/docs/arch/forma registros - metadatos.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="fill:#000000;stroke:#000000"
+       id="path3564"
+       d="m -1641.4397,-58.039688 c 4.3177,7.191886 9.78,13.586995 15.3295,19.841376 7.6752,7.426304 13.8571,16.100511 20.3744,24.507675 4.9989,3.615208 9.8897,13.06523191 16.2781,14.04946416 1.2252,0.18876593 2.4751,-0.14550465 3.7127,-0.21825697 1.2647,-0.65873041 5.0488,-2.65387209 3.7942,-1.97619129 -2.5436,1.37383807 -4.8508,3.386929 -7.6611,4.0647794 -1.7297,0.4172108 2.8795,-2.09575938 4.2421,-3.2401034 3.9989,-3.3586203 7.4568,-7.3365113 10.9638,-11.1846239 6.1573,-7.058859 12.205,-14.106202 19.6201,-19.864097 4.4885,-3.350178 2.259,-1.674339 6.6889,-5.027153 0,0 12.9426,-5.155916 12.9426,-5.155916 l 0,0 c -4.4275,3.37207 -2.194,1.695608 -6.7012,5.028699 -7.5273,5.639339 -13.7024,12.509075 -19.7957,19.662015 -9.9581,11.0416467 -20.5914,21.3168802 -35.3863,25.8915397 -1.3495,-0.08112 -2.7386,0.091112 -4.0485,-0.2433589 -6.6946,-1.7093808 -11.2466,-10.7059564 -16.5741,-14.6885314 -6.4564,-8.4141934 -12.5858,-17.0912744 -20.3147,-24.4272754 -5.6555,-6.296162 -11.0794,-12.818427 -15.6777,-19.941522 0,0 12.2129,-7.078519 12.2129,-7.078519 z"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/arayaq/dugtrio/docs/arch/forma registros - metadatos.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text3566"
+       y="97.47097"
+       x="-1849.71"
+       style="font-size:55.07040405px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Ubuntu Mono;-inkscape-font-specification:Ubuntu Mono"
+       xml:space="preserve"
+       inkscape:export-filename="/home/arayaq/dugtrio/docs/arch/forma registros - metadatos.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         y="97.47097"
+         x="-1849.71"
+         sodipodi:role="line"
+         id="tspan3568">øø: EOF</tspan><tspan
+         y="166.30898"
+         x="-1849.71"
+         sodipodi:role="line"
+         id="tspan3570">01: Inmediatamente</tspan><tspan
+         y="235.14697"
+         x="-1849.71"
+         sodipodi:role="line"
+         id="tspan3572">    siguiente</tspan><tspan
+         y="303.98499"
+         x="-1849.71"
+         sodipodi:role="line"
+         id="tspan3576">XX: Bloque de inicio</tspan><tspan
+         y="372.823"
+         x="-1849.71"
+         sodipodi:role="line"
+         id="tspan3574" /></text>
+    <path
+       style="fill:#000000;stroke:#000000"
+       id="path3578"
+       d="m -1074.3067,1069.1354 c -2.1279,-1.4859 -4.3815,-2.8062 -6.3836,-4.4576 -13.1583,-10.8532 -24.2493,-24.566 -35.744,-37.0471 -12.9191,-14.0279 -25.8746,-28.0223 -38.8074,-42.03765 -6.9744,-7.72762 -14.0076,-15.4026 -20.9232,-23.18285 -17.6686,-19.87759 -23.2102,-25.97587 -39.0271,-46.87469 -13.979,-18.47037 -26.6996,-37.80218 -39.3428,-57.19179 -10.9646,-19.4283 -26.1939,-36.14928 -37.1807,-55.51176 -7.6352,-11.6104 -11.4001,-24.71582 -15.4727,-37.80704 -2.8444,-11.15294 -8.8232,-20.98887 -14.3653,-30.94219 0,0 12.0187,-6.91013 12.0187,-6.91013 l 0,0 c 5.5372,10.06286 11.5296,20.01741 14.3539,31.27008 4.0594,13.0054 7.751,26.01285 15.355,37.54869 10.6648,19.48628 25.4771,36.48701 36.1696,56.00278 12.3465,19.51662 24.7666,38.97656 38.5781,57.50989 15.6988,21.06574 21.0909,26.97924 38.8552,46.8813 6.9326,7.76696 14.0017,15.41101 21.0026,23.11651 23.5086,25.08265 16.6081,17.82918 39.3591,41.69725 11.6395,12.2112 23.0833,25.8787 36.6384,36.126 2.0735,1.5676 4.4218,2.7341 6.6328,4.1012 0,0 -11.7166,7.7091 -11.7166,7.7091 z"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/arayaq/dugtrio/docs/arch/forma registros - metadatos.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="fill:#000000;stroke:#000000"
+       id="path3580"
+       d="m -1371.3643,806.94784 c 6.086,-18.76814 14.2667,-36.77918 21.9031,-54.95024 9.2657,-20.26568 16.821,-41.25062 25.621,-61.70991 15.4056,-22.70618 28.6819,-13.10407 47.0656,-4.9868 17.1082,7.55107 34.3278,14.82732 51.4006,22.4603 0,0 -11.3281,7.51786 -11.3281,7.51786 l 0,0 c -17.0083,-7.75473 -34.201,-15.06438 -51.3645,-22.46586 -6.6586,-2.89212 -13.7868,-7.125 -21.0858,-8.18863 -1.8475,-0.26923 -6.1851,1.77709 -5.601,0.004 0.8965,-2.72209 4.2991,-4.74784 7.165,-4.75232 2.0477,-0.003 -2.5994,3.16481 -3.8992,4.74722 -9.1119,20.43284 -16.7179,41.50969 -26.0169,61.86637 -7.4527,17.96164 -15.514,35.76595 -21.1927,54.39013 0,0 -12.6671,6.0681 -12.6671,6.0681 z"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/arayaq/dugtrio/docs/arch/forma registros - metadatos.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+  </g>
+</svg>
