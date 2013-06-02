@@ -6,7 +6,8 @@ CONFIG -= qt
 TARGET = clientcpp
 
 SOURCES += \
-    client.cpp
+    client.cpp \
+    main.cpp
 
 HEADERS += \
     client.h

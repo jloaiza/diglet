@@ -20,7 +20,8 @@ SOURCES += \
     lssmanager.cpp \
     lssconsole.cpp \
     lssmain.cpp \
-    lssxml.cpp
+    lssxml.cpp \
+    main.cpp
 
 HEADERS += \
     lss.h \
@@ -29,4 +30,4 @@ HEADERS += \
     lssmanager.h \
     info.h \
     lssconsole.h \
-    lssxml.h
+    lssxml.h \

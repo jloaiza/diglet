@@ -18,7 +18,8 @@ SOURCES += \
     serveroperations.cpp \
     noraid.cpp \
     registerspace.cpp \
-    session.cpp
+    session.cpp \
+    main.cpp
 
 HEADERS += \
     diskgroup.h \
