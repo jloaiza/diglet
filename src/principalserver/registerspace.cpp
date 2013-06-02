@@ -5,7 +5,7 @@ RegisterSpace::RegisterSpace(char* pName, int pSize, int pType)
 	_name = pName;
 	_size = pSize;
 	_type = pType;
-	_next = NULL;
+    _next = 0;
 }
 
 char* RegisterSpace::getName()

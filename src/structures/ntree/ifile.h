@@ -2,7 +2,7 @@
 #define IFILE_H
 
 #include <string>
-#include "../comparable.h"
+#include "../util/comparable.h"
 
 class iFile : public Comparable
 {

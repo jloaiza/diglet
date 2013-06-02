@@ -1,9 +1,10 @@
 #include "diskgroup.h"
+#include "noraid.h"
 
 NoRaid::NoRaid(short pID, int pBlockSize)
 {
 	_ID = pID;
-	_BlockSize = ;
+    _BlockSize = 0;
 	DataBuffer* _outBuffer;
 	bool _Functional;
 	bool _Working;
@@ -19,7 +20,7 @@ bool NoRaid::deleteFile(char* pPath, char* pUser)
 	
 }
 	
-bool NoRaid::createFile(char* pPath, RegisterSpace pRegister, char* pUser)
+bool NoRaid::createFile(char* pPath, RegisterSpace *pRegister, char* pUser)
 {
 	
 }

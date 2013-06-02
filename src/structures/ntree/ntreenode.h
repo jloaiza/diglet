@@ -6,6 +6,7 @@
 
 class SimpleList;
 class Comparable;
+class iFile;
 
 class nTreeNode {
 	
@@ -34,7 +35,7 @@ public:
      * retorna el hijo de un nodo
      * @return
      */
-    nTreeNode* getChild(std::string pName);
+    iFile* getChild(std::string pName);
 
     //SimpleList* getChildrenList();
 

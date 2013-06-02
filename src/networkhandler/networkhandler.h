@@ -92,7 +92,7 @@ class NetworkHandler
          * @param pIP
          * @return 
          */
-        int MeetClient(int pSocket);
+        int meetClient(int pSocket);
         /**
         * Verificar si hay algun nuevo cliente ingresando al servidor.
         */

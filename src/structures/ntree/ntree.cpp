@@ -7,13 +7,7 @@ nTree::nTree(){
     _head = new nTreeNode(0, "/");
 }
 
-void nTree::insert(std::string pName, iFile *pFile, std::string pPath){
-
-    nTreeNode* newNode = new nTreeNode(pFile, pName);
-
-    /** Jugar con el path para encontrar donde insertarlo **/
-    /** Absoluto o relativo?: Absoluto **/
-
+void nTree::insert(std::string pName, iFile *pFile, std::string pPath){   
 
 
 }

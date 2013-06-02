@@ -1,4 +1,4 @@
-#include <QtGui/QApplication>
+//#include <QtGui/QApplication>
 #include <QtXml>
 #include <QtCore>
 #include <QtDebug>

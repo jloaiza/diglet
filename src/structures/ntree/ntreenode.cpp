@@ -8,19 +8,17 @@
 
 nTreeNode::nTreeNode(Comparable* pPath, std::string pUser)
 {
-    name = pName;
-    _file = pFile;
-    _children = new SimpleList;
+
 }
 
 void nTreeNode::addChild(nTreeNode pNode)
 {
-    _children->insert(pNode);
+
 }
 
 iFile* nTreeNode::getChild(std::string pName)
 {
-	_children->get(pName);
+
 }
 
 /*

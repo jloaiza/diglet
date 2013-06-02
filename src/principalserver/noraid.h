@@ -2,6 +2,8 @@
 #ifndef NORAID
 #define NORAID
 
+class RegisterSpace;
+
 class NoRaid : public DiskGroup
 {
 private:
@@ -14,7 +16,7 @@ public:
 	NoRaid(short pID, int pBlockSize);
 	bool getFile(char* pPath, char* pUser);
 	bool deleteFile(char* pPath, char* pUser);
-	bool createFile(char* pPath, RegisterSpace pRegister, char* pUser);
+    bool createFile(char* pPath, RegisterSpace* pRegister, char* pUser);
 	void appendRegister(char* pPath, char* pUser, DataNode* pData);
 	bool eraseRegister(char* pPath, char* pUser, int pRegisterNumber);
 	void writeRegister(char* pPath, char* pUser, int pRegisterNumber, DataNode* pData);

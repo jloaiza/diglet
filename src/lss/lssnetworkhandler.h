@@ -1,7 +1,7 @@
 #ifndef LSSNETWORKHANDLER
 #define LSSNETWORKHANDLER
 
-#include "../network/networkhandler/networkhandler.h"
+#include "../networkhandler/networkhandler.h"
 #include "../structures/doublelinkedlist/doublelinkedlist.h"
 
 #include "lssmanager.h"

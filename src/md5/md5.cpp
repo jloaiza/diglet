@@ -32,7 +32,7 @@ documentation and/or software.
 
 /* interface header */
 #include "md5.h"
-#include "constants.h"
+#include "../util/constants.h"
 
 #include <stdio.h>
 #include <memory.h>

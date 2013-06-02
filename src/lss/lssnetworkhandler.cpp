@@ -1,6 +1,6 @@
 #include "lssnetworkhandler.h"
 #include "lssoperations.h"
-#include "../tokenizer.h"
+#include "../tokenizer/tokenizer.h"
 
 #include <exception>
 #include <cstdlib>

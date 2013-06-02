@@ -1,7 +1,7 @@
 #ifndef LSS
 #define LSS
 
-#include "../structures/comparable.h"
+#include "../util/comparable.h"
 #include <string>
 
 class Lss : public Comparable {
@@ -16,7 +16,8 @@ private:
 	char *read(int pPos, int pSize);
 	void write(int pPos, int pSize, char* pData);
 	void header();
-public:
+
+public:    
     Lss(const char*  pDisk, short pID, int pSize, std::string pSecKey);
 	void write(char* pText, int pBlock);
 	char * read(int pBlock);
