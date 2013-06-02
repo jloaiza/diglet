@@ -5,6 +5,7 @@ CONFIG -= qt
 
 SUBDIRS += \
     src/principalserver \
-    src/network/clientcpp
+    src/network/clientcpp \
+    src/lss
 
 
