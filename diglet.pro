@@ -4,6 +4,7 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SUBDIRS += \
-    src/principalserver
+    src/principalserver \
+    src/network/clientcpp
 
 
