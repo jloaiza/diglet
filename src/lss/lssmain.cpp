@@ -1,17 +1,19 @@
 #include <iostream>
-#include "info.h"
+//#include "info.h"
 #include "lssmanager.h"
 
 void title()
-{
+{ /*
 	std::cout << lssmenuL << "\n" << lssmenuS << "\n" << lssmenu3 << "\n" << lssmenu4 << "\n";
 	std::cout << lssmenu5 << "\n" << lssmenu6 << "\n" << lssmenu7 << "\n" << lssmenu8 << "\n";
 	std::cout << lssmenu9 << "\n" << lssmenuS << "\n" << lssmenuL << "\n";
+    */
 }
 
-int main(int argc, char **argv)
+int lssmain(int argc, char **argv)
 {
-	LssManager* diskManager = new LssManager(4);
+    /*
+    LssManager* diskManager = new LssManager();
 	
 	title();	
 	
@@ -25,7 +27,7 @@ int main(int argc, char **argv)
 			int fileSize;
 			std::cout << SIZE1;
 			std::cin >> fileSize;		
-			diskManager->createDisk(fileSize);		
+            diskManager->createDisk(fileSize, "ola k ase?");
 		}
 		 
 		else if (clave == 2)
@@ -33,7 +35,7 @@ int main(int argc, char **argv)
 			short fileName;
 			std::cout << NAME;
 			std::cin >> fileName;
-			diskManager->eraseDisk(fileName);
+            diskManager->eraseDisk(fileName, "ola k ase?");
 		}
 		
 		else if (clave == 3)
@@ -60,8 +62,6 @@ int main(int argc, char **argv)
 		}
 		
 	}
-	
+    */
 	return 0;
-	
-	
 }
