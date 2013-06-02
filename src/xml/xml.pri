@@ -1,6 +1,7 @@
 
 CONFIG += qt
-QT +=  xml
+QT += xml
+QT += xmlpatterns
 
 HEADERS += $$PWD/parserxml.h
 
