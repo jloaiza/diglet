@@ -1,4 +1,4 @@
 
-HEADERS += networkhandler.h
+HEADERS += $$PWD/networkhandler.h
 
-SOURCES += networkhanlder.cpp
+SOURCES += $$PWD/networkhandler.cpp

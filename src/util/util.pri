@@ -1,3 +1,3 @@
 
-HEADERS += constants.h \
-           comparable.h
+HEADERS += $$PWD/constants.h \
+           $$PWD/comparable.h

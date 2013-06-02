@@ -1,4 +1,4 @@
 
-HEADERS += tokenizer.h
+HEADERS += $$PWD/tokenizer.h
 
-SOURCES += tokenizer.cpp
+SOURCES += $$PWD/tokenizer.cpp

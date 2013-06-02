@@ -1,5 +1,5 @@
 
 
-HEADERS += md5.h
+HEADERS += $$PWD/md5.h
 
-SOURCES += md5.cpp
+SOURCES += $$PWD/md5.cpp

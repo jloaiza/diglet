@@ -1,6 +1,7 @@
 
-HEADERS += baseconverter.h \
-           byteshandler.h
 
-SOURCES += baseconverter.cpp \
-           byteshandler.h
+HEADERS += $$PWD/baseconverter.h \
+           $$PWD/byteshandler.h
+
+SOURCES += $$PWD/baseconverter.cpp \
+           $$PWD/byteshandler.cpp

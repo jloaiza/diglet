@@ -2,6 +2,6 @@
 CONFIG += qt
 QT +=  xml
 
-HEADERS += xmlparser.h
+HEADERS += $$PWD/parserxml.h
 
-SOURCES += xmlparser.cpp
+SOURCES += $$PWD/parserxml.cpp
