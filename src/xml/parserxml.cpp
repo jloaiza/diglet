@@ -65,7 +65,14 @@ void parserxml::createOtherChild(std::string pFatherNodeDirection, std::string p
 
 void parserxml::createAttribute(std::string pNodeDirection, std::string pAttribute, std::string pAttributeValue)
 {
-    tourXML(pNodeDirection).setAttribute(QString::fromStdString(pAttribute),QString::fromStdString(pAttributeValue));
+    if(isRoot(pNodeDirection))
+    {
+        _document.firstChild().setAttribute(QString::fromStdString(pAttribute),QString::fromStdString(pAttributeValue));
+    }
+    else
+    {
+        tourXML(pNodeDirection).setAttribute(QString::fromStdString(pAttribute),QString::fromStdString(pAttributeValue));
+    }
     updateDocument();
     qDebug() << "Atributo creado con exito.";
 }
@@ -73,7 +80,14 @@ void parserxml::createAttribute(std::string pNodeDirection, std::string pAttribu
 void parserxml::createValue(std::string pNodeDirection, std::string pValue)
 {
     QDomText value = _document.createTextNode(QString::fromStdString(pValue));
-    tourXML(pNodeDirection).appendChild(value);
+    if(isRoot(pNodeDirection))
+    {
+        _document.firstChild().appendChild(value);
+    }
+    else
+    {
+        tourXML(pNodeDirection).appendChild(value);
+    }
     updateDocument();
     qDebug() << "Valor creado con exito.";
 }
@@ -104,8 +118,15 @@ std::string parserxml::getAnyValue(std::string pNodeDirectionValue)
 
 void parserxml::eraseAttribute(std::string pNodeDirection, std::string pNameAttribute)
 {
-    QDomElement childaux = tourXML(pNodeDirection);
-    childaux.removeAttribute(QString::fromStdString(pNameAttribute));
+    if(isRoot(pNodeDirection))
+    {
+        _document.firstChild().removeAttribute(QString::fromStdString(pNameAttribute));
+    }
+    else
+    {
+        QDomElement childaux = tourXML(pNodeDirection);
+        childaux.removeAttribute(QString::fromStdString(pNameAttribute));
+    }
     qDebug() << "Atributo borrado con exito.";
     updateDocument();
 }
