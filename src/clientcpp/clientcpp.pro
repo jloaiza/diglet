@@ -5,6 +5,7 @@ CONFIG += c++11
 CONFIG += qt
 
 QT += xml
+QT += xmlpatterns
 
 TARGET = clientcpp
 
