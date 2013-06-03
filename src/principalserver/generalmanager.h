@@ -17,7 +17,8 @@ public:
 	GeneralManager();
 	std::string getDiskGroupStatus(std::string pDiskGroupID);
 	Session* getSession(int pSessionID);
-	int newSession(std::string pUser, short pDiskGroupID);
+	int newSession(std::string pUser, std::string pDiskGroupID);
+	void closeSession(int pSessionID);
 	void defineDiskGroup(int pRAID, int pBlockSize, std::string pID);
 	void addLSS(std::string pDiskGroupID, std::string pIPToConnect, short pDiskID, std::string pSecurityKey, int pPort);
 	void startDiskGroup(std::string pDiskGroupID);

@@ -9,19 +9,27 @@
 class Session {
 private:
 
-	static int _counter;
+	static int _sessionCounter;
 	int _sessionID;
 	int _seek;
-	bool _consoleMode;
 	DiskGroup* _disk;
 	nTreeNode* _currentNode;
 	RegisterSpace* _register;
 	std::string _user;
-	std::string _currentPath;
 
 public:
 	Session(std::string pUser);
 	
+	bool operator==(int pID);
+	bool operator<(int pID);
+	bool operator<=(int pID);
+	bool operator>(int pID);
+	bool operator>=(int pID);
+
+	int getSessionID() const{
+		return _sessionID;
+	}
+
 	int getSeek() const {
 		return _seek;
 	}
@@ -30,20 +38,32 @@ public:
 		_seek = pSeek;
 	}
 
-	bool isOnConsoleMode() const{
-		return _consoleMode;
+	DiskGroup* getDiskGroup() const {
+		return _disk;
 	}
 
-	void setConsoleMode(bool pValue) {
-		_consoleMode = pValue;
+	void setDiskGroup(DiskGroup* pDiskGroup){
+		_disk = pDiskGroup;
+	}
+
+	nTreeNode* getCurrentNode() const {
+		return _currentNode;
+	}
+
+	void setCurrentNode(nTreeNode* pNode){
+		_currentNode = pNode;
+	}
+
+	RegisterSpace* getCurrentFormat() const {
+		return _register;
+	}
+
+	void setCurrentFormat(RegisterSpace* pFormat){
+		_register = pFormat;
 	}
 
 	std::string getUser() const{
 		return _user;
-	}
-
-	std::string getCurrentPath() const {
-		return _currentPath;
 	}
 
 };

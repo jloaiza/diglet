@@ -28,7 +28,7 @@ private:
 	void getFreeBlock(int pSocket, std::string pParam);
 	void readBlock(int pSocket, std::string pParam);
 	void writeBlock(int pSocket, std::string pParam);
-	void getLssList(int pSocket, std::string pParam);
+	void getLssList(int pSocket);
 	void getSize(int pSocket, std::string pParam);
 	void writeBytes(int pSocket, std::string pParam);
 	void readBytes(int pSocket, std::string pParam);
