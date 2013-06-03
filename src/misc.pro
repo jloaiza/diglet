@@ -1,4 +1,6 @@
 
+CONFIG += qt
+QT += xmlpatterns
 
 include(binaryoperations/binaryoperations.pri)
 include(md5/md5.pri)
