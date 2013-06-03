@@ -3,13 +3,13 @@
 
 #include "diskgroup.h"
 #include "../structures/avltree/avltree.h"
-#include "servernetworkhandler.h"
 #include "session.h"
 
 #include <string>
 
 class ServerConsole;
 class StorageClient;
+class ServerNetworkHandler;
 
 class GeneralManager{
 	
