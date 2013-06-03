@@ -7,6 +7,7 @@ CONFIG -= qt
 SUBDIRS += \
     src/principalserver \
     src/clientcpp \
-    src/lss
+    src/lss \
+    src/misc.pro
 
 
