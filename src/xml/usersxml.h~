@@ -1,4 +1,5 @@
 #include "parserxml.h"
+#include <iostream>
 
 class usersxml
 {

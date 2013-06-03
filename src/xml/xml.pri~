@@ -4,9 +4,7 @@ QT += xml
 QT += xmlpatterns
 
 HEADERS += $$PWD/parserxml.h \
-    xml/usersxml.h \
-    xml/diskgroupsxml.h \ 
+    xml/usersxml.h
 
 SOURCES += $$PWD/parserxml.cpp \
-    xml/usersxml.cpp \
-    xml/diskgroupsxml.cpp \
+    xml/usersxml.cpp
