@@ -22,7 +22,8 @@ SOURCES += \
     noraid.cpp \
     registerspace.cpp \
     session.cpp \
-    main.cpp
+    main.cpp \
+    generalmanager.cpp
 
 HEADERS += \
     diskgroup.h \
@@ -31,5 +32,6 @@ HEADERS += \
     session.h \
     noraid.h \
     registerspace.h \
-    registerbuffer.h
+    registerbuffer.h \
+    generalmanager.h
 
