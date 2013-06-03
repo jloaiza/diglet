@@ -3,6 +3,8 @@ CONFIG += qt
 QT += xml
 QT += xmlpatterns
 
-HEADERS += $$PWD/parserxml.h
+HEADERS += $$PWD/parserxml.h \
+    xml/usersxml.h
 
-SOURCES += $$PWD/parserxml.cpp
+SOURCES += $$PWD/parserxml.cpp \
+    xml/usersxml.cpp
