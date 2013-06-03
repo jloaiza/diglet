@@ -1,1 +1,1 @@
-#include "generalmanager.hs"
+#include "generalmanager.h"
