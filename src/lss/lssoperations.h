@@ -19,7 +19,7 @@ public:
 	static std::string writeBlock(short pID, int pBlock, std::string pData, DoubleLinkedList<Lss, short>* pDiskList);
 	static std::string writeBytes(short pID, int pBlock, int pOffset, int pSize, std::string pData, DoubleLinkedList<Lss, short>* pDiskList);
 	static std::string readBytes (short pID, int pBlock, int pOffset, int pSize, DoubleLinkedList<Lss, short>* pDiskList);
-	static std::string getLssList(short pID, LssManager* pManager);
+	static std::string getLssList(LssManager* pManager);
 
 };
 #endif

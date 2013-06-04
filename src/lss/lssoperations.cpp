@@ -27,7 +27,7 @@ std::string LssOperations::connect(short pID, std::string pKey, DoubleLinkedList
 
 	} else if (lss != 0){
 		pDiskList->insertStart(lss);
-		return "+connected";
+		return "";
 
 	} else {
 		return "?Error: El disco no ha sido encontrado";
@@ -80,7 +80,7 @@ std::string LssOperations::readBytes (short pID, int pBlock, int pOffset, int pS
 	}
 }
 
-std::string LssOperations::getLssList(short pID, LssManager* pManager){
+std::string LssOperations::getLssList(LssManager* pManager){
 	//return pManager->getLssList();
 	return "!Not implemented yet";
 }
