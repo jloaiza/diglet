@@ -1,6 +1,6 @@
 #include "registerspace.h"
 
-RegisterSpace::RegisterSpace(char* pName, int pSize, int pType)
+RegisterSpace::RegisterSpace(std::string pName, int pSize, int pType)
 {
 	_name = pName;
 	_size = pSize;
@@ -8,7 +8,7 @@ RegisterSpace::RegisterSpace(char* pName, int pSize, int pType)
     _next = 0;
 }
 
-char* RegisterSpace::getName()
+std::string RegisterSpace::getName()
 {
 	return _name;
 }
@@ -31,4 +31,13 @@ RegisterSpace * RegisterSpace::getNext()
 void RegisterSpace::setNext (RegisterSpace * pNext)
 {
 	_next = pNext;
+}
+
+void RegisterSpace::releaseDependencyList(){
+	RegisterSpace* iSpace = this;
+	while (iSpace != 0){
+		RegisterSpace* tmp = iSpace->getNext();
+		delete iSpace;
+		iSpace = tmp;
+	}
 }
