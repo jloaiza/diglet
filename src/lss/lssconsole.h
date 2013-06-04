@@ -22,8 +22,8 @@ public:
 		return _thread;
 	}
 
-
 private:
+	void echo(bool pON);
 	static void callRun(LssConsole* pConsole);
 	void run();
 	void title();
@@ -33,4 +33,4 @@ private:
 
 
 
-#endif /* LSSCONSOLE */
+#endif
