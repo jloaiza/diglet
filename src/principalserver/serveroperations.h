@@ -2,30 +2,33 @@
 #define SERVEROPERATIONS
 
 #include <string>
-#include "session.h"
+#include "datanode.h"
+#include "registerspace.h"
 
 class ServerOperations{
 private:
 
-	//static std::string toCSV(DataNode* pData);
+	static std::string toCSV(DataNode* pData, RegisterSpace* pFormat);
 	static bool checkUser(std::string pUser, std::string pKey);
-	//static nTree* loadUserTree(std::string pUser);
-
+	static RegisterSpace* getFormat(std::string pFormat);
+	static DataNode* getData(std::string pData, RegisterSpace* pFormat);
 
 public:
 	
-	static std::string get(Session* pSession, std::string pPath);
-	static std::string cd(Session* pSession, std::string pPath);
-	static std::string rm(Session* pSession, std::string pPath);
-	static std::string touch(Session* pSession, std::string pPath, std::string pFormat);
-	static Session* connect(std::string pUser, std::string pSecKey, std::string pDisk);
-	static Session* adduser(std::string pUser, std::string pSecKey, std::string pDisk);
-	static std::string openfile(Session* pSession, std::string pPath);
-	static std::string appendReg(Session* pSession, std::string pData);
-	static std::string delReg(Session* pSession, int pRegNum);
-	static std::string write(Session* pSession, std::string pData, int pRegNum);
-	static std::string readReg(Session* pSession, int pRegNum);
-	static std::string close(Session* pSession);
+	static std::string get(int pSessionID, std::string pPath);
+	static std::string cd(int pSessionID, std::string pPath);
+	static std::string rm(int pSessionID, std::string pPath);
+	static std::string moveSeek(int pSessionID, int pSeekPos);
+	static std::string touch(int pSessionID, std::string pPath, std::string pFormat);
+	static int connect(std::string pUser, std::string pSecKey, std::string pDisk);
+	static int adduser(std::string pUser, std::string pSecKey, std::string pDisk);
+	static std::string openfile(int pSessionID, std::string pPath);
+	static std::string appendReg(int pSessionID, std::string pData);
+	static std::string delReg(int pSessionID, int pRegNum);
+	static std::string write(int pSessionID, std::string pData, int pRegNum);
+	static std::string readReg(int pSessionID, int pRegNum);
+	static std::string close(int* pSessionID);
+	static std::string getInfo(int pSessionID);
 
 };
 
