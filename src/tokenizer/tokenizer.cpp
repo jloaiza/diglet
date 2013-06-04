@@ -113,10 +113,3 @@ std::string Tokenizer::getRegSize(std::string pRegister){
 	int start = charIndex(pRegister, '#', 2)+1;
 	return pRegister.substr(start, pRegister.length()-start);
 }
-
-int main(){
-	std::string folder;
-	std::cout<<Tokenizer::dividePathAndName("./joseph/loaiza/cruz/prueba.txt", &folder)<<std::endl;
-	std::cout<<folder<<std::endl;
-	return 0;
-}
