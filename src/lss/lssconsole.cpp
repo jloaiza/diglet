@@ -1,11 +1,12 @@
 #include "lssconsole.h"
+#include "info.h"
 #include "../md5/md5.h"
-#include "../constants.h"
 
 #include <iostream>
 #include <string>
 #include <termios.h>
 
+void echo(bool pON);
 
 void LssConsole::start(){
 	_thread = new std::thread(callRun, this);
@@ -51,7 +52,7 @@ void LssConsole::run(){
 			echo(true);
 			secKey = md5(secKey);
 
-			/* std::cout<<secKey<<std::endl; */
+			std::cout<<secKey<<std::endl;
 
 			_diskManager->createDisk(fileSize, secKey);
 		}
@@ -86,17 +87,15 @@ void LssConsole::run(){
 		
 		else if (clave == 5)
 		{
-			/*
 			char * fileName;
 			std::cout << NAME2;
 			std::cin >> fileName;
-			*/
 			//_diskManager->loadDisks();
 		}
 		
 		else if (clave == 6)
 		{
-			_onRun = false;
+			break;
 		}
 		
 	}

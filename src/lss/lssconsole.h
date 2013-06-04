@@ -23,7 +23,6 @@ public:
 	}
 
 private:
-	void echo(bool pON);
 	static void callRun(LssConsole* pConsole);
 	void run();
 	void title();
