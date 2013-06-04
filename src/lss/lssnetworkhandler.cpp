@@ -23,7 +23,7 @@ void LSSNetworkHandler::inMessage(std::string pMessage, int pSocket){
 		writeBlock(pSocket, param);
 
 	} else if (command == "getLssList"){
-		getLssList(pSocket, param);
+		getLssList(pSocket);
 	
 	} else if (command == "getSize"){
 		getSize(pSocket, param);
@@ -92,14 +92,9 @@ void LSSNetworkHandler::writeBlock(int pSocket, std::string pParam){
 	}
 }
 
-void LSSNetworkHandler::getLssList(int pSocket, std::string pParam){
+void LSSNetworkHandler::getLssList(int pSocket){
 	
-	try {
-		short diskID = stoi(Tokenizer::getCommandSpace(pParam, 1));
-		outMessage(LssOperations::getLssList(diskID, _manager), pSocket);
-	} catch (std::exception e){
-		outMessage("?Error: El paremetro debe ser un número\n", pSocket);
-	}
+	outMessage(LssOperations::getLssList(_manager), pSocket);
 	
 }
 

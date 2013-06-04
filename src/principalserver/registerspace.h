@@ -2,20 +2,23 @@
 #ifndef REGISTERSPACE
 #define REGISTERSPACE
  
+#include <string>
+
 class RegisterSpace
 {
 private:
-	char * _name;
+	std::string _name;
 	int _size;
 	int _type;
 	RegisterSpace * _next;
 public:
-	RegisterSpace(char* pName, int pSize, int pType);
+	RegisterSpace(std::string pName, int pSize, int pType);
 	char* getName();
 	int getSize();
 	int getType();
 	RegisterSpace * getNext();
 	void setNext (RegisterSpace * pRegisterSpace);
+	void releaseDependencyList();
 };
 
 #endif

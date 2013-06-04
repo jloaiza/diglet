@@ -1,0 +1,1 @@
+#include "generalmanager.h"

@@ -5,16 +5,10 @@ CONFIG += c++11
 CONFIG += qt
 
 QT += xml
+QT += xmlpatterns
 
 TARGET = lssprovider
 
-include(../binaryoperations/binaryoperations.pri)
-include(../md5/md5.pri)
-include(../networkhandler/networkhandler.pri)
-include(../structures/structures.pri)
-include(../tokenizer/tokenizer.pri)
-include(../util/util.pri)
-include(../xml/xml.pri)
 
 SOURCES += \
     lss.cpp \

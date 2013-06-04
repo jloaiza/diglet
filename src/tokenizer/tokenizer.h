@@ -12,6 +12,7 @@ public:
 
 	static std::string cleanEntry(std::string pEntry);
 	
+	static std::string dividePathAndName(const std::string pTotalPath, std::string* pFolderPath);
 
 	static std::string getRegName(std::string pRegister);
 	static std::string getRegType(std::string pRegister);
@@ -20,6 +21,7 @@ public:
 	static int charIndex(std::string pString, char pChar, int pNumber);
 
 	static std::string getCommandSpace(std::string pString, int pNumber);
+	static std::string getCommandSpace(std::string pString, int pNumber, char pDelimiter);
 
 private:
 	static bool isRestringedChar(char pChar);

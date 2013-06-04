@@ -2,17 +2,22 @@
 #ifndef REGISTERBUFFER
 #define REGISTERBUFFER
 
-#include "registerSpace.h"
+#include <string>
+#include "registerspace.h"
 
 class RegisterBuffer
 {
 private:
-	registerSpace* _head;
-	registerSpace* _tail;
+	RegisterSpace* _head;
+	RegisterSpace* _tail;
 public:
-	addSpace(int pSize, char* pName, short pType);
-	registerSpace* getBuffer();
-	clear();	
+	RegisterBuffer(){
+		_head = _tail = 0;
+	}
+
+	void addSpace(std::string pName, int pSize, short pType);
+	RegisterSpace* getBuffer();
+	void clear();
 };
 
 #endif
