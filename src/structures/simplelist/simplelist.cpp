@@ -1,7 +1,7 @@
 #include "simplelist.h"
 #include <iostream>
 #include "node.h"
-#include "../util/comparable.h"
+#include "../../util/comparable.h"
 
 SimpleList::SimpleList()
 {

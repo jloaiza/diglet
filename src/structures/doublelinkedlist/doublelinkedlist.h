@@ -17,14 +17,11 @@ public:
 	void insertDecrecient(t* pData);
 	void insertEnd(t* pData);
 	void insertStart(t* pData);
-	t* search(t* pDataDummy);
-	t* erase(t* pDataDummy);
 
 	t* search(c* pData);
 	t* erase(c* pData);
 
 private:
-	ListNode<t>* searchAux(t* pDataDummy);
 	ListNode<t>* searchAux(c* pDataDummy);
 	ListNode<t>* _head;
 	ListNode<t>* _tail;
@@ -122,15 +119,6 @@ void DoubleLinkedList<t, c>::insertEnd(t* pData){
 }
 
 template <class t, typename c>
-ListNode<t>* DoubleLinkedList<t, c>::searchAux(t* pDataDummy){
-	ListNode<t>* iNode = _head;
-	while (iNode != 0 && *iNode->getData() != *pDataDummy){
-		iNode = iNode->getNext();
-	}
-	return iNode;
-}
-
-template <class t, typename c>
 ListNode<t>* DoubleLinkedList<t, c>::searchAux(c* pData){
 	ListNode<t>* iNode = _head;
 	while (iNode != 0 && *iNode->getData() != *pData){
@@ -140,45 +128,9 @@ ListNode<t>* DoubleLinkedList<t, c>::searchAux(c* pData){
 }
 
 template <class t, typename c>
-t* DoubleLinkedList<t, c>::search(t* pDataDummy){
-	ListNode<t>* searched = searchAux(pDataDummy);
-	return searched != 0 ? searched->getData() : 0;
-}
-
-template <class t, typename c>
 t* DoubleLinkedList<t, c>::search(c* pData){
 	ListNode<t>* searched = searchAux(pData);
 	return searched != 0 ? searched->getData() : 0;
-}
-
-template <class t, typename c>
-t* DoubleLinkedList<t, c>::erase(t* pDataDummy){
-	ListNode<t>* toErase = searchAux(pDataDummy);
-	if (toErase != 0){
-
-		if (_head == _tail && toErase == _head){
-			_head = _tail = 0;
-			
-		} else if (toErase == _head){
-			toErase->getNext()->setPrevious(0);
-			_head = toErase->getNext();
-
-		} else if (toErase == _tail){
-			toErase->getPrevious()->setNext(0);
-			_tail = toErase->getPrevious();
-
-		} else {
-			toErase->getPrevious()->setNext(toErase->getNext());
-			toErase->getNext()->setPrevious(toErase->getPrevious);
-		}
-
-		t* tmp = toErase->getData();
-		delete toErase;
-		return tmp;
-			
-	} else{
-		return 0;
-	}
 }
 
 template <class t, typename c>
