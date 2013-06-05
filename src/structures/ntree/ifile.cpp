@@ -1,11 +1,19 @@
 #include "ifile.h"
 
-iFile::iFile(std::string pName, int pDisk, int pPointer){
-
-    name = pName;
+iFile::iFile(std::string pName, std::string pDisk, int pBlockSize, RegisterSpace * pRegister)
+{	
+	_BlockSize = pBlockSize;
+	name = pName;
     _diskID = pDisk;
-    _startBlock = pPointer;
+    _Blocks = new SimpleList();	
+    createMetadata(RegisterSpace *pRegister);
+}
 
+std::string createMetadata()
+{
+	std::string direction = pDisk.getFreeSpace();
+	std::string MetadataBlock[pBlockSize];
+	
 }
 
 

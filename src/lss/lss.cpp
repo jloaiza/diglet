@@ -75,7 +75,6 @@ void Lss::header()
 	File.open(_disk);
 	File.write (data, _blockSize);
 	File.close();
-	//delete[] data;
 }
 
 /**
@@ -147,14 +146,11 @@ void Lss::format(int pBlockSize)
  */
 void Lss::write(char* pText, int pBlock, int pOffset, int pSize)
 {
-	std::cout<<"H1"<<std::endl;
 	/* abre el archivo */
 	std::fstream File;
 	File.open(_disk);
 	/* mueve el puntero al final para verificar el tamaño del archivo */
-	std::cout<<"H2"<<std::endl;
 	File.seekp ( 12*(pBlock)+pOffset, File.beg);
-	std::cout<<"H3"<<std::endl;
 	File.write (pText, pSize);
 	File.close();
 }

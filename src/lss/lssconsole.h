@@ -22,7 +22,6 @@ public:
 		return _thread;
 	}
 
-
 private:
 	static void callRun(LssConsole* pConsole);
 	void run();
@@ -33,4 +32,4 @@ private:
 
 
 
-#endif /* LSSCONSOLE */
+#endif

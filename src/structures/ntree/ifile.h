@@ -10,7 +10,11 @@ class iFile : public Comparable
 private:
 
     int _diskID;
-    int _startBlock;
+    SimpleList * _Blocks;
+    std::string _name;
+    int _BlockSize;
+    
+    std::string createMetadata();
 
 public:
 
@@ -20,7 +24,7 @@ public:
      * @param pDisk
      * @param pPointer
      */
-    iFile(std::string pName, int pDisk, int pPointer);
+    iFile(std::string pName, int pDisk, int pBlockSize);
 
     /**
      * @brief getDisk

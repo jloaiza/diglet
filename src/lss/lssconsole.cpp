@@ -33,69 +33,83 @@ void echo(bool pON){
 
 void LssConsole::run(){
 	title();	
-	
+	std::cout << std::endl;
 	while (_onRun)
 	{
 		int clave = 0;
+		std::cout << "maikol@wander15-> ";
 		std::cin >> clave;
 		
-		if (clave == 1)
+		try
 		{
-			int fileSize;
-			std::cout << SIZE1;
-			std::cin >> fileSize;
+			if (clave == 1)
+			{
+				int fileSize;
+				std::cout << SIZE1;
+				std::cin >> fileSize;
 
-			std::cout << PASS;
-			std::string secKey;
-			echo(false);
-			std::cin >> secKey;
-			echo(true);
-			secKey = md5(secKey);
+				std::cout << PASS;
+				std::string secKey;
+				echo(false);
+				std::cin >> secKey;
+				std::cout << std::endl;
+				echo(true);
+				secKey = md5(secKey);
 
-			std::cout<<secKey<<std::endl;
-
-			_diskManager->createDisk(fileSize, secKey);
-		}
+				_diskManager->createDisk(fileSize, secKey);
+			}
 		 
-		else if (clave == 2)
-		{
-			short fileName;
-			std::cout << NAME;
-			std::cin >> fileName;
+			else if (clave == 2)
+			{
+				short fileName;
+				std::cout << NAME;
+				std::cin >> fileName;
 
-			std::cout << PASS;
-			std::string secKey;
-			echo(false);
-			std::cin >> secKey;
-			echo(true);
-			secKey = md5(secKey);
+				std::cout << PASS;
+				std::string secKey;
+				echo(false);
+				std::cin >> secKey;
+				std::cout << std::endl;
+				echo(true);
+				secKey = md5(secKey);
 
-			std::cout<<std::endl;
+				std::cout<<std::endl;
 
-			_diskManager->eraseDisk(fileName, secKey);
-		}
+				_diskManager->eraseDisk(fileName, secKey);
+			}
+			
+			else if (clave == 3)
+			{
+				_diskManager->showDisks();
+			}
 		
-		else if (clave == 3)
-		{
-			_diskManager->showDisks();
-		}
-				
-		else if (clave == 4)
-		{
-			//_diskManager->saveDisks();
-		}
+			else if (clave == 4)
+			{
+				//_diskManager->saveDisks();
+			}
+			
+			else if (clave == 5)
+			{
+				char * fileName;
+				std::cout << NAME2;
+				std::cin >> fileName;
+				//_diskManager->loadDisks();
+			}
 		
-		else if (clave == 5)
-		{
-			char * fileName;
-			std::cout << NAME2;
-			std::cin >> fileName;
-			//_diskManager->loadDisks();
+			else if (clave == 6)
+			{
+				_onRun = false;
+				LssConsole::stop();
+			}
+			
+			else
+			{
+				title();
+			}
 		}
-		
-		else if (clave == 6)
+		catch(int e)
 		{
-			break;
+			title();
 		}
 		
 	}

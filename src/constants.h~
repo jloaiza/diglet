@@ -1,0 +1,35 @@
+
+#ifndef CONSTANTS
+#define CONSTANTS
+
+class Constants
+{
+	static const char * BOOL = "a";
+	static const char * CHAR = "b";
+	static const char * SHORT = "c";
+	static const char * INT = "d";
+	static const char * DOUBLE = "e";
+	static const char * STRING = "f";
+
+
+
+
+	static const std::string lssmenuL = "** * * * * * * * * * * * * * * * * *";
+	static const std::string lssmenuS = "*                                  *";
+	static const std::string lssmenu3 = "*     seleccione la operacion:     *";
+	static const std::string lssmenu4 = "*       1. Crear disco nuevo       *";
+	static const std::string lssmenu5 = "*       2. Borrar disco            *";
+	static const std::string lssmenu6 = "*       3. Mostrar discos          *";
+	static const std::string lssmenu7 = "*       4. SAVE                    *";
+	static const std::string lssmenu8 = "*       5. LOAD                    *";
+	static const std::string lssmenu9 = "*       6. Salir                   *";
+
+	static const std::string NAME = "nombre del disco (archivo real): ";
+	static const std::string NAME2 = "nombre del xml: ";
+	static const std::string SIZE1 = "tamaño del disco (bytes): ";
+	static const std::string PASS = "security key: ";
+}
+
+
+
+#endif
