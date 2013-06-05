@@ -42,6 +42,10 @@ class NetworkHandler
         *Variable Thread.
         */
         std::thread* _thread;
+        /**
+         * Método para cerrar el server por completo.
+         */
+        void closeServer();
     protected:
         /**
          * Método que se implementará dentro de cualquier clase que herede.
@@ -59,10 +63,6 @@ class NetworkHandler
          * Método para desconectar un cliente del server.
          */     
         void disconnectClient();
-        /**
-         * Método para cerrar el server por completo.
-         */
-        void closeServer();
     private:
         /**
         *Funcion estatica para correr el server como un Thread.

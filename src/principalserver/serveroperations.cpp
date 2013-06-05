@@ -12,7 +12,7 @@
 #include <exception>
 
 bool ServerOperations::checkUser(std::string pUser, std::string pKey){
-
+	
 }
 
 std::string ServerOperations::toCSV(DataNode* pData, RegisterSpace* pFormat){
