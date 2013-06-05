@@ -11,7 +11,11 @@ private:
 	int _BlockSize;
 	DataBuffer* _outBuffer;
 	bool _Functional;
-	bool _Working;
+	bool _Working
+	
+	Lss * exampledisk;			// *** CUIDADO ***
+	
+	
 public:
 	NoRaid(short pID, int pBlockSize);
 	bool getFile(char* pPath, char* pUser);

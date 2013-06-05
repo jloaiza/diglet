@@ -8,6 +8,7 @@ NoRaid::NoRaid(short pID, int pBlockSize)
 	DataBuffer* _outBuffer;
 	bool _Functional;
 	bool _Working;
+	exampledisk = new Lss("666", pID, pSize, pSecKey);;
 }
 
 bool NoRaid::getFile(char* pPath, char* pUser)
@@ -17,7 +18,9 @@ bool NoRaid::getFile(char* pPath, char* pUser)
 	
 bool NoRaid::deleteFile(char* pPath, char* pUser)
 {
-	
+	//iFile temp = get(pPath);
+	//temp.~iFile();
+	//erase(pPath);
 }
 	
 bool NoRaid::createFile(char* pPath, RegisterSpace *pRegister, char* pUser)

@@ -1,9 +1,24 @@
 #include "parserxml.h"
 
-void parserxml::createDocument(std::string pName)
+void parserxml::createDocument(std::string pDocumentName)
 {
-	_file.setFileName(QString::fromStdString(pName));
+	_file.setFileName(QString::fromStdString(pDocumentName));
     updateDocument();
+}
+
+void parserxml::loadDocument(std::string pDocumentDirection)
+{
+    _file.setFileName(QString::fromStdString(pDocumentDirection));
+    if(!_file.open( QIODevice::ReadOnly | QIODevice::Text ) )
+    {
+      qDebug( "Lo sentimos, no se pudo abrir el documento XML." );
+    }
+
+    if(!_document.setContent(&_file))
+    {
+      qDebug("No se pudo parsear el documento XML a un documento de tipo DOM.");
+    }
+    _file.close();
 }
 
 void parserxml::updateDocument()
@@ -21,47 +36,63 @@ void parserxml::updateDocument()
     }  
 }
 
-void parserxml::createRoot(std::string pName)
+void parserxml::createRoot(std::string pRootName)
 {
-	_root = _document.createElement(QString::fromStdString(pName));
-    _document.appendChild(_root);
-    setAuxChild(_root);
+	QDomElement root = _document.createElement(QString::fromStdString(pRootName));
+    _document.appendChild(root);
+    updateDocument();
     qDebug() << "Root creada con exito.";
 }
 
-void parserxml::createRootChild(std::string pName)
+void parserxml::createRootChild(std::string pRootChildName)
 {
-    QDomElement child = _document.createElement(QString::fromStdString(pName));
-    getRoot().appendChild(child);
-    setAuxChild(child);
-    qDebug() << "Hijo creado con exito.";
+    QDomElement child = _document.createElement(QString::fromStdString(pRootChildName));
+    _document.firstChild().appendChild(child);
+    updateDocument();
+    qDebug() << "Hijo de raíz creado con exito.";
 
 }
 
-void parserxml::createOtherChild(std::string pDirection, std::string pName)
+void parserxml::createOtherChild(std::string pFatherNodeDirection, std::string pChildName)
 {
-	QDomElement child = _document.createElement(QString::fromStdString(pName));
-    QDomElement childadd = tourXML(pDirection);
+	QDomElement child = _document.createElement(QString::fromStdString(pChildName));
+    QDomElement childadd = tourXML(pFatherNodeDirection);
 	childadd.appendChild(child);
-    setAuxChild(child);
+    updateDocument();
     qDebug() << "Hijo creado con exito.";
 
 }
 
-void parserxml::createChildAttribute(std::string pIndicator, std::string pValue)
+void parserxml::createAttribute(std::string pNodeDirection, std::string pAttribute, std::string pAttributeValue)
 {
-    getAuxChild().setAttribute(QString::fromStdString(pIndicator),QString::fromStdString(pValue));
+    if(isRoot(pNodeDirection))
+    {
+        _document.firstChild().setAttribute(QString::fromStdString(pAttribute),QString::fromStdString(pAttributeValue));
+    }
+    else
+    {
+        tourXML(pNodeDirection).setAttribute(QString::fromStdString(pAttribute),QString::fromStdString(pAttributeValue));
+    }
+    updateDocument();
     qDebug() << "Atributo creado con exito.";
 }
 
-void parserxml::createChildValue(std::string pValue)
+void parserxml::createValue(std::string pNodeDirection, std::string pValue)
 {
     QDomText value = _document.createTextNode(QString::fromStdString(pValue));
-    getAuxChild().appendChild(value);
-    qDebug() << "Hijo valor creado con exito.";
+    if(isRoot(pNodeDirection))
+    {
+        _document.firstChild().appendChild(value);
+    }
+    else
+    {
+        tourXML(pNodeDirection).appendChild(value);
+    }
+    updateDocument();
+    qDebug() << "Valor creado con exito.";
 }
 
-std::string parserxml::obtainValue(std::string pXpath)
+std::string parserxml::getAnyValue(std::string pNodeDirectionValue)
 {
     if( !_file.open(QIODevice::ReadOnly))
     {
@@ -72,7 +103,7 @@ std::string parserxml::obtainValue(std::string pXpath)
         QXmlQuery query;
         query.bindVariable("document", &_file);
         std::string stringdocument = "doc($document)";
-        std::string finalstring = std::string(stringdocument) + std::string(pXpath);
+        std::string finalstring = std::string(stringdocument) + std::string(pNodeDirectionValue);
         query.setQuery(QString::fromStdString(finalstring));
         if(!query.isValid()) 
         {
@@ -83,6 +114,38 @@ std::string parserxml::obtainValue(std::string pXpath)
         _file.close();
         return queryresult.toStdString();
     }  
+}
+
+void parserxml::eraseAttribute(std::string pNodeDirection, std::string pNameAttribute)
+{
+    if(isRoot(pNodeDirection))
+    {
+        _document.firstChild().removeAttribute(QString::fromStdString(pNameAttribute));
+    }
+    else
+    {
+        QDomElement childaux = tourXML(pNodeDirection);
+        childaux.removeAttribute(QString::fromStdString(pNameAttribute));
+    }
+    qDebug() << "Atributo borrado con exito.";
+    updateDocument();
+}
+
+void parserxml::eraseNode(std::string pNodeDirection)
+{
+    if(isRoot(pNodeDirection))
+    {
+        _document.removeChild(_document.firstChild());
+    }
+    else
+    {
+        int index = getPositionChild(pNodeDirection);
+        QDomElement child = tourXML(pNodeDirection);
+        QDomElement childfather = child.parentNode().toElement();
+        childfather.removeChild(childfather.elementsByTagName(QString::fromStdString(childNameExtract(pNodeDirection))).at(index));
+    }
+    qDebug() << "Nodo borrado con exito.";
+    updateDocument();
 }
 
 int parserxml::getPositionChild(std::string pWord)
@@ -97,13 +160,13 @@ int parserxml::getPositionChild(std::string pWord)
         index--;
         letra = pWord.c_str()[index];
     }
-    if(auxstring == "")
+    if(auxstring == "" || auxstring == "1")
     {
         finalnumber = 0;
     }
     else
     {
-        finalnumber = atoi(auxstring.c_str());
+        finalnumber = atoi(auxstring.c_str()) - 1;
     }
     return finalnumber;
 }
@@ -138,11 +201,13 @@ std::string parserxml::wordTokenExtract(std::string pWord)
 
 QDomElement parserxml::tourXML(std::string pDirection)
 {
-    QDomElement actualelement = getRoot();
+    QDomElement actualelement = _document.firstChild().toElement();
     std::string completedirection = pDirection;
     std::string delimiter = "/";
     size_t pos = 0;
     std::string token;
+    pos = completedirection.find(delimiter);
+    completedirection.erase(0, pos + delimiter.length());
     while ((pos = completedirection.find(delimiter)) != std::string::npos) 
     {
         token = completedirection.substr(0, pos);
@@ -154,21 +219,35 @@ QDomElement parserxml::tourXML(std::string pDirection)
     return actualelement;
 }
 
-void parserxml::eraseAttribute(std::string pChildDirection, std::string pAttribute)
+std::string parserxml::childNameExtract(std::string pDirection)
 {
-    QDomElement childaux = tourXML(pChildDirection);
-    childaux.removeAttribute(QString::fromStdString(pAttribute));
+    std::string delimiter = "/";
+    size_t pos = 0;
+    std::string childname;
+    std::string wordextract;
+    while ((pos = pDirection.find(delimiter)) != std::string::npos) 
+    {
+        childname = pDirection.substr(0, pos);
+        wordextract = wordTokenExtract(childname);
+        pDirection.erase(0, pos + delimiter.length());
+    }
+    return wordextract;
 }
 
-void parserxml::changeValue(std::string pChildDirection, std::string pValue)
+bool parserxml::isRoot(std::string pNodeDirection)
 {
-    QDomElement childaux= tourXML(pChildDirection);
-    childaux.setNodeValue(QString::fromStdString(pValue));
-}
-
-void parserxml::eraseChild(std::string pFatherDirection, std::string pChildName)
-{
-    int index = getPositionChild(pChildName);
-    QDomElement childaux = tourXML(pFatherDirection);
-    childaux.removeChild(childaux.elementsByTagName(QString::fromStdString(pChildName)).at(index));
+    bool rootflag = false;
+    size_t pos = 0;
+    std::string delimiter = "/";
+    pos = pNodeDirection.find(delimiter);
+    std::string root = pNodeDirection.substr(0, pos);
+    if(_document.firstChild().nodeName().toStdString().compare(root) != 0 )
+    {
+        rootflag = false;
+    }
+    else
+    {
+        rootflag = true;
+    }
+    return rootflag;
 }
