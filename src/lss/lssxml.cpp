@@ -1,33 +1,52 @@
 #include "lssxml.h"
 
-void lssxml::createXMLFile(std::string pName)
+void lssxml::createXMLFile(std::string pDocumentDirection)
 {
-    XMLParser->createDocument(pName);
-    XMLParser->createRoot("LSS");
+	parserxml* XMLParser = new parserxml();
+	XMLParser->createDocument(pDocumentDirection);
+	XMLParser->createRoot("LSS");
+	delete XMLParser;
 }
 
-void lssxml::addDisk()
+void lssxml::addDisk(std::string pDocumentDirection)
 {
-    XMLParser->createRootChild("Disk");
+	parserxml* XMLParser = new parserxml();
+	XMLParser->loadDocument(pDocumentDirection);
+	XMLParser->createRootChild("Disk");
+	delete XMLParser;
 }
 
-void lssxml::addDiskAttribute(std::string pAttribute, std::string pValue)
+void lssxml::addDiskAttribute(std::string pDocumentDirection, std::string pDiskDirection, std::string pDiskAttribute, std::string pValue)
 {
-    XMLParser->createChildAttribute(pAttribute, pValue);
+	parserxml* XMLParser = new parserxml();
+	XMLParser->loadDocument(pDocumentDirection);
+	XMLParser->createAttribute(pDiskDirection,pDiskAttribute, pValue);
+	delete XMLParser;
 }
 
-void lssxml::addSecurityKey(std::string pDirection,std::string pSecurityKey)
+void lssxml::addSecurityKey(std::string pDocumentDirection, std::string pDiskDirection, std::string pSecurityKey)
 {
-    XMLParser->createOtherChild(pDirection, "Key");
-    XMLParser->createChildValue(pSecurityKey);
+	parserxml* XMLParser = new parserxml();
+	XMLParser->loadDocument(pDocumentDirection);
+	XMLParser->createOtherChild(pDiskDirection, "Key");
+	std::string keydirection = std::string(pDiskDirection) + std::string("Key/");
+	XMLParser->createValue(keydirection, pSecurityKey);
+	delete XMLParser;
 }
 
-std::string lssxml::getSecurityKey(std::string pId)
+void lssxml::eraseDisk(std::string pDocumentDirection, std::string pDiskDirection)
 {
-    return XMLParser->obtainValue(pId);
+	parserxml* XMLParser = new parserxml();
+	XMLParser->loadDocument(pDocumentDirection);
+	XMLParser->eraseNode(pDiskDirection);
+	delete XMLParser;
 }
 
-void lssxml::eraseDisk(std::string pFatherDirection, std::string pDiskName)
+std::string lssxml::getSecurityKey(std::string pDocumentDirection, std::string pDiskKeyDirection)
 {
-    XMLParser->eraseChild(pFatherDirection, pDiskName);
+	parserxml* XMLParser = new parserxml();
+	XMLParser->loadDocument(pDocumentDirection);
+	std::string value = XMLParser->getAnyValue(pDiskKeyDirection);
+	delete XMLParser;
+	return value;
 }

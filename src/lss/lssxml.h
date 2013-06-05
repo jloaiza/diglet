@@ -3,12 +3,10 @@
 class lssxml
 {
 public:
-	void createXMLFile(std::string pName);
-	void addDisk();
-	void addDiskAttribute(std::string pAttribute, std::string pValue);
-	void addSecurityKey(std::string pDirection,std::string pSecurityKey);
-	std::string getSecurityKey(std::string pId);
-	void eraseDisk(std::string pFatherDirection, std::string pDiskName);
-private:
-	parserxml* XMLParser = new parserxml();
+	static void createXMLFile(std::string pDocumentDirection);
+	static void addDisk(std::string pDocumentDirection);
+	static void addDiskAttribute(std::string pDocumentDirection, std::string pDiskDirection, std::string pDiskAttribute, std::string pValue);
+	static void addSecurityKey(std::string pDocumentDirection, std::string pDiskDirection, std::string pSecurityKey);
+	static void eraseDisk(std::string pDocumentDirection, std::string pDiskDirection);
+	static std::string getSecurityKey(std::string pDocumentDirection, std::string pDiskKeyDirection);
 };
