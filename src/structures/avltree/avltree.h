@@ -4,13 +4,13 @@
 #include "abstractbinarytree.h"
 #include <math.h>
 
-template <class t>
+template <class t, typename c>
 class AVLTree : public AbstractBinaryTree<t>{
 public:
 	AVLTree();
 	void insert(t* pData);
-	t* erase(t* pData);
-	t* search(t* pData);
+	t* erase(c* pData);
+	t* search(c* pData);
 private:
 	void leftRightRotation(TreeNode<t>* pNode);
 	void rightLeftRotation(TreeNode<t>* pNode);
@@ -23,7 +23,7 @@ private:
 //-----------------------------Declaración de metodos--------------------------------------------
 
 template <class t>
-t* AVLTree<t>::erase(t* pData){
+t* AVLTree<t>::erase(c* pData){
 	TreeNode<t>* erased = this->eraseAux(pData);
 	if (erased != 0){
 		balanceTree(erased->getParent());
@@ -34,7 +34,7 @@ t* AVLTree<t>::erase(t* pData){
 }
 
 template <class t>
-t* AVLTree<t>::search(t* pData){
+t* AVLTree<t>::search(c* pData){
 	TreeNode<t>* searched = this->searchAux(pData);
 	if (searched != 0){
 		return searched->getData();

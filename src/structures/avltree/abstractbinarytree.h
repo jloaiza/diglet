@@ -5,7 +5,7 @@
 #include <iostream>
 using namespace std;
 
-template <class t>
+template <class t, typename c>
 class AbstractBinaryTree{
 private:
 
@@ -14,8 +14,8 @@ protected:
 	TreeNode<t>* _root;
 
 	TreeNode<t>* insertAux(t* pData);
-	TreeNode<t>* searchAux(t* pData) const;
-	TreeNode<t>* eraseAux(t* pData);
+	TreeNode<t>* searchAux(c* pData) const;
+	TreeNode<t>* eraseAux(c* pData);
 	TreeNode<t>* findGreater(TreeNode<t>* pNode) const;
 
 	void eraseLeaf(TreeNode<t>* pNode);
@@ -37,8 +37,8 @@ public:
 	static const int PRE_ORDER_TRAVERSAL = 2;
 
 	virtual void insert(t* pData) = 0;
-	virtual t* search(t* pData) = 0;
-	virtual t* erase(t* pData) = 0;
+	virtual t* search(c* pData) = 0;
+	virtual t* erase(c* pData) = 0;
 
 	void printTree(int pTraversal);
 
@@ -127,7 +127,7 @@ TreeNode<t>* AbstractBinaryTree<t>::insertAux(t* pData){
 }
 
 template <class t>
-TreeNode<t>* AbstractBinaryTree<t>::searchAux(t* pData) const{
+TreeNode<t>* AbstractBinaryTree<t>::searchAux(c* pData) const{
 	TreeNode<t>* iNode = _root;
 	while (iNode != 0){
 		if (*iNode->getData() > *pData){
@@ -142,7 +142,7 @@ TreeNode<t>* AbstractBinaryTree<t>::searchAux(t* pData) const{
 }
 
 template <class t>
-TreeNode<t>* AbstractBinaryTree<t>::eraseAux(t* pData){
+TreeNode<t>* AbstractBinaryTree<t>::eraseAux(c* pData){
 	TreeNode<t>* toErase = searchAux(pData);
 	if (toErase != 0){
 		std::cout<<"founded"<<std::endl;
