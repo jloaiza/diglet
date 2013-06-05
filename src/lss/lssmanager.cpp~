@@ -13,16 +13,12 @@ LssManager::LssManager()
 	_networkHandler = 0;
 }
 
-Lss* LssManager::getLSS(short pID){
-	return (Lss*)(_lss->get( std::to_string(pID).data() ));
-}
-
-void LssManager::write(char* pData, short pID, int pBlockPadre)
+void LssManager::write(char* pData, short pID, int pBlock)
 {
 	Lss* temporal = (Lss*)( _lss->get( std::to_string(pID).data() ) );
 	temporal->write(pData, pBlock);
 }
-/*
+
 char * LssManager::read(short pID, int pBlock)
 {
 	Lss* temporal = (Lss*)( _lss->get( std::to_string(pID).data() ) );
@@ -43,23 +39,21 @@ void LssManager::showDisks()
 	_lss->print();
 }
 
+Lss* LssManager::getLSS(short pID){
+	return (Lss*)(_lss->get( std::to_string(pID).data() ));
+}
 
 void LssManager::eraseDisk(short pID, std::string pSecKey)
 {
 	Lss * temporal = (Lss*)(_lss->get( std::to_string(pID).data() ));
 	if (temporal->getSecKey() == pSecKey){
-		
-		
-		
-		
-		
 		_lss->erase(temporal);
 	} else {
 		std::cout<<"Security key incorrecto"<<std::endl;
 	}
 	
 }
-*/
+
 /*
 int LssManager::getDiskSize(short pID)
 {
@@ -67,7 +61,7 @@ int LssManager::getDiskSize(short pID)
 	return temporal->getDiskSize();
 }
 */
-/*
+
 int LssManager::getBlockSize(short pID)
 {
 	Lss* temporal = (Lss*)( _lss->get( std::to_string(pID).data() ) );
@@ -83,9 +77,6 @@ void LssManager::format(short pID, int pBlockSize)
 short LssManager::getFreeBlock(short pID)
 {
 	Lss* temporal = (Lss*)( _lss->get( std::to_string(pID).data() ) );
-	
-	temporal
-
 	return temporal->getFreeBlock();
 }
 
@@ -109,4 +100,3 @@ void LssManager::startSystem(){
 	_console->getThread()->join();
 	_networkHandler->getThread()->join();
 }
-*/

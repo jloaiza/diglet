@@ -10,6 +10,11 @@ class Constants
 	static const short INT = 4;
 	static const short DOUBLE = 5;
 	static const short STRING = 6;
+	
+	std::string TWOPOINTS = ":";
+	std::string DIRECTION = "@"
+	
+	
 
 
 	std::string lssmenuL = "** * * * * * * * * * * * * * * * * *";

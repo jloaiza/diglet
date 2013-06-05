@@ -8,19 +8,22 @@ class NoRaid : public DiskGroup
 {
 private:
 	short _ID;
-	int _BlockSize;
+	int _BlockSize, _NumDisks;
 	DataBuffer* _outBuffer;
 	bool _Functional;
 	bool _Working
 	
-	Lss * exampledisk;			// *** CUIDADO ***
 	
-	
+	SimpleListLss * _diskList;			// *** CUIDADO ***
+		
 public:
-	NoRaid(short pID, int pBlockSize);
+	NoRaid(short pID, int pBlockSize, SimpleList pList);
 	bool getFile(char* pPath, char* pUser);
 	bool deleteFile(char* pPath, char* pUser);
-    bool createFile(char* pPath, RegisterSpace* pRegister, char* pUser);
+	
+	/* cambie RegisterSpace* por una lista simple para conocer el tamaño mas facilmente */
+    bool createFile(char* pPath, SimpleList* pRegisterList, char* pUser);
+	
 	void appendRegister(char* pPath, char* pUser, DataNode* pData);
 	bool eraseRegister(char* pPath, char* pUser, int pRegisterNumber);
 	void writeRegister(char* pPath, char* pUser, int pRegisterNumber, DataNode* pData);
