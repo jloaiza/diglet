@@ -4,14 +4,14 @@
 
 class Constants
 {
+public:
 	static const short BOOL = 1;
 	static const short CHAR = 2;
 	static const short SHORT = 3;
 	static const short INT = 4;
 	static const short DOUBLE = 5;
 	static const short STRING = 6;
-
-
+	
 	std::string lssmenuL = "** * * * * * * * * * * * * * * * * *";
 	std::string lssmenuS = "*                                  *";
 	std::string lssmenu3 = "*     seleccione la operacion:     *";
@@ -26,7 +26,7 @@ class Constants
 	std::string NAME2 = "nombre del xml: ";
 	std::string SIZE1 = "tamaño del disco (bytes): ";
 	std::string PASS = "security key: ";
-}
+};
 
 
 
