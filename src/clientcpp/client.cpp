@@ -56,3 +56,15 @@ std::string Client::readMessage()
      std::string pMessage = _inMessage;
      return pMessage;
 }
+
+bool Client::isConnect()
+{
+   std::string test;
+   test = "isConnect";
+   bool connect = false;
+   if (!(write (_socket, test.data(), test.size()) < 0))
+   {
+        connect = true;
+   }
+   return connect;
+}

@@ -60,7 +60,10 @@ class Client
         * comando por medio de la red, es decir, la respuesta del servidor.
         */
         std::string readMessage();
-        
+        /**
+        * Método que devuelve true si el cliente está conectado al server o false si no lo está-
+        */        
+        bool isConnect();
     private:
         /* Getters y setters para el puerto y la IP. */
         void setPort(int _port){this->_port = _port;}
