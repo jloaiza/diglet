@@ -2,10 +2,10 @@
 #define AVL_TREE
 
 #include "abstractbinarytree.h"
-#include <math.h>
+
 
 template <class t, typename c>
-class AVLTree : public AbstractBinaryTree<t>{
+class AVLTree : public AbstractBinaryTree<t, c>{
 public:
 	AVLTree();
 	void insert(t* pData);
@@ -22,8 +22,8 @@ private:
 
 //-----------------------------Declaración de metodos--------------------------------------------
 
-template <class t>
-t* AVLTree<t>::erase(c* pData){
+template <class t, typename c>
+t* AVLTree<t, c>::erase(c* pData){
 	TreeNode<t>* erased = this->eraseAux(pData);
 	if (erased != 0){
 		balanceTree(erased->getParent());
@@ -33,8 +33,8 @@ t* AVLTree<t>::erase(c* pData){
 	}	
 }
 
-template <class t>
-t* AVLTree<t>::search(c* pData){
+template <class t, typename c>
+t* AVLTree<t, c>::search(c* pData){
 	TreeNode<t>* searched = this->searchAux(pData);
 	if (searched != 0){
 		return searched->getData();
@@ -43,21 +43,21 @@ t* AVLTree<t>::search(c* pData){
 	}
 }
 
-template <class t>
-void AVLTree<t>::insert(t* pData){
+template <class t, typename c>
+void AVLTree<t, c>::insert(t* pData){
 	TreeNode<t>* inserted = this->insertAux(pData);
 	if (inserted != 0){
 		balanceTree(inserted);
 	}
 }
 
-template <class t>
-AVLTree<t>::AVLTree(){
+template <class t, typename c>
+AVLTree<t, c>::AVLTree(){
 	this->_root = 0;
 }
 
-template <class t>
-void AVLTree<t>::leftRightRotation(TreeNode<t>* pNode){
+template <class t, typename c>
+void AVLTree<t, c>::leftRightRotation(TreeNode<t>* pNode){
 	if (pNode->getGrandpa() == this->_root){
 		this->_root = pNode;
 	}
@@ -65,8 +65,8 @@ void AVLTree<t>::leftRightRotation(TreeNode<t>* pNode){
 	this->rightRightRotation(pNode);
 }
 
-template <class t>
-void AVLTree<t>::rightLeftRotation(TreeNode<t>* pNode){
+template <class t, typename c>
+void AVLTree<t, c>::rightLeftRotation(TreeNode<t>* pNode){
 	if (pNode->getGrandpa() == this->_root){
 		this->_root = pNode;
 	}
@@ -74,8 +74,8 @@ void AVLTree<t>::rightLeftRotation(TreeNode<t>* pNode){
 	this->leftLeftRotation(pNode);
 }
 
-template <class t>
-int AVLTree<t>::balanceFactor(TreeNode<t>* pNode){
+template <class t, typename c>
+int AVLTree<t, c>::balanceFactor(TreeNode<t>* pNode){
 	if (pNode == 0){
 		return 0;
 	}
@@ -84,8 +84,8 @@ int AVLTree<t>::balanceFactor(TreeNode<t>* pNode){
 	return rH - lH;
 }
 
-template <class t>
-void AVLTree<t>::balanceTree(TreeNode<t>* pNode){
+template <class t, typename c>
+void AVLTree<t, c>::balanceTree(TreeNode<t>* pNode){
 
 	bool balanced = false;
 

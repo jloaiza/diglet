@@ -7,6 +7,7 @@ int STRING_TYPE = 2;
 int DOUBLE_TYPE = 3;
 int SHORT_TYPE = 4;
 int SEEK_POS = -1;
+int NO_SESSION = -1;
 
 
 #endif /* CONSTANTS */

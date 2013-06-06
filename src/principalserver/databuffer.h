@@ -12,7 +12,6 @@ public:
 private:
 	DataNode* _head;
 	DataNode* _tail;
-
 };
 
 

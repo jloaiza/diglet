@@ -1,89 +1,84 @@
 #ifndef DISKGROUP
 #define DISKGROUP
 
-//#include "resgisterspacer.h"
-//#include "../basicstructures/datanode.h"
+#include "registerspace.h"
+#include "datanode.h"
+//#include "../structures/ntree/ifile.h"
+//#include "../structures/ntree/ntreenode.h"
+#include "disk.h"
+#include "../structures/doublelinkedlist/doublelinkedlist.h"
 
-class RegisterSpace;
-class DataBuffer;
-class DataNode;
+#include <string>
 
-
+class iFile;
+class nTreeNode;
 class DiskGroup 
 {
 	
 public:
-	
-	
-	/* operaciones sobre el arbol n-ario */
-	
-	
-	/**
-	 * busca y retorna un archivo del disco
-	 * @param pPath nombre o direccion del archivo ficticio
-	 * @param pUser nombre del usuario que realiza la operacion
-	 * @return true si la operacion se realizo con exito, false de lo contrario
-	 */
-	virtual bool getFile(char* pPath, char* pUser) = 0;
-	
-	/**
-	 * borra un archivo o una carpeta
-	 * @param pPath nombre o direccion del archivo ficticio
-	 * @param pUser nombre del usuario que realiza la operacion
-	 * @return true si la operacion se realizo con exito, false de lo contrario
-	 */
-	virtual bool deleteFile(char* pPath, char* pUser) = 0;
-	
-	//virtual void eraseFolder(char* pPath);
-	//virtual void eraseFile(char* pPath);
-	
-	/**
-	 * crea un nuevo archivo
-	 * @param pName nombre o direccion del nuevo archivo ficticio
-	 * @param pRegister formato de cada registro del nuevo archivo
-	 * @param pUser nombre del usuario que realiza la operacion
-	 */
-	virtual bool createFile(char* pPath, RegisterSpace pRegister, char* pUser) = 0;
-	
-	
-	/* operaciones sobre el registros */
-	
-	
-	/**
-	 * agrega un registro al final (despues del ultimo registro almacenado)
-	 * @param pPath nombre o direccion del nuevo archivo ficticio
-	 * @param pUser nombre del usuario que realiza la operacion
-	 * @param pData datos que contiene el registro
-	 */
-	virtual void appendRegister(char* pPath, char* pUser, DataNode* pData) = 0;
-	
-	/**
-	 * borrar un registro
-	 * @param pPath nombre o direccion del nuevo archivo ficticio
-	 * @param pUser nombre del usuario que realiza la operacion
-	 * @param pRegisterNumber numero de registro
-	 */
-	virtual bool eraseRegister(char* pPath, char* pUser, int pRegisterNumber) = 0;
-	
-	/**
-	 * sobreescribe un registro
-	 * @param pPath nombre o direccion del nuevo archivo ficticio
-	 * @param pUser nombre del usuario que realiza la operacion
-	 * @param pRegisterNumber numero de registro 
-	 * @param pData datos que contiene el registro
-	 */
-	virtual void writeRegister(char* pPath, char* pUser, int pRegisterNumber, DataNode* pData) = 0;
-	
-	/**
-	 * leer un registro
-	 * @param pPath nombre o direccion del nuevo archivo ficticio
-	 * @param pUser nombre del usuario que realiza la operacion
-	 * @param pRegisterNumber numero de registro
-	 */
-	virtual DataNode* readRegister(char* pPath, char* pUser, int pRegisterNumber) = 0;
-		
-	
-	/* 	virtual bool getFilesTree(char* pPath, char* pUser);  */
+
+	const int NO_RAID = -1;
+	const int RAID0 = 0;
+	const int RAID1 = 1;
+	const int RAID5 = 5;
+
+	bool operator==(std::string& pID);
+	bool operator>(std::string& pID);
+	bool operator>=(std::string& pID);
+	bool operator<(std::string& pID);
+	bool operator<=(std::string& pID);
+	bool operator!=(std::string& pID);
+
+	virtual nTreeNode* createFile(nTreeNode* pFolderNode, std::string pName, RegisterSpace* pRegister, std::string pUser) = 0;
+	virtual void del(nTreeNode* pNode) = 0;
+	virtual DataNode* getFile(iFile* pFile) = 0;
+	virtual int appendReg(DataNode* pData, iFile* pFile) = 0;
+	virtual DataNode* readRegister(int pRegisterNumber, iFile* pFile) = 0;
+	virtual void eraseRegister(int pRegisterNumber, iFile* pFile) = 0;
+	virtual RegisterSpace* getRegisterFormat(iFile* pFile) = 0;
+	virtual void format() = 0;
+
+	std::string getDiskList();
+	nTreeNode* getNode(std::string pRelativePath, nTreeNode* pCurrentNode);
+	void createDir(nTreeNode* pFolderNode, std::string pName, std::string pUser);
+	void addDisk(Disk* pDisk);
+	void removeDisk(std::string pIP, short pDiskID);
+
+	std::string getID() const {
+		return _id;
+	}
+
+	int getBlockSize() const {
+		return _blockSize;
+	}
+
+	void setBlockSize(int pSize){
+		_blockSize = pSize;
+	}
+
+	bool isWorking() const {
+		return _working;
+	}
+
+	bool isFunctional(){
+		return _functional;
+	}
+
+
+
+
+protected:
+	std::string _id;
+	int _raid;
+	int _blockSize;
+	bool _functional;
+	bool _working;
+	DoubleLinkedList<Disk, std::string> _diskList;
+
+	virtual void eraseFile(iFile* pFile) = 0;
+
+
+
 };
 
 #endif

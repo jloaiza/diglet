@@ -5,6 +5,7 @@
 #include "../structures/avltree/avltree.h"
 #include "servernetworkhandler.h"
 #include "session.h"
+#include "disk.h"
 
 #include <string>
 
@@ -20,7 +21,7 @@ public:
 	int newSession(std::string pUser, std::string pDiskGroupID);
 	void closeSession(int pSessionID);
 	void defineDiskGroup(int pRAID, int pBlockSize, std::string pID);
-	void addLSS(std::string pDiskGroupID, std::string pIPToConnect, short pDiskID, std::string pSecurityKey, int pPort);
+	void addLSS(std::string pDiskGroupID, std::string pIPToConnect, int pPort, short pDiskID, std::string pSecurityKey, int pPort);
 	void startDiskGroup(std::string pDiskGroupID);
 	void stopDiskGroup(std::string pDiskGroupID);
 	void startSystem();
@@ -32,13 +33,23 @@ public:
 
 private:
 	static GeneralManager* _instance;
+	AVLTree<DiskGroup, std::string>* loadDiskGroups();
+	AVLTree<StorageClient, std::string>* loadClients();
+	AVLTree<Disk, std::string> loadDisks();
+	AVLTree<User, std::string> loadUsers();
 
-	AVLTree<DiskGroup>* _diskGroups;
-	ServerNetworkHandler* _serverHandler;
+	void saveDiskGroups();
+	void saveClients();
+	void saveDisk();
+	void saveUsers();
+
+	AVLTree<DiskGroup, std::string>* _diskGroups;
+	ServerNetworkHandler* _server;
 	ServerConsole* _console;
-	AVLTree<StorageClient>* _clientsTree;
-	AVLTree<Session>* _sessions;
-
+	AVLTree<StorageClient, std::string>* _clientsTree;
+	AVLTree<Session, int>* _sessions;
+	AVLTree<Disk, std::string> _diskTree;
+	AVLTree<User, std::string> _userTree;
 };
 
 #endif /* GENERALMANAGER */
