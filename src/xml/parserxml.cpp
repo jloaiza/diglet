@@ -36,6 +36,18 @@ void parserxml::updateDocument()
     }  
 }
 
+bool parserxml::thereFile(std::string pFileDirection)
+{
+    bool confirmation = false;
+    QFile file;
+    file.setFileName(QString::fromStdString(pFileDirection));
+    if(file.open( QIODevice::ReadOnly | QIODevice::Text ))
+    {
+        confirmation = true;
+    }
+    return confirmation;
+}
+
 void parserxml::createRoot(std::string pRootName)
 {
 	QDomElement root = _document.createElement(QString::fromStdString(pRootName));
@@ -67,7 +79,7 @@ void parserxml::createAttribute(std::string pNodeDirection, std::string pAttribu
 {
     if(isRoot(pNodeDirection))
     {
-        _document.firstChild().setAttribute(QString::fromStdString(pAttribute),QString::fromStdString(pAttributeValue));
+        _document.firstChild().toElement().setAttribute(QString::fromStdString(pAttribute),QString::fromStdString(pAttributeValue));
     }
     else
     {
@@ -120,7 +132,7 @@ void parserxml::eraseAttribute(std::string pNodeDirection, std::string pNameAttr
 {
     if(isRoot(pNodeDirection))
     {
-        _document.firstChild().removeAttribute(QString::fromStdString(pNameAttribute));
+        _document.firstChild().toElement().removeAttribute(QString::fromStdString(pNameAttribute));
     }
     else
     {

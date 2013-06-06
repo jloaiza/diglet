@@ -106,6 +106,10 @@ public:
 	* Enlace: www.google.co.cr
 	*/
 	std::string getAnyValue(std::string pNodeDirectionValue);
+	/**
+	* Función que evalua si la direción de un archivo dado existe.
+	*/
+	bool thereFile(std::string pFileDirection);
 private:
 	/** Los siguientes métodos son únicos para el manejo del XML interno y no debe de ser modificados bajo ninguna circunstancia. */
 	/** ------------------------------------------------------------------------------------------------------------------------ */
