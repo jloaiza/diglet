@@ -7,7 +7,10 @@
 class Lss : public Comparable {
 	
 private:
-    const char* _disk;
+
+	std::string TWOPOINTS = ":";
+	std::string DIRECTION = "@";	
+    std::string _disk;
 	bool _busy;
 	int _size;
 	int _blockSize;
@@ -18,10 +21,12 @@ private:
 	 * construye el header del lss (binario)
 	 */
 	void header();
-
+	
+	char * string_2_charArray(std::string pString, short pSize);
+	
 public:
 
-    Lss(const char*  pDisk, short pID, int pSize, std::string pSecKey);
+    Lss(std::string pDisk, short pID, int pSize, std::string pSecKey);
 
 	/**
 	 * escribe en el disco
@@ -30,7 +35,7 @@ public:
 	 * @return numero de bloque donde escribimos
 	 * @version 2.0 	se implemento para que busque un bloque libre, y retorne el numero de bloque que se utilizo
 	 */
-	short write (char* pData, short pBlockPadre);
+	short writeA (std::string pData, short pBlockPadre);
 	
 	/**
 	 * escribe cualquier cantidad de caracteres en cualquier posicion del LSS
@@ -38,28 +43,32 @@ public:
 	 * @param pPos posicion especifica en el disco
 	 * @param pSize cantidad de caracteres que se van a escribir
 	 */
-	void write (char* pData, int pPos, int pSize);
+	void writeB (std::string pData, int pPos, int pSize);
 	
 	/**
 	 * @param pBlock bloque que se va a leer
 	 * @return datos leidos
 	 */
-	char* read(int pBlock);	
-		
+	char * readA (int pBlock);	
+	
 	/**
 	 * lee cualquier cantidad de caracteres en cualquier posicion del disco
 	 * @param pPos posicion dentro del disco
 	 * @param pSize cantidad de caracteres que se van a leer
 	 * @return datos que leyó del disco
 	 */
-	char *read(int pPos, int pSize);
+	char * readB (int pPos, int pSize);
 	
 	/**
 	 * @return numero del bloque libre
 	 */
 	short getFreeBlock();
 	
+	short getLastBlock();
+	
 	int getBlockSize();
+	
+	int getDiskSize();
 	
 	std::string getSecKey();
 	

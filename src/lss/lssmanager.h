@@ -38,7 +38,7 @@ public:
 	 * @return numero de bloque donde escribio los datos
 	 * @version 2.0 	se cambio el valor de retorno y la variable pBlockPadre 
 	 */
-	short write(char* pData, short pID, short pBlockPadre);
+	short write(std::string pData, short pID, short pBlockPadre);
 	
 	/**
 	 * lee datos de un LSS
@@ -58,7 +58,7 @@ public:
 	 * @param pSize numero de bytes que se escribirán
 	 * version 1.0
 	 */
-	void write_bytes(char* pData, short pID, int pBlock, int pOffset, int pSize);
+	void write_bytes(std::string pData, short pID, int pBlock, int pOffset, int pSize);
 
 	/**
 	 * lee una posicion especifica dentro de un bloque en un LSS
@@ -84,6 +84,9 @@ public:
 	 * @version 1.0
 	 */
 	void eraseDisk(short pID, std::string pSecKey);
+	
+	void eraseBlock(short pID, short pBlock);
+	
 	
 	/**
 	 * @param pDiskID id del disco que se busca

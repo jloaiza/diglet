@@ -38,7 +38,7 @@ std::string LssOperations::connect(short pID, std::string pKey, DoubleLinkedList
 std::string LssOperations::readBlock(short pID, int pBlock, DoubleLinkedList<Lss, short>* pDiskList){
 	Lss* toRead = pDiskList->search(&pID);
 	if (toRead != 0){
-		return toRead->readA (pBlock);
+		return toRead->read(pBlock);
 	} else {
 		return "?Error: El disco no ha sido encontrado";
 	}
@@ -49,7 +49,7 @@ std::string LssOperations::writeBlock(short pID, int pBlock, std::string pData, 
 	if (toWrite != 0){
 		char* tmp;
 		strcpy(tmp, pData.data());
-		toWrite->writeA (tmp, pBlock);
+		toWrite->write(tmp, pBlock);
 		return "";
 	} else {
 		return "?Error: El disco no ha sido encontrado";
@@ -64,8 +64,7 @@ std::string LssOperations::writeBytes(short pID, int pBlock, int pOffset, int pS
 		char* tmp = new char[pData.length()];
 		strcpy(tmp, pData.data());
 		std::cout<<"H"<<std::endl;
-		short pPos = 12 + (pBlock*toWrite->getBlockSize()) + pOffset;		
-		toWrite->writeB (tmp, pPos, pSize);
+		toWrite->write(tmp, pBlock, pOffset, pSize);
 		return "";
 	} else {
 		return "?Error: El disco no ha sido encontrado";
@@ -75,8 +74,7 @@ std::string LssOperations::writeBytes(short pID, int pBlock, int pOffset, int pS
 std::string LssOperations::readBytes (short pID, int pBlock, int pOffset, int pSize, DoubleLinkedList<Lss, short>* pDiskList){
 	Lss* toRead = pDiskList->search(&pID);
 	if (toRead != 0){
-		short pPos = 12 + (pBlock*toRead->getBlockSize()) + pOffset;
-		return toRead->readB(pPos, pSize);
+		return toRead->read(pBlock, pOffset, pSize);
 	} else {
 		return "?Error: El disco no ha sido encontrado";
 	}
