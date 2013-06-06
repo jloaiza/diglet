@@ -8,10 +8,10 @@ GeneralManager(){
 	*/
 	_instance = this;
 
-	_clientsTree = loadClients();
-	_diskTree = loadDisks();
-	_diskGroups = loadDiskGroups();
-	_users = loadUsers();
+	_clientsTree = 0;
+	_diskTree = 0;
+	_diskGroups = 0;
+	_users = 0;
 
 	_server = new ServerNetworkHandler();
 	_console = new ServerConsole();
@@ -147,6 +147,12 @@ void GeneralManager::stopDiskGroup(std::string pDiskGroupID){
 }
 
 void GeneralManager::startSystem(){
+	_clientsTree = loadClients();
+	_diskTree = loadDisks();
+	_diskGroups = loadDiskGroups();
+	_users = loadUsers();
+
+	FALTA
 
 }
 
