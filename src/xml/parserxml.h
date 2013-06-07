@@ -4,6 +4,7 @@
 #include <QXmlQuery>
 #include <iostream>
 #include <string>
+#include <sstream>
 
 class parserxml
 {
