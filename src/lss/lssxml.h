@@ -5,8 +5,9 @@ class lssxml
 public:
 	static void createXMLFile(std::string pDocumentDirection);
 	static void addDisk(std::string pDocumentDirection);
-	static void addDiskAttribute(std::string pDocumentDirection, std::string pDiskDirection, std::string pDiskAttribute, std::string pValue);
-	static void addSecurityKey(std::string pDocumentDirection, std::string pDiskDirection, std::string pSecurityKey);
-	static void eraseDisk(std::string pDocumentDirection, std::string pDiskDirection);
-	static std::string getSecurityKey(std::string pDocumentDirection, std::string pDiskKeyDirection);
+	static void addDiskAttribute(std::string pDocumentDirection, int pDiskIndex, std::string pDiskAttribute, std::string pValue);
+	static void addSecurityKey(std::string pDocumentDirection, int pDiskIndex, std::string pSecurityKey);
+	static std::string getSecurityKey(std::string pDocumentDirection, int pDiskIndex);
+	static std::string getIdDisk(std::string pDocumentDirection, int pDiskIndex);
+	static std::string getDiskDates(std::string pDocumentDirection, int pDiskIndex);
 };
