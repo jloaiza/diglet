@@ -54,6 +54,7 @@ void SimpleList::erase(Comparable *pData)
             iterNode->next = tmp->next;
             tmp->next = NULL;
         }
+        _size--;
 	}
 }
 

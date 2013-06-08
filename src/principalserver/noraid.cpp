@@ -1,14 +1,15 @@
 #include "diskgroup.h"
 #include "noraid.h"
 
-NoRaid::NoRaid(short pID, int pBlockSize)
+NoRaid::NoRaid(short pID, int pBlockSize, SimpleList * pList)
 {
 	_ID = pID;
-    _BlockSize = 0;
+    _BlockSize = pBlockSize;
+    _NumDisks = pList->_size;
 	DataBuffer* _outBuffer;
 	bool _Functional;
 	bool _Working;
-	exampledisk = new Lss("666", pID, pSize, pSecKey);;
+	_diskList = pList;
 }
 
 bool NoRaid::getFile(char* pPath, char* pUser)
@@ -23,9 +24,19 @@ bool NoRaid::deleteFile(char* pPath, char* pUser)
 	//erase(pPath);
 }
 	
-bool NoRaid::createFile(char* pPath, RegisterSpace *pRegister, char* pUser)
+bool NoRaid::createFile(char* pPath, SimpleList* pRegisterList, char* pUser)
 {
-	
+	short _AdmiHeader = 18;
+	_AdmiHeader +=  (SimpleList->_size) * 20;
+	if ( _AdmiHeader > _BLockSize )
+	{
+		
+	}
+	else
+	{
+		
+	}
+		
 }
 
 void NoRaid::appendRegister(char* pPath, char* pUser, DataNode* pData)

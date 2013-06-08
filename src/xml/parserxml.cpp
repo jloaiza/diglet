@@ -249,15 +249,16 @@ std::string parserxml::childNameExtract(std::string pDirection)
 bool parserxml::isRoot(std::string pNodeDirection)
 {
     bool rootflag = false;
+    int counter = 0;
     size_t pos = 0;
     std::string delimiter = "/";
-    pos = pNodeDirection.find(delimiter);
-    std::string root = pNodeDirection.substr(0, pos);
-    if(_document.firstChild().nodeName().toStdString().compare(root) != 0 )
+    std::string word;
+    while ((pos = pNodeDirection.find(delimiter)) != std::string::npos) 
     {
-        rootflag = false;
+        pNodeDirection.erase(0, pos + delimiter.length());
+        counter++;
     }
-    else
+    if(!(counter > 1))
     {
         rootflag = true;
     }

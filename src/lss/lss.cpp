@@ -1,3 +1,4 @@
+#include <alloca.h>
 #include <iostream>
 #include <fstream>
 #include <iomanip>
@@ -31,18 +32,47 @@ bool Lss::operator >= (const short& pToCompare){
 }
 
 
-/**
- * constructor de la clase LSS
- * @param pDisk nombre o directorio del lss (archivo real)
- * @param pID nombre del lss, para comparaciones
- * @param pSize tamaño maximo del disco;
- */
-Lss::Lss(const char * pDisk, short pID, int pSize, std::string pSecKey)
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 		PRIVATE		* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+void Lss::header()
 {
-	char * temp = new char();
-	std::strcpy(temp, pDisk);
-	name = std::string(temp);
-	_disk = temp;
+	char * data = new char[12];
+	for (int x=0; x<6; x++)
+	{
+		data[x]=0;
+	}
+	
+	std::string tmp = BytesHandler::bin2str( BytesHandler::unum2bin(1, 2) );
+	data[6] = tmp[0];
+	data[7] = tmp[1];
+	std::string tmp2 = BytesHandler::bin2str( BytesHandler::unum2bin(_size, 4) );
+	data[8] = tmp2[0];
+	data[9] = tmp2[1];
+	data[10] = tmp2[2];
+	data[11] = tmp2[3];
+	std::ofstream File;	
+	File.open( _disk.data() );
+	File.write (data, _blockSize);
+	File.close();
+}
+
+char * Lss::string_2_charArray(std::string pString, short pSize)
+{
+	char * temporal = new char[pSize];
+	
+	for (int x=0; x<pSize; x++)
+	{
+		temporal[x] = pString[x];
+	}
+	return temporal;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 		PUBLIC		 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+Lss::Lss(std::string pDisk, short pID, int pSize, std::string pSecKey)
+{
+	_disk = pDisk;
+	name = _disk;
 	_busy = false;
 	_id = pID;
 	_size = pSize;
@@ -51,171 +81,145 @@ Lss::Lss(const char * pDisk, short pID, int pSize, std::string pSecKey)
 	header();
 }
 
-/**
- * construye el header del lss (binario)
- */
-void Lss::header()
+short Lss::writeA (std::string pData, short pBlockPadre)
 {
-	char * data = new char[12];
-	for (int x=0; x<4; x++)
+	short freeblock = getFreeBlock(); 	/* pide un bloques borrados (en caso de que existan) */	
+	if ( freeblock == 0)	/* no hay bloques borrados */
 	{
-		data[x]=0;
+		freeblock = getLastBlock(); 	/* pide el ultimo bloque libre */
+		
+		if (freeblock == 0) 	/* no hay espacio */
+		{
+			std::cout << "disco lleno";
+		}
+		else 	/* si hay espacio */
+		{
+			short nextDirection = freeblock+1;		/* numero del nuevo bloque libre */
+			
+			//std::cout << freeblock << std::endl;			
+			
+			writeB ( BytesHandler::bin2str(BytesHandler::unum2bin(nextDirection, 2)), 6, 2); 	/* aumenta el apuntador al ultimo bloque libre */
+			writeB (pData, 12+(freeblock*_blockSize), _blockSize);		/*	escribe los datos en la direccion del bloque libre */
+		}
 	}
-	std::string tmp = BytesHandler::bin2str( BytesHandler::unum2bin(1, 2) );
-	data[4] = tmp[0];
-	data[5] = tmp[1];
-	data[6] = 0;
-	data[7] = 0;
-	tmp = BytesHandler::bin2str( BytesHandler::unum2bin(_size, 4) );
-	data[8] = tmp[0];
-	data[9] = tmp[1];
-	data[10] = tmp[2];
-	data[11] = tmp[3];
-	std::ofstream File;
-	File.open(_disk);
-	File.write (data, _blockSize);
+	else 	/* si hay un bloque borrado disponible */
+	{
+		char * buffer = readB ( (12+(freeblock*_blockSize)), 2); /* lee la direccion del bloque borrado */
+		short freeblock2 = BytesHandler::to_ulong( BytesHandler::string2bin(std::string(buffer,2), 2) );		/*	convierte la lectura a un short */
+		if (freeblock2 == 0) 	/* solo hay 1 bloque libre */ 
+		{
+			writeB ( BytesHandler::bin2str(BytesHandler::unum2bin(0, 2)), 4, 2);		/* apuntador a bloques borrados = NULL*/
+		}
+		else 	/* hay mas de un bloque libre */
+		{
+			writeB ( BytesHandler::bin2str(BytesHandler::unum2bin(freeblock2, 2)), 4, 2);		/* aumenta apuntador a bloques borrados */
+		}
+		writeA (pData, (12+(freeblock*_blockSize), _blockSize) );		/* escribe los datos en el bloque borrado */
+	}
+	
+	if (pBlockPadre == 0) 	/* no tiene bloque predecesor */
+	{	}
+	else 	/* tiene un bloque predecesor */
+	{
+		//std::string direction = DIRECTION + _disk + TWOPOINTS + std::to_string(freeblock);
+		//write(direction, 12+_blockSize*pBlockPadre, 14);
+	}
+	return freeblock;		/* numero de bloque donde escribio los datos*/
+}
+
+void Lss::writeB (std::string pData, int pPos, int pSize)
+{
+	std::fstream File;
+	File.open( _disk );
+	File.seekp ( pPos, File.beg);
+	
+	File.write (string_2_charArray(pData, pSize), pSize);
 	File.close();
 }
 
-/**
- * escribe en el disco
- * @param pText informacion que escribiremos en el disco
- * @param pBlock bloque sobre el cual escribiremos
- */
-void Lss::write(char* pText, int pBlock)
+char * Lss::readA (int pBlock)
 {
-	write(pText, pBlock, 0, _blockSize);
+	return readB ( (12+(pBlock*_blockSize)), _blockSize );
 }
 
-/**
- * metodo para leer un bloque del disco
- * @param pBlock bloque que se va a leer
- */
-char * Lss::read(int pBlock)
+char * Lss::readB (int pPos, int pSize)
 {
-	read(pBlock, 0, _blockSize);
+	char * buffer = new char [pSize];
+	std::ifstream File;
+	File.open( _disk );
+	File.seekg ( pPos, File.beg);
+	File.read (buffer, pSize);
+	File.close();
+	return buffer;
 }
 
-/**
- * retorna un bloque libre para escribir
- * @return numero del bloque
- */
-int Lss::getFreeBlock()
+short Lss::getFreeBlock()
 {
 	char * buffer = new char[2];
-	buffer = read(4, 2);
-	std::string tmp = BytesHandler::string2bin(std::string(buffer,2), 2);
-	short tmp2 = BytesHandler::to_ulong(tmp);
+	buffer = readB (4, 2);
+	short tmp2 = BytesHandler::to_ulong( BytesHandler::string2bin(std::string(buffer,2), 2) );
 	return tmp2;
+}
+
+short Lss::getLastBlock()
+{
+	char * buffer = new char[2];
+	buffer = readB (6, 2);
+	short tmp2 = BytesHandler::to_ulong( BytesHandler::string2bin(std::string(buffer,2), 2) );
+	return tmp2;	
+}
+
+int Lss::getBlockSize()
+{
+	return _blockSize;
+}
+
+int Lss::getDiskSize()
+{
+	return _size;
 }
 
 std::string Lss::getSecKey(){
 	return _secKey;
 }
 
-
-void Lss::eraseBlock(int pBlock)
-{
-	
-}
-
-/**
- * retorna el tamaño de cada bloque en el disco
- * @return tamaño de cada bloque
- */
-int Lss::getBlockSize()
-{
-	return _blockSize;
-}
-
-/**
- * formatea el disco; borrando los datos y estableciendo un nuevo tamaño de bloque
- * @param pBlockSize nuevo tamaño del bloque 
- */
 void Lss::format(int pBlockSize)
 {
 	
 }
 
-/**
- * escribe en un sector determinado de un bloque
- * @param pText datos que escribir en el bloque
- * @param pBlock numero de bloque
- * @param pOffset posicion dentro del bloque donde hay que escribir
- * @param pSize cantidad de bytes que se escribirán
- */
-void Lss::write(char* pText, int pBlock, int pOffset, int pSize)
+void Lss::eraseBlock(int pBlock)
 {
-	/* abre el archivo */
-	std::fstream File;
-	File.open(_disk);
-	/* mueve el puntero al final para verificar el tamaño del archivo */
-	File.seekp ( 12*(pBlock)+pOffset, File.beg);
-	File.write (pText, pSize);
-	File.close();
-}
-
-/**
- * lee en un sector determinado de un bloque
- * @param pBlock numero de bloque
- * @param pOffset posicion dentro del bloque donde hay que leer
- * @param pSize cantidad de bytes que se escribirán
- * @return caractareres leídos del disco
- */
-char* Lss::read (int pBlock, int pOffset, int pSize)
-{
-	/* arreglo para contener los datos leídos */
-	char * buffer = new char [pSize];
-	/* abre el archivo */
-	std::ifstream file (_disk);
-	/* mueve el puntero desde la posicion inicial hasta la posicion pBlock */
-	file.seekg ( 12*(pBlock)+pOffset, file.beg);
-	/* lee directamente el archivo desde pBlock hasta (pBlock + pBlockSize) */
-	file.read (buffer, pSize);
-	file.close();
-	return buffer;
-}
-
-/**
- * lee cualquier cantidad de caracteres en cualquier posicion del disco
- * @param pPos posicion dentro del disco
- * @param pSize cantidad de caracteres que se van a leer
- * @return datos que leyó del disco
- */
-char * Lss::read(int pPos, int pSize)
-{
-	/* arreglo para contener los datos leídos */
-	char * buffer = new char [pSize];
-	/* abre el archivo */
-	std::ifstream file (_disk);
-	/* mueve el puntero desde la posicion inicial hasta la posicion pBlock */
-	file.seekg ( pPos, file.beg);
-	/* lee directamente el archivo desde pBlock hasta (pBlock + pBlockSize) */
-	file.read (buffer, pSize);
-	file.close();
-	return buffer;
-}
-
-/**
- * escribe cualquier cantidad de caracteres en cualquier posicion del disco
- * @param pPos posicion dentro del disco
- * @param pSize cantidad de caracteres que se van a escribir
- * @param pData datos que se escriben en el disco
- */
-void Lss::write(int pPos, int pSize, char* pData)
-{
-	/* abre el archivo */
-	std::fstream File;
-	File.open(_disk);
-	/* mueve el puntero al final para verificar el tamaño del archivo */
-	File.seekp ( pPos, File.beg);
-	File.write (pData, pSize);
-	File.close();
+	short BloqueLibre = getFreeBlock();		/* numero del primer bloque borrado */
+	//std::cout << BloqueLibre << std::endl;
+	
+	char* tmp = new char[_blockSize];
+	for (int x=0; x<_blockSize; x++) { tmp[x]=0; }
+	
+	if (BloqueLibre == 0)
+	{
+		writeB( BytesHandler::bin2str( BytesHandler::unum2bin(pBlock, 2) ), 4, 2);
+		writeB( tmp, 12+(pBlock*_blockSize), _blockSize);
+	}
+	else
+	{
+		while(true)
+		{
+			char * buffer = new char[2];
+			buffer = readB (12+(BloqueLibre*_blockSize), 2);
+			BloqueLibre = BytesHandler::to_ulong( BytesHandler::string2bin(std::string(buffer,2), 2) );
+			if (BloqueLibre == 0)
+			{
+				writeB( BytesHandler::bin2str( BytesHandler::unum2bin(pBlock, 2) ), 12+(BloqueLibre*_blockSize), 2);
+				writeB( tmp, 12+(pBlock*_blockSize), _blockSize);
+				break;
+			}		
+		}
+	}
 }
 
 
-/* metodos heredados de Comparable */
-
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 		COMPARABLE		 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 bool Lss::eql(Comparable* arg)
 {
