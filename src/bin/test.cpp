@@ -14,6 +14,8 @@
 #include "lssoperations.h"
 #include "lssxml.h"
 
+#include "md5.h"
+
 int main(int argc, char const *argv[])
 {
   std::cout << "Hello, test" << std::endl;
