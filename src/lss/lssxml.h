@@ -9,5 +9,6 @@ public:
 	static void addSecurityKey(std::string pDocumentDirection, int pDiskIndex, std::string pSecurityKey);
 	static std::string getSecurityKey(std::string pDocumentDirection, int pDiskIndex);
 	static std::string getIdDisk(std::string pDocumentDirection, int pDiskIndex);
+	static std::string getClientDisk(std::string pDocumentDirection, int pDiskIndex);
 	static std::string getDiskDates(std::string pDocumentDirection, int pDiskIndex);
 };
