@@ -64,6 +64,18 @@ std::string lssxml::getIdDisk(std::string pDocumentDirection, int pDiskIndex)
 	return value;
 }
 
+std::string lssxml::getClientDisk(std::string pDocumentDirection, int pDiskIndex)
+{
+	parserxml* XMLParser = new parserxml();
+	XMLParser->loadDocument(pDocumentDirection);
+	std::stringstream indexstream;
+	indexstream << pDiskIndex;
+	std::string diskattributedirection = "/disks/disk[" + std::string(indexstream.str()) + "]/@client/data(.)";
+	std::string value = XMLParser->getAnyValue(diskattributedirection);
+	delete XMLParser;
+	return value;
+}
+
 std::string lssxml::getDiskDates(std::string pDocumentDirection, int pDiskIndex)
 {
 	std::string diskdates = getSecurityKey(pDocumentDirection, pDiskIndex) + ":" + getIdDisk(pDocumentDirection,pDiskIndex);
