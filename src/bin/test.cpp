@@ -16,6 +16,8 @@
 
 #include "md5.h"
 
+#include "networkhandler.h"
+
 int main(int argc, char const *argv[])
 {
   std::cout << "Hello, test" << std::endl;
