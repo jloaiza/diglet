@@ -287,6 +287,6 @@ void ServerNetworkHandler::close(int pSocket){
 
 int main(){
 	ServerNetworkHandler* server = new ServerNetworkHandler();
-	server->Run();
+	server->start();
 	return 0;
 }

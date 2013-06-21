@@ -2,7 +2,9 @@
 #define SERVERCONSOLE
 
 #include <thread>
+#include "generalmanager.h"
 
+class GeneralManager;
 
 class ServerConsole{
 public:
@@ -27,9 +29,6 @@ private:
 	bool _onRun;
 	GeneralManager* _manager;
 	std::thread* _thread;
-
-
-
 };
 
 

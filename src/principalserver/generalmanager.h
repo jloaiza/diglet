@@ -33,23 +33,24 @@ public:
 
 private:
 	static GeneralManager* _instance;
+	
 	AVLTree<DiskGroup, std::string>* loadDiskGroups();
 	AVLTree<StorageClient, std::string>* loadClients();
 	AVLTree<Disk, std::string> loadDisks();
 	AVLTree<User, std::string> loadUsers();
 
-	void saveDiskGroups();
-	void saveClients();
+	void saveDiskGroups(); 
+	void saveClients();	
 	void saveDisk();
 	void saveUsers();
 
-	AVLTree<DiskGroup, std::string>* _diskGroups;
-	ServerNetworkHandler* _server;
-	ServerConsole* _console;
-	AVLTree<StorageClient, std::string>* _clientsTree;
-	AVLTree<Session, int>* _sessions;
-	AVLTree<Disk, std::string> _diskTree;
-	AVLTree<User, std::string> _userTree;
+	AVLTree<DiskGroup, std::string>* _diskGroups; 		//Árbol que contiene los grupos de discos
+	ServerNetworkHandler* _server; 						//Server para usuarios finales
+	ServerConsole* _console; 							//Consola del sistema para administración
+	AVLTree<StorageClient, std::string>* _clientsTree; 	//Árbol utilizado para almacenar los clientes a los LSS
+	AVLTree<Session, int>* _sessions;					//Árbol que contiene las sesiones actuales
+	AVLTree<Disk, std::string> _diskTree;				//Árbol que contiene los discos 
+	AVLTree<User, std::string> _userTree;				//Árbol con que contiene a los usuarios
 };
 
 #endif /* GENERALMANAGER */

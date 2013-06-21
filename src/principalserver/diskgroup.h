@@ -54,6 +54,8 @@ public:
 
 	void setBlockSize(int pSize){
 		_blockSize = pSize;
+		_functional = false;
+		_working = false;
 	}
 
 	bool isWorking() const {
@@ -63,9 +65,6 @@ public:
 	bool isFunctional(){
 		return _functional;
 	}
-
-
-
 
 protected:
 	std::string _id;

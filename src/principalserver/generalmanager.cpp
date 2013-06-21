@@ -16,6 +16,7 @@ GeneralManager(){
 	_server = new ServerNetworkHandler(this);
 	_console = new ServerConsole(this);
 	_sessions = new AVLTree<Session, int>();
+	_users = new AVLTree<User, std::string>;
 	
 }
 
@@ -46,13 +47,13 @@ int GeneralManager::newSession(std::string pUser, std::string pDiskGroupID){
 }
 
 void GeneralManager::closeSession(int pSessionID){
-	Session* session = _sessions->erase(pSessionID)
+	Session* session = _sessions->erase(pSessionID);
 	delete session;
 }
 
 void GeneralManager::defineDiskGroup(int pRAID, int pBlockSize, std::string pID){
 	if (_diskGroups->search(pID) != 0){
-		std::cout<<"Error. Ya existe un DiskGroup con el identificador '" << pID << "'."<<std::endl
+		std::cout<<"Error. Ya existe un DiskGroup con el identificador '" << pID << "'."<<std::endl;
 	} else {
 		switch (pRAID){
 			case DiskGroup::NO_RAID:
@@ -148,11 +149,64 @@ void GeneralManager::stopDiskGroup(std::string pDiskGroupID){
 	}
 }
 
+AVLTree<DiskGroup, std::string>* GeneralManager::loadDiskGroups(){
+	std::string raidType = DiskGroupsXML::getDiskGroupRaid("~/diglet/raidb/diskgroups.xml", 1);
+	for (int i = 1; raidType != ""; i++){
+
+		//Obtener los atributos del diskgroup
+		std::string id = DiskGroupsXML::getDiskGroupId("~/diglet/raidb/diskgroups.xml", i);
+		int blockSize = std::stoi( DiskGroupsXML::getDiskGroupBlockSize("~/diglet/raidb/diskgroups.xml", i) );
+		int maxSize = std::stoi( DiskGroupsXML::getDiskGroupMaxSize("~/diglet/raidb/diskgroups.xml", i) );
+		bool functional = DiskGroupsXML::getDiskGroupFunctional("~/diglet/raidb/diskgroups.xml", i) == "true"?true:false;
+		bool working = DiskGroupsXML::getDiskGroupWorking("~/diglet/raidb/diskgroups.xml", i) == "true"?true:false;
+
+		//Inicializar el diskgroup
+		DiskGroup* diskGroup = 0;
+		if (raidType == std::to_string(DiskGroup::NO_RAID)){
+			diskGroup = new NoRAID(id, blockSize, maxSize, functional, working);
+		} else if (raidType == std::to_string(DiskGroup::RAID0)){
+			diskGroup = new  RAID0(id, blockSize, maxSize, functional, working);
+		} else if (raidType == std::to_string(DiskGroup::RAID1)){
+			diskGroup = new  RAID1(id, blockSize, maxSize, functional, working);
+		} else if (raidType == std::to_string(DiskGroup::RAID5)){
+			diskGroup = new  RAID5(id, blockSize, maxSize, functional, working);
+		}
+
+		//Cargar discos
+		std::string id = DiskGroupsXML::getDiskGroupDiskId("~/diglet/raidb/diskgroups.xml", i, 0);
+		for (int j = 1; id != ""; j++){
+			StorageClient* client = _clientsTree->search( Tokenizer::getCommandSpace(id, 0, ':') );
+			Disk* disk = client->getDisk( std::stoi(Tokenizer::getCommandSpace(id, 1, ':')) );
+			diskGroup->addDisk(disk);
+			id = DiskGroupsXML::getDiskGroupDiskId("~/diglet/raidb/diskgroups.xml", i, j+1);
+		}
+
+		_diskTree->insert(diskGroup);
+		std::cout<<"Diskgroup '"<<id<<"' añadido con éxito"<<std::endl;
+
+		raidType = DiskGroupsXML::getDiskGroupRaid("~/diglet/raidb/diskgroups.xml", i+1);
+
+	}
+}
+
+AVLTree<StorageClient, std::string>* GeneralManager::loadClients(){
+	
+}
+
+AVLTree<Disk, std::string> loadDisks();
+AVLTree<User, std::string> loadUsers();
+
+
 void GeneralManager::startSystem(){
+	/* CUIDADO EL ORDEN DE INICIALIZACIÓN DEBE SER:
+		- CLIENTES
+		- DISCOS
+		- DISKGROUPS
+	*/
 	_clientsTree = loadClients();
 	_diskTree = loadDisks();
 	_diskGroups = loadDiskGroups();
-	_users = loadUsers();
+	_userTree = loadUsers();
 
 	_console->start();
 	FALTA

@@ -46,6 +46,12 @@ class NetworkHandler
          * Método para cerrar el server por completo.
          */
         void closeServer();
+
+        /**
+         * Método que devuelve la ip real del cliente actual.
+         * @return: IP del cliente.
+         */
+        std::string getClientIP();
     protected:
         /**
          * Método que se implementará dentro de cualquier clase que herede.
@@ -101,13 +107,6 @@ class NetworkHandler
         * Verificar si algun cliente ha pedido la desconección.
         */
         void verifyDeadClient(); 
-        
-        /**
-         * Método que devuelve la ip real del cliente actual.
-         * @return: IP del cliente.
-         */
-        
-        std::string getClientIP();
 
         /* Conjunto de parametros de red a vigilar */
 
