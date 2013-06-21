@@ -1,4 +1,4 @@
-# FIND_PACKAGE(OpenCV REQUIRED)
+FIND_PACKAGE(Qt5Core REQUIRED)
 
 SET(LSS_PROVIDER_SOURCES
   lssprovider.cpp)
@@ -20,8 +20,7 @@ ADD_EXECUTABLE(test ${TEST_SOURCES})
 
 TARGET_LINK_LIBRARIES(test binaryoperations)
 TARGET_LINK_LIBRARIES(test clientcpp)
-# TARGET_LINK_LIBRARIES(main map)
-# TARGET_LINK_LIBRARIES(main algorithms)
+TARGET_LINK_LIBRARIES(test lss)
 
-# Change the name of the final executable
-# SET_TARGET_PROPERTIES(main PROPERTIES_OUTPUT_NAME newname)
+QT5_USE_MODULES(test Xml)
+QT5_USE_MODULES(test XmlPatterns)
