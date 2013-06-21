@@ -12,8 +12,7 @@ private:
 	DataBuffer* _outBuffer;
 	bool _Functional;
 	bool _Working
-	
-	
+		
 	SimpleListLss * _diskList;			// *** CUIDADO ***
 		
 public:
