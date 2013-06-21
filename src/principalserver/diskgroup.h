@@ -3,24 +3,23 @@
 
 #include "registerspace.h"
 #include "datanode.h"
-//#include "../structures/ntree/ifile.h"
-//#include "../structures/ntree/ntreenode.h"
 #include "disk.h"
-#include "../structures/doublelinkedlist/doublelinkedlist.h"
+#include "doublelinkedlist/doublelinkedlist.h"
 
 #include <string>
 
 class iFile;
 class nTreeNode;
+
 class DiskGroup 
 {
 	
 public:
 
-	const int NO_RAID = -1;
-	const int RAID0 = 0;
-	const int RAID1 = 1;
-	const int RAID5 = 5;
+	static const int NO_RAID = -1;
+	static const int RAID0 = 0;
+	static const int RAID1 = 1;
+	static const int RAID5 = 5;
 
 	bool operator==(std::string& pID);
 	bool operator>(std::string& pID);

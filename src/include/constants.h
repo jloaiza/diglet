@@ -44,4 +44,19 @@ const int S42 = 10;
 const int S43 = 15;
 const int S44 = 21;
 
+namespace PS
+{
+  
+
+int INT_TYPE    = 0;
+int LONG_TYPE   = 1;
+int STRING_TYPE = 2;
+int DOUBLE_TYPE = 3;
+int SHORT_TYPE  = 4;
+int SEEK_POS    = -1;
+int NO_SESSION  = -1;
+
+}
+
+
 #endif // CONSTANTS_H

@@ -13,7 +13,7 @@ private:
 	RegisterSpace * _next;
 public:
 	RegisterSpace(std::string pName, int pSize, int pType);
-	char* getName();
+	std::string getName();
 	int getSize();
 	int getType();
 	RegisterSpace * getNext();

@@ -1,4 +1,5 @@
 #include "disk.h"
+#include "storageclient.h"
 
 bool Disk::operator==(std::string& pDisk){
 	std::string diskID = _storageClient->getIP() + std::to_string(_id);
