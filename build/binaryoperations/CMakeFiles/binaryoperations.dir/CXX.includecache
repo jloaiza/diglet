@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/arayaq/castor/diglet/src/binaryoperations/baseconverter.cpp
+baseconverter.h
+/home/arayaq/castor/diglet/src/binaryoperations/baseconverter.h
+cstdlib
+-
+cmath
+-
+iostream
+-
+
+/home/arayaq/castor/diglet/src/binaryoperations/baseconverter.h
+string
+-
+
+/home/arayaq/castor/diglet/src/binaryoperations/byteshandler.cpp
+byteshandler.h
+/home/arayaq/castor/diglet/src/binaryoperations/byteshandler.h
+iostream
+-
+
+/home/arayaq/castor/diglet/src/binaryoperations/byteshandler.h
+string
+-
+baseconverter.h
+/home/arayaq/castor/diglet/src/binaryoperations/baseconverter.h
+

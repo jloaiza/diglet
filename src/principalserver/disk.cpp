@@ -1,4 +1,5 @@
 #include "disk.h"
+#include "storageclient.h"
 
 bool Disk::operator==(std::string& pDisk){
 	return getDiskDirection() == pDisk;

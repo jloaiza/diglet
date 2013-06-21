@@ -1,0 +1,1 @@
+/usr/bin/c++       CMakeFiles/serverprovider.dir/serverprovider.cpp.o CMakeFiles/serverprovider.dir/serverprovider_automoc.cpp.o  -o serverprovider -rdynamic 

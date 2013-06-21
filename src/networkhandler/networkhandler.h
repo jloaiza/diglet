@@ -1,4 +1,9 @@
 
+#ifndef NETWORK_HANDLER
+#define NETWORK_HANDLER 
+
+
+
 #include <fcntl.h>
 #include <string>
 #include <string.h>
@@ -137,3 +142,4 @@ class NetworkHandler
         int _exitCode;
 };
 
+#endif

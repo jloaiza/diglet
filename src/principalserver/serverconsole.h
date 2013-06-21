@@ -1,3 +1,4 @@
+
 #ifndef SERVERCONSOLE
 #define SERVERCONSOLE
 
@@ -6,9 +7,12 @@
 
 class GeneralManager;
 
-class ServerConsole{
+class ServerConsole
+{
+
 public:
-	ServerConsole(GeneralManager* pManager){
+	ServerConsole(GeneralManager* pManager)
+	{
 		_manager = pManager;
 		_onRun = true;
 	}
@@ -30,7 +34,5 @@ private:
 	GeneralManager* _manager;
 	std::thread* _thread;
 };
-
-
 
 #endif /* SERVERCONSOLE */

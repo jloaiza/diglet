@@ -3,15 +3,14 @@
 
 #include "registerspace.h"
 #include "datanode.h"
-//#include "../structures/ntree/ifile.h"
-//#include "../structures/ntree/ntreenode.h"
 #include "disk.h"
-#include "../structures/doublelinkedlist/doublelinkedlist.h"
+#include "doublelinkedlist/doublelinkedlist.h"
 
 #include <string>
 
 class iFile;
 class nTreeNode;
+
 class DiskGroup 
 {
 	

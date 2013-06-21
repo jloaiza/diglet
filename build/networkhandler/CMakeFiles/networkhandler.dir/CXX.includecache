@@ -1,0 +1,46 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/arayaq/castor/diglet/src/networkhandler/networkhandler.cpp
+networkhandler.h
+/home/arayaq/castor/diglet/src/networkhandler/networkhandler.h
+
+/home/arayaq/castor/diglet/src/networkhandler/networkhandler.h
+fcntl.h
+-
+string
+-
+string.h
+-
+stdlib.h
+-
+errno.h
+-
+stdio.h
+-
+netinet/in.h
+-
+resolv.h
+-
+sys/socket.h
+-
+sys/types.h
+-
+sys/wait.h
+-
+arpa/inet.h
+-
+unistd.h
+-
+pthread.h
+-
+iostream
+-
+thread
+-
+
