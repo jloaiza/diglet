@@ -19,7 +19,7 @@ ADD_EXECUTABLE(serverprovider ${SERVER_PROVIDER_SOURCES})
 ADD_EXECUTABLE(test ${TEST_SOURCES})
 
 TARGET_LINK_LIBRARIES(test binaryoperations)
-# TARGET_LINK_LIBRARIES(main simplestructures)
+TARGET_LINK_LIBRARIES(test clientcpp)
 # TARGET_LINK_LIBRARIES(main map)
 # TARGET_LINK_LIBRARIES(main algorithms)
 
