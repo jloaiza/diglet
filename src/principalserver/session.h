@@ -18,9 +18,10 @@ private:
 	std::string _user;
 
 public:
-	Session(std::string pUser);
+	Session(std::string pUser, DiskGroup* pDisk);
 	
 	bool operator==(int pID);
+	bool operator!=(int pID);
 	bool operator<(int pID);
 	bool operator<=(int pID);
 	bool operator>(int pID);
@@ -40,10 +41,6 @@ public:
 
 	DiskGroup* getDiskGroup() const {
 		return _disk;
-	}
-
-	void setDiskGroup(DiskGroup* pDiskGroup){
-		_disk = pDiskGroup;
 	}
 
 	nTreeNode* getCurrentNode() const {

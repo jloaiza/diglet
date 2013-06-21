@@ -19,6 +19,7 @@ public:
 	static std::string cd(int pSessionID, std::string pPath);
 	static std::string rm(int pSessionID, std::string pPath);
 	static std::string moveSeek(int pSessionID, int pSeekPos);
+	static std::string mkdir(int pSessionID, std::string pName);
 	static std::string touch(int pSessionID, std::string pPath, std::string pFormat);
 	static int connect(std::string pUser, std::string pSecKey, std::string pDisk);
 	static int adduser(std::string pUser, std::string pSecKey, std::string pDisk);

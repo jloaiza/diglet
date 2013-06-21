@@ -7,12 +7,13 @@
 #include "constants.h"
 #include "../structures/ntree/ntreenode.h"
 #include "../tokenizer/tokenizer.h"
+#include "../xml/usersxml.h"
 
 #include <iostream>
 #include <exception>
 
 bool ServerOperations::checkUser(std::string pUser, std::string pKey){
-
+	
 }
 
 std::string ServerOperations::toCSV(DataNode* pData, RegisterSpace* pFormat){
@@ -106,9 +107,6 @@ RegisterSpace* ServerOperations::getFormat(std::string pFormat){
 			} else {
 				splitting = false;
 			}
-				
-
-		
 		}
 	} catch (std::exception e){
 		return 0;
@@ -202,21 +200,34 @@ std::string ServerOperations::touch(int pSessionID, std::string pPath, std::stri
 	}
 	
 	RegisterSpace* format = getFormat(pFormat);
-	session->setCurrentNode(diskgroup->createFile(fileName, format, session->getUser()));
+	session->setCurrentNode(diskgroup->createFile(cdNode, fileName, format, session->getUser()));
 	session->setCurrentFormat(format);
 	session->setSeek(0);
 	return "";
 }
 
+std::string ServerOperations::mkdir(int pSessionID, std::string pName){
+	GeneralManager* manager = GeneralManager::getInstance();
+	Session* session = manager->getSession(pSessionID);
+	if (session == 0){
+		return "*Error. Sesión no encontrada\n";
+	}
+	DiskGroup* diskgroup = session->getDiskGroup();
+	nTreeNode* currentNode = session->getCurrentNode();
+
+	diskgroup->createDir(currentNode, pName, session->getUser());
+	return "";
+}
+
 int ServerOperations::connect(std::string pUser, std::string pSecKey, std::string pDisk){
-	SEGURIDAD;
+	SEGURIDAD
 
 	GeneralManager* manager = GeneralManager::getInstance();
 	return manager->newSession(pUser, pDisk);
 }
 
 int ServerOperations::adduser(std::string pUser, std::string pSecKey, std::string pDisk){
-	AGREGAR;
+	AGREGAR
 
 	GeneralManager* manager = GeneralManager::getInstance();
 	return manager->newSession(pUser, pDisk);
@@ -349,9 +360,10 @@ std::string ServerOperations::close(int* pSessionID){
 		session->setSeek(0);
 		return "";
 	} else {
+		std::string user = session->getUser();
 		manager->closeSession(*pSessionID);
 		*pSessionID = -1;
-		return "See ya, " + session->getUser();
+		return "See ya, " + user + ".";
 	}
 }
 

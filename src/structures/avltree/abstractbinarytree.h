@@ -52,8 +52,8 @@ public:
 
 //---------------------------------------Declaración de métodos---------------------------------
 
-template <class t>
-void AbstractBinaryTree<t>::preOrderTraversal(TreeNode<t>* pNode){
+template <class t, typename c>
+void AbstractBinaryTree<t, c>::preOrderTraversal(TreeNode<t>* pNode){
 	if (pNode != 0){
 		cout<<*pNode->getData()<<endl;
 		preOrderTraversal(pNode->getLeftChild());
@@ -61,8 +61,8 @@ void AbstractBinaryTree<t>::preOrderTraversal(TreeNode<t>* pNode){
 	}
 }
 
-template <class t>
-void AbstractBinaryTree<t>::inOrderTraversal(TreeNode<t>* pNode){
+template <class t, typename c>
+void AbstractBinaryTree<t, c>::inOrderTraversal(TreeNode<t>* pNode){
 	if (pNode != 0){
 		inOrderTraversal(pNode->getLeftChild());
 		cout<<*pNode->getData()<<endl;
@@ -70,8 +70,8 @@ void AbstractBinaryTree<t>::inOrderTraversal(TreeNode<t>* pNode){
 	}
 }
 
-template <class t>
-void AbstractBinaryTree<t>::postOrderTraversal(TreeNode<t>* pNode){
+template <class t, typename c>
+void AbstractBinaryTree<t, c>::postOrderTraversal(TreeNode<t>* pNode){
 	if (pNode != 0){
 		postOrderTraversal(pNode->getLeftChild());
 		postOrderTraversal(pNode->getRightChild());
@@ -79,8 +79,8 @@ void AbstractBinaryTree<t>::postOrderTraversal(TreeNode<t>* pNode){
 	}
 }
 
-template <class t>
-void AbstractBinaryTree<t>::printTree(int pTraversal){
+template <class t, typename c>
+void AbstractBinaryTree<t, c>::printTree(int pTraversal){
 	if (pTraversal == IN_ORDER_TRAVERSAL){
 		inOrderTraversal(_root);
 	} else if (pTraversal == PRE_ORDER_TRAVERSAL){
@@ -92,8 +92,8 @@ void AbstractBinaryTree<t>::printTree(int pTraversal){
 	}
 }
 
-template <class t>
-TreeNode<t>* AbstractBinaryTree<t>::insertAux(t* pData){
+template <class t, typename c>
+TreeNode<t>* AbstractBinaryTree<t, c>::insertAux(t* pData){
 	TreeNode<t>* newNode = new TreeNode<t>(pData);
 	if (_root == 0){
 		_root = newNode;
@@ -126,8 +126,8 @@ TreeNode<t>* AbstractBinaryTree<t>::insertAux(t* pData){
 	return newNode;
 }
 
-template <class t>
-TreeNode<t>* AbstractBinaryTree<t>::searchAux(c* pData) const{
+template <class t, typename c>
+TreeNode<t>* AbstractBinaryTree<t, c>::searchAux(c* pData) const{
 	TreeNode<t>* iNode = _root;
 	while (iNode != 0){
 		if (*iNode->getData() > *pData){
@@ -141,8 +141,8 @@ TreeNode<t>* AbstractBinaryTree<t>::searchAux(c* pData) const{
 	return 0;
 }
 
-template <class t>
-TreeNode<t>* AbstractBinaryTree<t>::eraseAux(c* pData){
+template <class t, typename c>
+TreeNode<t>* AbstractBinaryTree<t, c>::eraseAux(c* pData){
 	TreeNode<t>* toErase = searchAux(pData);
 	if (toErase != 0){
 		std::cout<<"founded"<<std::endl;
@@ -160,8 +160,8 @@ TreeNode<t>* AbstractBinaryTree<t>::eraseAux(c* pData){
 	return toErase;
 }
 
-template <class t>
-TreeNode<t>* AbstractBinaryTree<t>::findGreater(TreeNode<t>* pNode) const{
+template <class t, typename c>
+TreeNode<t>* AbstractBinaryTree<t, c>::findGreater(TreeNode<t>* pNode) const{
 	pNode = pNode->getRightChild();
 	while (pNode->getLeftChild() != 0){
 		pNode = pNode->getLeftChild();
@@ -169,8 +169,8 @@ TreeNode<t>* AbstractBinaryTree<t>::findGreater(TreeNode<t>* pNode) const{
 	return pNode;
 }
 
-template <class t>
-void AbstractBinaryTree<t>::eraseLeaf(TreeNode<t>* pNode){
+template <class t, typename c>
+void AbstractBinaryTree<t, c>::eraseLeaf(TreeNode<t>* pNode){
 	if (pNode->isLeftChild()){
 		pNode->getParent()->setLeftChild(0);
 	} else if (pNode->isRightChild()) {
@@ -180,8 +180,8 @@ void AbstractBinaryTree<t>::eraseLeaf(TreeNode<t>* pNode){
 	}
 }
 
-template <class t>
-void AbstractBinaryTree<t>::eraseWithNoLeft(TreeNode<t>* pNode){
+template <class t, typename c>
+void AbstractBinaryTree<t, c>::eraseWithNoLeft(TreeNode<t>* pNode){
 
 	if (pNode->isLeftChild()){
 		pNode->getParent()->setLeftChild(pNode->getRightChild());
@@ -197,8 +197,8 @@ void AbstractBinaryTree<t>::eraseWithNoLeft(TreeNode<t>* pNode){
 	pNode->setParent(pNode->getRightChild());
 }
 
-template <class t>
-void AbstractBinaryTree<t>::eraseWithNoRight(TreeNode<t>* pNode){
+template <class t, typename c>
+void AbstractBinaryTree<t, c>::eraseWithNoRight(TreeNode<t>* pNode){
 	if (pNode->isLeftChild()){
 		pNode->getParent()->setLeftChild(pNode->getLeftChild());
 	} else if (pNode->isRightChild()) {
@@ -211,10 +211,9 @@ void AbstractBinaryTree<t>::eraseWithNoRight(TreeNode<t>* pNode){
 	pNode->setParent(pNode->getLeftChild());
 }
 
-template <class t>
-void AbstractBinaryTree<t>::eraseWithChilds(TreeNode<t>* pNode){
+template <class t, typename c>
+void AbstractBinaryTree<t, c>::eraseWithChilds(TreeNode<t>* pNode){
 	TreeNode<t>* replace = findGreater(pNode);
-	eraseLeaf(replace);
 
 	//Set replace atributtes
 
@@ -222,6 +221,12 @@ void AbstractBinaryTree<t>::eraseWithChilds(TreeNode<t>* pNode){
 	replace->getLeftChild()->setParent(replace);
 
 	if (replace->getParent() != pNode){
+
+		replace->getParent()->setLeftChild(replace->getRightChild());
+		if (replace->getRightChild() != 0){
+			replace->getRightChild()->setParent(replace->getParent());
+		}
+
 		replace->setRightChild(pNode->getRightChild());
 		replace->getRightChild()->setParent(replace);
 	}
@@ -241,8 +246,8 @@ void AbstractBinaryTree<t>::eraseWithChilds(TreeNode<t>* pNode){
 	pNode->setParent(replace);
 }
 
-template <class t>
-int AbstractBinaryTree<t>::height(TreeNode<t>* pNode) const{
+template <class t, typename c>
+int AbstractBinaryTree<t, c>::height(TreeNode<t>* pNode) const{
 	if (pNode == 0){
 		return 0;
 	} else {
@@ -252,8 +257,8 @@ int AbstractBinaryTree<t>::height(TreeNode<t>* pNode) const{
 	}
 }
 
-template <class t>
-void AbstractBinaryTree<t>::leftLeftRotation(TreeNode<t>* pNode){
+template <class t, typename c>
+void AbstractBinaryTree<t, c>::leftLeftRotation(TreeNode<t>* pNode){
 
 	pNode->getParent()->setRightChild(pNode->getLeftChild());
 
@@ -275,8 +280,8 @@ void AbstractBinaryTree<t>::leftLeftRotation(TreeNode<t>* pNode){
 	pNode->setParent(nextParent);
 }
 
-template <class t>
-void AbstractBinaryTree<t>::rightRightRotation(TreeNode<t>* pNode){
+template <class t, typename c>
+void AbstractBinaryTree<t, c>::rightRightRotation(TreeNode<t>* pNode){
 
 	pNode->getParent()->setLeftChild(pNode->getRightChild());
 

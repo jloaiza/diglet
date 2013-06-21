@@ -26,6 +26,7 @@ private:
 	void cd(std::string pParameters, int pSocket);
 	void rm(std::string pParameters, int pSocket);
 	void touch(std::string pParameters, int pSocket);
+	void mkdir(std::string pParameters, int pSocket);
 	void connect(std::string pParameters, int pSocket);
 	void adduser(std::string pParameters, int pSocket);
 	void openfile(std::string pParameters, int pSocket);

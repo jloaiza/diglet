@@ -30,6 +30,9 @@ void ServerNetworkHandler::inMessage(std::string pMessage, int pSocket){
 		} else if (command == "connect"){
 			connect(param, pSocket);
 
+		} else if (command == "mkdir"){
+			mkdir(param, pSocket);
+
 		} else if (command == "adduser"){
 			adduser(param, pSocket);
 
@@ -66,10 +69,6 @@ void ServerNetworkHandler::inMessage(std::string pMessage, int pSocket){
 
 		} else if (command == "close"){
 			close(pSocket);
-		
-		} else if (command == "disconnect"){
-			//zczxc
-			
 		} else if (command == "consoleMode"){
 			consoleMode(param, pSocket);
 		} else {
@@ -103,6 +102,15 @@ void ServerNetworkHandler::consoleUI(int pSocket){
 void ServerNetworkHandler::outMessageValidate(std::string pMessage, int pSocket){
 	if (pMessage != ""){
 		outMessage(pMessage, pSocket);
+	}
+}
+
+void ServerNetworkHandler::mkdir(std::string pParameters, int pSocket){
+	if (pParameters == ""){
+		outMessage("?Error: El comando 'get' espera un parametro\n", pSocket);
+	} else {
+		std::string name = Tokenizer::getCommandSpace(pParameters, 1);
+		outMessageValidate(ServerOperations::mkdir(_sessionID, name), pSocket);
 	}
 }
 
@@ -279,6 +287,6 @@ void ServerNetworkHandler::close(int pSocket){
 
 int main(){
 	ServerNetworkHandler* server = new ServerNetworkHandler();
-	server->Run();
+	server->start();
 	return 0;
 }
