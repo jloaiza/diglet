@@ -27,6 +27,13 @@ public:
 	bool operator>(int pID);
 	bool operator>=(int pID);
 
+	bool operator==(Session& pSession);
+	bool operator!=(Session& pSession);
+	bool operator<(Session& pSession);
+	bool operator<=(Session& pSession);
+	bool operator>(Session& pSession);
+	bool operator>=(Session& pSession);
+
 	int getSessionID() const{
 		return _sessionID;
 	}
@@ -62,7 +69,6 @@ public:
 	std::string getUser() const{
 		return _user;
 	}
-
 };
 
 

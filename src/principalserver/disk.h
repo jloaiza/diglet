@@ -9,6 +9,7 @@ class Disk{
 private:
 	StorageClient* _storageClient;
 	int _id;
+	std::string _secKey;
 
 public:
 	bool operator==(std::string& pDisk);
@@ -17,6 +18,23 @@ public:
 	bool operator>=(std::string& pDisk);
 	bool operator<(std::string& pDisk);
 	bool operator<=(std::string& pDisk);
+
+	bool operator==(Disk& pDisk);
+	bool operator!=(Disk& pDisk);
+	bool operator>(Disk& pDisk);
+	bool operator>=(Disk& pDisk);
+	bool operator<(Disk& pDisk);
+	bool operator<=(Disk& pDisk);
+
+	Disk(StorageClient* pClient, int pID, std::string pSecKey);
+
+	int getDiskID() const {
+		return _id;
+	}
+
+	int getDiskDirection() const {
+		return _storageClient->getIP() + ":" + _id;
+	}
 
 	bool isAlive();
 	std::string readBlock(int pBlock);

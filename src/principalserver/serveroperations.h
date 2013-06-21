@@ -8,14 +8,34 @@
 class ServerOperations{
 private:
 
+	/**
+	* Convert data to CSV.
+	*
+	* @param pData Nodes that conteins the information
+	* @param pFormat Format of the information
+	**/
 	static std::string toCSV(DataNode* pData, RegisterSpace* pFormat);
-	static bool checkUser(std::string pUser, std::string pKey);
+
+	/**
+	* Gets the register-format representation needed by the program from an entry message
+	*
+	* @param pFormat string with format description
+	* @return RegisterSpace. A kind of list node that conteins the format information
+	**/
 	static RegisterSpace* getFormat(std::string pFormat);
+
+	/**
+	* Gets the data representation need by the program from a message.
+	*
+	* @param pData string that conteins the data
+	* @param pFormat register-format to set the data
+	**/
 	static DataNode* getData(std::string pData, RegisterSpace* pFormat);
 
 public:
 	
 	static std::string get(int pSessionID, std::string pPath);
+
 	static std::string cd(int pSessionID, std::string pPath);
 	static std::string rm(int pSessionID, std::string pPath);
 	static std::string moveSeek(int pSessionID, int pSeekPos);

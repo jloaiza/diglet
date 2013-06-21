@@ -12,10 +12,6 @@
 #include <iostream>
 #include <exception>
 
-bool ServerOperations::checkUser(std::string pUser, std::string pKey){
-	
-}
-
 std::string ServerOperations::toCSV(DataNode* pData, RegisterSpace* pFormat){
 	std::string data;
 	DataNode* iNode = pData;
@@ -32,6 +28,7 @@ std::string ServerOperations::toCSV(DataNode* pData, RegisterSpace* pFormat){
 		}
 		iNode = pData->getNext();
 	}
+	
 	data = data.substr(1, data.length()-1);
 
 	int length;
@@ -105,7 +102,7 @@ RegisterSpace* ServerOperations::getFormat(std::string pFormat){
 				buffer.addSpace(name, size, type);
 
 			} else {
-				splitting = false;
+				splitting connec= false;
 			}
 		}
 	} catch (std::exception e){
@@ -153,9 +150,11 @@ std::string ServerOperations::rm(int pSessionID, std::string pPath){
 	}
 	GeneralManager* manager = GeneralManager::getInstance();
 	Session* session = manager->getSession(pSessionID);
+
 	if (session == 0){
 		return "*Error. Sesión no encontrada\n";
 	}
+	
 	DiskGroup* diskgroup = session->getDiskGroup();
 	nTreeNode* currentNode = session->getCurrentNode();
 	nTreeNode* rmNode = diskgroup->getNode(pPath, currentNode);
@@ -220,16 +219,19 @@ std::string ServerOperations::mkdir(int pSessionID, std::string pName){
 }
 
 int ServerOperations::connect(std::string pUser, std::string pSecKey, std::string pDisk){
-	SEGURIDAD
-
 	GeneralManager* manager = GeneralManager::getInstance();
+	if (manager->getUser(pUser)->getSecurityKey() != pSecKey){
+		return NO_SESSION;
+	}
 	return manager->newSession(pUser, pDisk);
 }
 
 int ServerOperations::adduser(std::string pUser, std::string pSecKey, std::string pDisk){
-	AGREGAR
-
 	GeneralManager* manager = GeneralManager::getInstance();
+	if (manager->getUser(pUser) != 0){
+		return NO_SESSION;
+	}
+	manager->addUser(pUser, pSecKey);
 	return manager->newSession(pUser, pDisk);
 }
 
