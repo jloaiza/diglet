@@ -190,7 +190,7 @@ AVLTree<DiskGroup, std::string>* GeneralManager::loadDiskGroups(){
 }
 
 AVLTree<StorageClient, std::string>* GeneralManager::loadClients(){
-	
+	std::string client = 
 }
 
 AVLTree<Disk, std::string> loadDisks();
