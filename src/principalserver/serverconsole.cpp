@@ -1,22 +1,35 @@
+#include "serverconsole.h"
+
 #include <iostream>
 #include <string>
 #include "info.h"
 
-void title(){
+static void LssConsole::callRun(ServerConsole* pConsole){
+	pConsole->run();
+}
+
+void ServerConsole::start(){
+	_thread = new std::thread(callRun, this);
+}
+
+void ServerConsole::stop(){
+	_onRun = false;
+}
+
+void ServerConsole::title(){
 	std::cout << lssmenuL << "\n" << lssmenuS << "\n" << lssmenu3 << "\n" << lssmenu4 << "\n";
 	std::cout << lssmenu5 << "\n" << lssmenu6 << "\n" << lssmenu7 << "\n" << lssmenu8 << "\n";
 	std::cout << lssmenu9 << "\n" << lssmenuS << "\n" << lssmenuL << "\n";
 }
 
-void createDiskGroup()
+void ServerConsole::createDiskGroup()
 {
 	std::cout << lssmenuL << "\n" << lssmenuS << "\n" << lssmenu3 << "\n" << lssmenu10 << "\n";
 	std::cout << lssmenu11 << "\n" << lssmenuS << "\n" << lssmenuL << "\n";
 }
 
-int main(int argc, char **argv)
-{
-	
+void ServerConsole::run()
+{	
 	title();
 	
 	while (true)

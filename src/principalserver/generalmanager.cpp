@@ -13,8 +13,8 @@ GeneralManager(){
 	_diskGroups = 0;
 	_users = 0;
 
-	_server = new ServerNetworkHandler();
-	_console = new ServerConsole();
+	_server = new ServerNetworkHandler(this);
+	_console = new ServerConsole(this);
 	_sessions = new AVLTree<Session, int>();
 	
 }
@@ -76,8 +76,8 @@ void GeneralManager::defineDiskGroup(int pRAID, int pBlockSize, std::string pID)
 				break;
 		}
 	}
-		
 }
+
 void GeneralManager::addLSS(std::string pDiskGroupID, std::string pIPToConnect, int pPort, short pDiskID, std::string pSecurityKey, int pPort){
 	std::string diskID = pIPToConnect + ":" + std::to_string(pDiskID);
 	if (_diskTree->search(diskID) != 0){
@@ -124,6 +124,7 @@ void GeneralManager::startDiskGroup(std::string pDiskGroupID){
 			char format = 'n';
 			std::cout<<"El DiskGroup ha sufrido cambios importantes y se debe formatear, ¿desea continuar? (y/n): ";
 			std::cin>>format;
+			std::cout<<std::endl;
 			if (format == 'y'){
 				diskGroup->format();
 				diskGroup->startDiskGroup();
@@ -140,6 +141,7 @@ void GeneralManager::stopDiskGroup(std::string pDiskGroupID){
 		char stop = 'n';
 		std::cout<<"Esta operación deshablitará el DiskGroup y no podrá ser utilizado hasta que se inicie de nuevo, ¿Desea continuar? (y/n): ";
 		std::cin>>stop;
+		std::cout<<std::endl;
 		if (stop == 'y'){
 			diskGroup->stopDiskGroup();
 		}
@@ -152,8 +154,8 @@ void GeneralManager::startSystem(){
 	_diskGroups = loadDiskGroups();
 	_users = loadUsers();
 
+	_console->start();
 	FALTA
-
 }
 
 void GeneralManager::stopSystem(){

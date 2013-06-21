@@ -8,7 +8,6 @@ class LssManager;
 
 class LssConsole{
 public:
-	LssManager* _diskManager;
 
 	LssConsole(LssManager* pDiskManager){
 		_diskManager = pDiskManager;
@@ -28,6 +27,7 @@ private:
 	void title();
 	bool _onRun;
 	std::thread* _thread;
+	LssManager* _diskManager;
 };
 
 

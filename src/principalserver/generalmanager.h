@@ -4,12 +4,12 @@
 #include "diskgroup.h"
 #include "../structures/avltree/avltree.h"
 #include "servernetworkhandler.h"
+#include "serverconsole.h"
 #include "session.h"
 #include "disk.h"
 
 #include <string>
 
-class ServerConsole;
 class StorageClient;
 
 class GeneralManager{
