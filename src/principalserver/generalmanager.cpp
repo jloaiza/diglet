@@ -1,45 +1,39 @@
 #include "generalmanager.h"
+#include "constants.h"
 
-GeneralManager(){
-	/* CUIDADO EL ORDEN DE INICIALIZACIÓN DEBE SER:
-		- CLIENTES
-		- DISCOS
-		- DISKGROUPS
-	*/
+GeneralManager::GeneralManager(){
 	_instance = this;
 
-	_clientsTree = 0;
-	_diskTree = 0;
-	_diskGroups = 0;
-	_users = 0;
-
-	_server = new ServerNetworkHandler(this);
+	_server = new ServerNetworkHandler();
 	_console = new ServerConsole(this);
+
 	_sessions = new AVLTree<Session, int>();
-	_users = new AVLTree<User, std::string>;
-	
+	_userTree = new AVLTree<User, std::string>;
+	_diskTree = new AVLTree<Disk, int>;
+	_clientsTree = new AVLTree<StorageClient, std::string>;
+	_diskGroups = new AVLTree<DiskGroup, std::string>;
 }
 
 std::string GeneralManager::getDiskGroupStatus(std::string pDiskGroupID){
-	DiskGroup* disk = _diskGroups->search(pDiskGroupID);
+	DiskGroup* disk = _diskGroups->search(&pDiskGroupID);
 	std::string isWorking = disk->isWorking()?"true":"false";
 	std::string isFunctional = disk->isFunctional()?"true":"false";
 	return std::string("Disk ID: ") + pDiskGroupID + std::string(" working: ") + isWorking + std::string(" functional:") + isFunctional;
 }
 
 Session* GeneralManager::getSession(int pSessionID){
-	return _sessions->search(pSessionID);
+	return _sessions->search(&pSessionID);
 }
 
 int GeneralManager::newSession(std::string pUser, std::string pDiskGroupID){
-	DiskGroup* disk = _diskGroups->search(pDiskGroupID);
+	DiskGroup* disk = _diskGroups->search(&pDiskGroupID);
 	if (disk == 0){
 		return NO_SESSION;
 	} else {
 		if (disk->isWorking()){
 			Session* newSession = new Session(pUser, disk);
 			_sessions->insert(newSession);
-			return _newSession->getSessionID();
+			return newSession->getSessionID();
 		} else {
 			return NO_SESSION;
 		}
@@ -47,12 +41,21 @@ int GeneralManager::newSession(std::string pUser, std::string pDiskGroupID){
 }
 
 void GeneralManager::closeSession(int pSessionID){
-	Session* session = _sessions->erase(pSessionID);
+	Session* session = _sessions->erase(&pSessionID);
 	delete session;
 }
 
+User* GeneralManager::getUser(std::string pUser){
+	return _userTree->search(pUser);
+}
+
+void GeneralManager::addUser(std::string pUser, std::string pSecKey){
+	User* user = new User(pUser, pSecKey);
+	_userTree->insert(user);
+}
+
 void GeneralManager::defineDiskGroup(int pRAID, int pBlockSize, std::string pID){
-	if (_diskGroups->search(pID) != 0){
+	if (_diskGroups->search(&pID) != 0){
 		std::cout<<"Error. Ya existe un DiskGroup con el identificador '" << pID << "'."<<std::endl;
 	} else {
 		switch (pRAID){
@@ -79,43 +82,42 @@ void GeneralManager::defineDiskGroup(int pRAID, int pBlockSize, std::string pID)
 	}
 }
 
-void GeneralManager::addLSS(std::string pDiskGroupID, std::string pIPToConnect, int pPort, short pDiskID, std::string pSecurityKey, int pPort){
+void GeneralManager::addLSS(std::string pDiskGroupID, std::string pIPToConnect, int pPort, short pDiskID, std::string pSecurityKey){
+	//Busca si el disco ya existe
 	std::string diskID = pIPToConnect + ":" + std::to_string(pDiskID);
-	if (_diskTree->search(diskID) != 0){
+	if (_diskTree->search(&diskID) != 0){
 		std::cout<<"Error. El disco ya existe."<<std::endl;
 		return;
 	} 
 
-	DiskGroup* diskGroup = _diskGroups->search(pDiskGroupID);
+	//Busca el DiskGroup para agregar el disco
+	DiskGroup* diskGroup = _diskGroups->search(&pDiskGroupID);
 	if (diskGroup == 0){
 		std::cout<<"Error. El DiskGroup especificado no existe."<<std::endl;
 		return;
 	}
 
-	StorageClient* client = _clientsTree->search(pIPToConnect);
+	//Busca si el cliente existe, de no ser así, este es creado
+	StorageClient* client = _clientsTree->search(&pIPToConnect);
 	if (client == 0){
 		client = new StorageClient(pIPToConnect, pPort);
-		if (client->isConnected()){
-			_clientsTree->insert(client);
-		} else {
-			std::cout<<"Error. No se pudo conectar con el LSS."<<std::endl;
-			delete client;
-			return;
-		}	
+		if (!client->isConnected()){
+			std::cout<<"Error. No se pudo conectar con el LSS. El LSS se insertará pero no podrá ser utilizado hasta que el servidor esté online."<<std::endl;
+		}
+		_clientsTree->insert(client);
 	}
 
-	Disk* disk = new Disk(client, pDiskID);
-	if (disk->isAlive()){
-		_diskTree->insert(disk);
-		diskGroup->addDisk(disk);
-	} else {
-		std::cout<<"Error. El disco no está disponible."<<std::endl;
-		delete disk;
+	//Crea el disco y lo inserta
+	Disk* disk = new Disk(client, pDiskID, pSecurityKey); // Al crear el disco el se conecta automaticamente 
+	if (!disk->isAlive()){
+		std::cout<<"Error. El disco no está disponible. Este será insertado pero no podrá ser utilizado hasta que se encuentre online."<<std::endl;
 	}
+	_diskTree->insert(disk);
+	diskGroup->addDisk(disk);
 }
 
 void GeneralManager::startDiskGroup(std::string pDiskGroupID){
-	DiskGroup* diskGroup = _diskGroups->search(pDiskGroupID);
+	DiskGroup* diskGroup = _diskGroups->search(&pDiskGroupID);
 	if (diskGroup == 0){
 		std::cout<<"Error. El DiskGroup especificado no existe."<<std::endl;
 	} else if (!diskGroup->isWorking()){
@@ -135,7 +137,7 @@ void GeneralManager::startDiskGroup(std::string pDiskGroupID){
 }
 
 void GeneralManager::stopDiskGroup(std::string pDiskGroupID){
-	DiskGroup* diskGroup = _diskGroups->search(pDiskGroupID);
+	DiskGroup* diskGroup = _diskGroups->search(&pDiskGroupID);
 	if (diskGroup == 0){
 		std::cout<<"Error. El DiskGroup especificado no existe."<<std::endl;
 	} else if (diskGroup->isWorking()){
@@ -149,7 +151,7 @@ void GeneralManager::stopDiskGroup(std::string pDiskGroupID){
 	}
 }
 
-AVLTree<DiskGroup, std::string>* GeneralManager::loadDiskGroups(){
+void GeneralManager::loadDiskGroups(){
 	std::string raidType = DiskGroupsXML::getDiskGroupRaid("~/diglet/raidb/diskgroups.xml", 1);
 	for (int i = 1; raidType != ""; i++){
 
@@ -175,7 +177,7 @@ AVLTree<DiskGroup, std::string>* GeneralManager::loadDiskGroups(){
 		//Cargar discos
 		std::string id = DiskGroupsXML::getDiskGroupDiskId("~/diglet/raidb/diskgroups.xml", i, 0);
 		for (int j = 1; id != ""; j++){
-			StorageClient* client = _clientsTree->search( Tokenizer::getCommandSpace(id, 0, ':') );
+			StorageClient* client = _clientsTree->search( &Tokenizer::getCommandSpace(id, 0, ':') );
 			Disk* disk = client->getDisk( std::stoi(Tokenizer::getCommandSpace(id, 1, ':')) );
 			diskGroup->addDisk(disk);
 			id = DiskGroupsXML::getDiskGroupDiskId("~/diglet/raidb/diskgroups.xml", i, j+1);
@@ -185,33 +187,98 @@ AVLTree<DiskGroup, std::string>* GeneralManager::loadDiskGroups(){
 		std::cout<<"Diskgroup '"<<id<<"' añadido con éxito"<<std::endl;
 
 		raidType = DiskGroupsXML::getDiskGroupRaid("~/diglet/raidb/diskgroups.xml", i+1);
-
 	}
 }
 
-AVLTree<StorageClient, std::string>* GeneralManager::loadClients(){
-	
+void GeneralManager::loadClients(){
+	std::string ip = clientsxml::getClientIp("~/diglet/raidb/clients.xml", 1);
+	for (int i = 1; ip != ""; i++){
+		int port = std::stoi(clientsxml::getClientPort("~/diglet/raidb/clients.xml", i))
+		StorageClient* client = new StorageClient(ip, port);
+		_clientsTree->insert(client);
+		ip = clientsxml::getClientIp("~/diglet/raidb/clients.xml", i+1);
+	}
 }
 
-AVLTree<Disk, std::string> loadDisks();
-AVLTree<User, std::string> loadUsers();
+void GeneralManager::loadDisks(){
+	std::string id = DiskXML::getIdDisk("~diglet/raidb/disks.xml", 1);
+	for (int i = 1; id != ""; i++){
 
+		std::string clientIP = DiskXML::getClientDisk("~diglet/raidb/disks.xml", i);
+		StorageClient* client = _clientsTree->search(&clientIP);
+
+		std::string secKey = DiskXML::getSecurityKey("~diglet/raidb/disks.xml", i);
+
+		Disk* disk = new Disk(client, std::stoi(id), secKey);
+		_diskTree->insert(disk);
+
+		id = std::stoi( DiskXML::getIdDisk("~diglet/raidb/disks.xml", i+1) );
+	}
+}
+
+void GeneralManager::loadUsers(){
+	std::string id = usersxml::getIdUser("~diglet/raidb/users.xml", 1);
+	for (int i = 1; id != ""; i++){
+		std::string secKey = usersxml::getSecurityKey("~diglet/raidb/users.xml", i);
+		User* user = new User(id, secKey);
+		_userTree->insert(user);
+		id = usersxml::getIdUser("~diglet/raidb/users.xml", i+1);
+	}
+}
+
+void GeneralManager::saveDiskGroups(){
+	saveDiskGroupsAux(_diskGroups->getRoot());
+}
+
+void GeneralManager::saveClients(){
+	saveClientsAux(_clientsTree->getRoot());
+}
+
+void GeneralManager::saveDisk(){
+	saveDiskAux(_diskTree->getRoot());
+}
+
+void GeneralManager::saveUsers(){
+	saveUsersAux(_userTree->getRoot());
+}
+
+void GeneralManager::saveDiskGroupsAux(TreeNode<DiskGroup, std::string>* pNode){
+
+}
+
+void GeneralManager::saveClientsAux(TreeNode<StorageClient, std::string>* pNode){
+
+}
+
+void GeneralManager::saveDiskAux(TreeNode<Disk, std::string>* pNode){
+
+}
+
+void GeneralManager::saveUsersAux(TreeNode<User, std::string>* pNode){
+
+}
 
 void GeneralManager::startSystem(){
 	/* CUIDADO EL ORDEN DE INICIALIZACIÓN DEBE SER:
-		- CLIENTES
-		- DISCOS
-		- DISKGROUPS
+		1. CLIENTES
+		2. DISCOS
+		3. DISKGROUPS
 	*/
-	_clientsTree = loadClients();
-	_diskTree = loadDisks();
-	_diskGroups = loadDiskGroups();
-	_userTree = loadUsers();
+	loadClients();
+	loadDisks();
+	loadDiskGroups();
+	loadUsers();
 
 	_console->start();
-	FALTA
+	_server->start();
 }
 
 void GeneralManager::stopSystem(){
+	saveClients();
+	saveDisks();
+	saveDiskGroups();
+	saveUsers();
 
+	_console->stop();
+	_server->stop();
 }

@@ -1,34 +1,61 @@
 #include "disk.h"
 
 bool Disk::operator==(std::string& pDisk){
-	std::string diskID = _storageClient->getIP() + std::to_string(_id);
-	return diskID == pDisk;
+	return getDiskDirection() == pDisk;
 }
 
 bool Disk::operator!=(std::string& pDisk){
-	std::string diskID = _storageClient->getIP() + std::to_string(_id);
-	return diskID != pDisk;
+	return getDiskDirection() != pDisk;
 }
 
 bool Disk::operator>(std::string& pDisk){
-	std::string diskID = _storageClient->getIP() + std::to_string(_id);
-	return diskID > pDisk;
+	return getDiskDirection() > pDisk;
 }
 
 bool Disk::operator>=(std::string& pDisk){
-	std::string diskID = _storageClient->getIP() + std::to_string(_id);
-	return diskID >= pDisk;
+	return getDiskDirection() >= pDisk;
 }
 
 bool Disk::operator<(std::string& pDisk){
-	std::string diskID = _storageClient->getIP() + std::to_string(_id);
-	return diskID < pDisk;
+	return getDiskDirection() < pDisk;
 }
 
 bool Disk::operator<=(std::string& pDisk){
-	std::string diskID = _storageClient->getIP() + std::to_string(_id);
-	return diskID <= pDisk;
+	return getDiskDirection() <= pDisk;
 }
+
+bool Disk::operator==(Disk& pDisk){
+	return getDiskDirection() == pDisk.getDiskDirection();
+}
+
+bool Disk::operator!=(Disk& pDisk){
+	return getDiskDirection() != pDisk.getDiskDirection();
+}
+
+bool Disk::operator>(Disk& pDisk){
+	return getDiskDirection() > pDisk.getDiskDirection();
+}
+
+bool Disk::operator>=(Disk& pDisk){
+	return getDiskDirection() >= pDisk.getDiskDirection();
+}
+
+bool Disk::operator<(Disk& pDisk){
+	return getDiskDirection() < pDisk.getDiskDirection();
+}
+
+bool Disk::operator<=(Disk& pDisk){
+	return getDiskDirection() <= pDisk.getDiskDirection();
+}
+
+Disk::Disk(StorageClient* pClient, int pID, std::string pSecKey){
+	_storageClient = pClient;
+	_id = pID;
+	_secKey = pSecKey;
+	_storageClient->connect(pID, pSecKey);
+	_storageClient->addDisk(this);
+}
+
 
 std::string Disk::readBlock(int pBlock){
 	return _storageClient->readBlock(_id, pBlock);
@@ -47,5 +74,5 @@ std::string Disk::readBytes(int pBlock, int pOffset, int pSize){
 }
 
 bool Disk::isAlive(){
-	return _storageClient->isAlive(_id);
+	return _storageClient->isConnected() && _storageClient->isAlive(_id);
 }
