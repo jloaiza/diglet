@@ -1,1 +1,0 @@
-/usr/bin/c++  -fPIC    -shared -Wl,-soname,libbinaryoperations.so -o libbinaryoperations.so CMakeFiles/binaryoperations.dir/baseconverter.cpp.o CMakeFiles/binaryoperations.dir/byteshandler.cpp.o 

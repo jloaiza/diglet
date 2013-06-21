@@ -1,1 +1,0 @@
-/usr/bin/c++       CMakeFiles/lssprovider.dir/lssprovider.cpp.o CMakeFiles/lssprovider.dir/lssprovider_automoc.cpp.o  -o lssprovider -rdynamic 

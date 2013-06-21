@@ -1,1 +1,0 @@
-/usr/bin/c++       CMakeFiles/clientprovider.dir/clientprovider.cpp.o CMakeFiles/clientprovider.dir/clientprovider_automoc.cpp.o  -o clientprovider -rdynamic 
