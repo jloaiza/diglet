@@ -122,7 +122,11 @@ std::string parserxml::getAnyValue(std::string pNodeDirectionValue)
            qDebug()<< "Xpath invalido.";
         }
         QString queryresult;
-        query.evaluateTo(&queryresult); 
+        query.evaluateTo(&queryresult);
+        if (queryresult == "\n")
+        {
+            queryresult = "";
+        }
         _file.close();
         return queryresult.toStdString();
     }  
