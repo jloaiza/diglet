@@ -83,11 +83,10 @@ Lss::Lss(std::string pDisk, short pID, int pSize, std::string pSecKey)
 
 short Lss::writeA (std::string pData, short pBlockPadre)
 {
-	short freeblock = getFreeBlock(); 	/* pide un bloques borrados (en caso de que existan) */	
+	short freeblock = getFreeBlock(); 	/* pide un bloque borrado (en caso de que existan) */	
 	if ( freeblock == 0)	/* no hay bloques borrados */
 	{
 		freeblock = getLastBlock(); 	/* pide el ultimo bloque libre */
-		
 		if (freeblock == 0) 	/* no hay espacio */
 		{
 			std::cout << "disco lleno";
@@ -95,9 +94,6 @@ short Lss::writeA (std::string pData, short pBlockPadre)
 		else 	/* si hay espacio */
 		{
 			short nextDirection = freeblock+1;		/* numero del nuevo bloque libre */
-			
-			//std::cout << freeblock << std::endl;			
-			
 			writeB ( BytesHandler::bin2str(BytesHandler::unum2bin(nextDirection, 2)), 6, 2); 	/* aumenta el apuntador al ultimo bloque libre */
 			writeB (pData, 12+(freeblock*_blockSize), _blockSize);		/*	escribe los datos en la direccion del bloque libre */
 		}
@@ -106,6 +102,7 @@ short Lss::writeA (std::string pData, short pBlockPadre)
 	{
 		char * buffer = readB ( (12+(freeblock*_blockSize)), 2); /* lee la direccion del bloque borrado */
 		short freeblock2 = BytesHandler::to_ulong( BytesHandler::string2bin(std::string(buffer,2), 2) );		/*	convierte la lectura a un short */
+		std::cout << freeblock2 << std::endl;
 		if (freeblock2 == 0) 	/* solo hay 1 bloque libre */ 
 		{
 			writeB ( BytesHandler::bin2str(BytesHandler::unum2bin(0, 2)), 4, 2);		/* apuntador a bloques borrados = NULL*/
@@ -114,7 +111,8 @@ short Lss::writeA (std::string pData, short pBlockPadre)
 		{
 			writeB ( BytesHandler::bin2str(BytesHandler::unum2bin(freeblock2, 2)), 4, 2);		/* aumenta apuntador a bloques borrados */
 		}
-		writeA (pData, (12+(freeblock*_blockSize), _blockSize) );		/* escribe los datos en el bloque borrado */
+		
+		writeB (pData, 12+(freeblock*_blockSize), _blockSize );		/* escribe los datos en el bloque borrado */
 	}
 	
 	if (pBlockPadre == 0) 	/* no tiene bloque predecesor */
@@ -132,7 +130,6 @@ void Lss::writeB (std::string pData, int pPos, int pSize)
 	std::fstream File;
 	File.open( _disk );
 	File.seekp ( pPos, File.beg);
-	
 	File.write (string_2_charArray(pData, pSize), pSize);
 	File.close();
 }
@@ -191,7 +188,6 @@ void Lss::format(int pBlockSize)
 void Lss::eraseBlock(int pBlock)
 {
 	short BloqueLibre = getFreeBlock();		/* numero del primer bloque borrado */
-	//std::cout << BloqueLibre << std::endl;
 	
 	char* tmp = new char[_blockSize];
 	for (int x=0; x<_blockSize; x++) { tmp[x]=0; }
@@ -205,15 +201,20 @@ void Lss::eraseBlock(int pBlock)
 	{
 		while(true)
 		{
+			short BloqueLibre2;
 			char * buffer = new char[2];
 			buffer = readB (12+(BloqueLibre*_blockSize), 2);
-			BloqueLibre = BytesHandler::to_ulong( BytesHandler::string2bin(std::string(buffer,2), 2) );
-			if (BloqueLibre == 0)
+			BloqueLibre2 = BytesHandler::to_ulong( BytesHandler::string2bin(std::string(buffer,2), 2) );
+			if (BloqueLibre2 == 0)
 			{
 				writeB( BytesHandler::bin2str( BytesHandler::unum2bin(pBlock, 2) ), 12+(BloqueLibre*_blockSize), 2);
 				writeB( tmp, 12+(pBlock*_blockSize), _blockSize);
 				break;
-			}		
+			}
+			else
+			{
+				BloqueLibre = BloqueLibre2;
+			}	
 		}
 	}
 }
