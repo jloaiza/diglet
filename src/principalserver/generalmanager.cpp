@@ -243,19 +243,19 @@ void GeneralManager::saveUsers(){
 }
 
 void GeneralManager::saveDiskGroupsAux(TreeNode<DiskGroup, std::string>* pNode){
-
+	
 }
 
 void GeneralManager::saveClientsAux(TreeNode<StorageClient, std::string>* pNode){
-
+	
 }
 
 void GeneralManager::saveDiskAux(TreeNode<Disk, std::string>* pNode){
-
+	
 }
 
 void GeneralManager::saveUsersAux(TreeNode<User, std::string>* pNode){
-
+	
 }
 
 void GeneralManager::startSystem(){
