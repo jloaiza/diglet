@@ -17,11 +17,17 @@ release: builddir
 builddir:
 	test -d $(BUILDDIR) || mkdir $(BUILDDIR)
 
-run: builddir release
-	./$(BUILDDIR)/exec/main
+run-lss: builddir release
+	./$(BUILDDIR)/bin/lssprovider
 
-rundebug: builddir debug
-	./$(BUILDDIR)/exec/main
+run-server: builddir release
+	./$(BUILDDIR)/bin/serverprovider
+
+run-client: builddir release
+	./$(BUILDDIR)/bin/clientprovider
+
+run: builddir release
+	./$(BUILDDIR)/bin/test
 
 clean:
 	rm -rf $(BUILDDIR)/*

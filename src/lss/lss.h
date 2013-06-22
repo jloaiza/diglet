@@ -1,7 +1,7 @@
 #ifndef LSS
 #define LSS
 
-#include "../util/comparable.h"
+#include "comparable.h"
 #include <string>
 
 class Lss : public Comparable {

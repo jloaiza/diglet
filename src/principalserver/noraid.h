@@ -2,7 +2,10 @@
 #ifndef NORAID
 #define NORAID
 
+#include "diskgroup.h"
+
 class RegisterSpace;
+class DataBuffer;
 
 class NoRaid : public DiskGroup
 {
@@ -11,17 +14,16 @@ private:
 	int _BlockSize, _NumDisks;
 	DataBuffer* _outBuffer;
 	bool _Functional;
-	bool _Working
-		
-	SimpleListLss * _diskList;			// *** CUIDADO ***
+	bool _Working;
+			
 		
 public:
-	NoRaid(short pID, int pBlockSize, SimpleList pList);
+	// NoRaid(short pID, int pBlockSize, SimpleList pList);
 	bool getFile(char* pPath, char* pUser);
 	bool deleteFile(char* pPath, char* pUser);
 	
 	/* cambie RegisterSpace* por una lista simple para conocer el tamaño mas facilmente */
-    bool createFile(char* pPath, SimpleList* pRegisterList, char* pUser);
+    // bool createFile(char* pPath, SimpleList* pRegisterList, char* pUser);
 	
 	void appendRegister(char* pPath, char* pUser, DataNode* pData);
 	bool eraseRegister(char* pPath, char* pUser, int pRegisterNumber);
