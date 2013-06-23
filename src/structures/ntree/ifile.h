@@ -9,29 +9,11 @@ class iFile
 
 private:
 
-    int _diskID;
-    std::string _name;
-    std::string _user;
+    std::string _diskID;
     int _regCount;
     int _startBlock;
-    int _BlockSize;
 
 public:
-
-    bool operator==(std::string& pDiskID);
-    bool operator!=(std::string& pDiskID);
-    bool operator>=(std::string& pDiskID);
-    bool operator>(std::string& pDiskID);
-    bool operator<=(std::string& pDiskID);
-    bool operator<(std::string& pDiskID);
-
-    bool operator==(iFile& pDiskID);
-    bool operator!=(iFile& pDiskID);
-    bool operator>=(iFile& pDiskID);
-    bool operator>(iFile& pDiskID);
-    bool operator<=(iFile& pDiskID);
-    bool operator<(iFile& pDiskID);
-
 
     /**
      * @brief iFile
@@ -39,7 +21,11 @@ public:
      * @param pDisk
      * @param pPointer
      */
-    iFile(std::string pName, int pDisk, int pBlockSize);
+    iFile(std::string pDisk, int pStartBlock){
+        _regCount = 0;
+        _startBlock = pStartBlock;
+        _diskID = pDisk;
+    }
 
     void addRegCount() {
         _regCount++;
@@ -47,16 +33,20 @@ public:
 
     void removeRegCount() {
         if (_regCount == 0){
-            std::cout<<"Error. Removing more registers than posibles on "<<_name<<". Check algorithms.";
+            std::cout<<"Error. Removing more registers than posibles. Check algorithms.";
         }
         _regCount--;
+    }
+
+    int getRegCount() const {
+        return _regCount;
     }
 
     /**
      * @brief getDisk
      * @return
      */
-    int getDisk() const {
+    std::string getDisk() const {
         return _diskID;
     }
 
@@ -64,7 +54,7 @@ public:
      * @brief setDisk
      * @param pDisk
      */
-    void setDisk(int pDisk){
+    void setDisk(std::string pDisk){
         _diskID = pDisk;
     }
 
