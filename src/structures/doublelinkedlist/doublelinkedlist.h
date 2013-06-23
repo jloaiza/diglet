@@ -18,6 +18,10 @@ public:
 	void insertEnd(t* pData);
 	void insertStart(t* pData);
 
+	ListNode* getHead() const{
+		return _head;
+	}
+
 	t* search(c* pData);
 	t* erase(c* pData);
 

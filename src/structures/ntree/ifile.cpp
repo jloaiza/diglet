@@ -1,5 +1,6 @@
 #include "ifile.h"
 
+
 iFile::iFile(std::string pName, std::string pDisk, int pBlockSize, RegisterSpace * pRegister)
 {	
 	_BlockSize = pBlockSize;
@@ -9,53 +10,50 @@ iFile::iFile(std::string pName, std::string pDisk, int pBlockSize, RegisterSpace
     createMetadata(RegisterSpace *pRegister);
 }
 
-std::string createMetadata()
-{
-	std::string direction = pDisk.getFreeSpace();
-	std::string MetadataBlock[pBlockSize];
-	
+bool inline operator==(std::string& pDiskID){
+    return _diskID == pDiskID
 }
 
-
-int iFile::getDisk(){
-    return _diskID;
+bool inline operator!=(std::string& pDiskID){
+    return _diskID != pDiskID;
 }
 
-void iFile::setDisk(int pDisk){
-    _diskID = pDisk;
+bool inline operator>=(std::string& pDiskID){
+    return _diskID >= pDiskID;
 }
 
-int iFile::getStartBlock(){
-    return _startBlock;
+bool inline operator>(std::string& pDiskID){
+    return _diskID > pDiskID;
 }
 
-void iFile::setStartBlock(int pPointer){
-    _startBlock = pPointer;
+bool inline operator<=(std::string& pDiskID){
+    return _diskID <= pDiskID;
 }
 
-/** COMPARABLE INHERITANCE **/
-
-bool iFile::eql(Comparable* arg){
-
-    /** TODO **/
-    return false;
-
+bool inline operator<(std::string& pDiskID){
+    return _diskID < pDiskID;
 }
 
-bool iFile::gtr(Comparable *arg){
-
-    /** TODO **/
-    return false;
-
+bool inline operator==(iFile& pDiskID){
+    return _diskID == pDiskID.getID();
 }
 
-bool iFile::lss(Comparable *arg){
-
-    /** TODO **/
-    return false;
-
+bool inline operator!=(iFile& pDiskID){
+    return _diskID != pDiskID.getID();
 }
 
-void iFile::print(){
-    /** TODO **/
+bool inline operator>=(iFile& pDiskID){
+    return _diskID >= pDiskID.getID();
+}
+
+bool inline operator>(iFile& pDiskID){
+    return _diskID > pDiskID.getID();
+}
+
+bool inline operator<=(iFile& pDiskID){
+    return _diskID <= pDiskID.getID();
+}
+
+bool inline operator<(iFile& pDiskID){
+    return _diskID < pDiskID.getID();
 }
